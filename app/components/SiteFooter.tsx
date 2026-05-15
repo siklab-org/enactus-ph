@@ -37,6 +37,7 @@ export function SiteFooter() {
           </h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li><a href="https://enactus.org" target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100">Enactus Global</a></li>
+            <li><a href="https://siklab.org.ph/" target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100">Siklab — National Expo Organizers</a></li>
           </ul>
         </div>
       </div>
