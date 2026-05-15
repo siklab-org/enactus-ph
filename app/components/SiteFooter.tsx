@@ -37,8 +37,6 @@ export function SiteFooter() {
           </h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li><a href="https://enactus.org" target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100">Enactus Global</a></li>
-            <li><a href="https://www.enactusaustralia.org.au" target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100">Enactus Australia</a></li>
-            <li><a href="#" className="opacity-80 hover:opacity-100">World Cup</a></li>
           </ul>
         </div>
       </div>
