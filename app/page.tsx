@@ -41,25 +41,34 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border/60">
         <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
-        <div className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl" aria-hidden />
+        <div
+          className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl"
+          aria-hidden
+        />
         <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 pb-28 pt-20 md:pt-28">
           <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <span className="inline-block h-px w-8 bg-foreground/40" />
             Enactus.ph · est. network of 33 countries
           </div>
-          <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
-            Entrepreneurial action,
+          <h1 className="max-w-5xl text-4xl font-semibold leading-[1.12] tracking-tight md:text-5xl lg:text-6xl">
+            We believe <span className="text-foreground/30">investing</span> in{" "}
+            students
             <br />
             <span className="relative inline-block">
-              engineered <span className="text-foreground/30">in the</span>
-              <span className="ml-3 inline-block bg-primary px-3 italic">Philippines.</span>
+              who <span className="text-foreground/30">take</span>{" "}
+              <span className="inline-block bg-primary px-3 italic">
+                entrepreneurial action
+              </span>
+            </span>
+            <br />
+            <span className="relative inline-block">
+              for others <span className="text-foreground/30">creates a</span>{" "}
+              better world{" "}
+              <span className="inline-block bg-primary px-3 italic">
+                for us all.
+              </span>
             </span>
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-            We are a community of students, academics and business leaders using
-            innovation and business skills to ensure that all Filipinos thrive
-            in a sustainable world.
-          </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/what-we-do"
@@ -76,7 +85,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 h-16 w-1/2 yellow-slash" aria-hidden />
+        <div
+          className="absolute bottom-0 left-0 h-16 w-1/2 yellow-slash"
+          aria-hidden
+        />
       </section>
 
       {/* STATS */}
@@ -103,24 +115,39 @@ export default function Home() {
               · The name
             </div>
             <h2 className="mt-4 text-5xl font-semibold tracking-tight">
-              en<span className="text-primary">·</span>act<span className="text-primary">·</span>us
+              en<span className="text-primary">·</span>act
+              <span className="text-primary">·</span>us
             </h2>
             <p className="mt-6 text-muted-foreground">
-              Three syllables. One operating model for solving the country's
-              hardest problems.
+              Three syllables. One operating model for solving the
+              country&apos;s hardest problems.
             </p>
           </div>
           <div className="space-y-8 md:col-span-8">
             {[
-              { k: "En", v: "trepreneurial — initiating innovation with integrity and passion." },
-              { k: "Act", v: "ion — the experience of social impact that sparks social enterprise." },
-              { k: "Us", v: " — students, academics and business leaders building a better Philippines." },
+              {
+                k: "En",
+                v: "trepreneurial — initiating innovation with integrity and passion.",
+              },
+              {
+                k: "Act",
+                v: "ion — the experience of social impact that sparks social enterprise.",
+              },
+              {
+                k: "Us",
+                v: " — students, academics and business leaders building a better Philippines.",
+              },
             ].map((row) => (
-              <div key={row.k} className="flex gap-6 border-b border-border/60 pb-8">
+              <div
+                key={row.k}
+                className="flex gap-6 border-b border-border/60 pb-8"
+              >
                 <div className="w-20 shrink-0 font-display text-3xl font-semibold text-primary">
                   {row.k}
                 </div>
-                <p className="text-lg leading-relaxed text-foreground/80">{row.v}</p>
+                <p className="text-lg leading-relaxed text-foreground/80">
+                  {row.v}
+                </p>
               </div>
             ))}
           </div>
@@ -139,19 +166,27 @@ export default function Home() {
                 A platform for the next generation of Filipino founders.
               </h2>
             </div>
-            <Link href="/what-we-do" className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary">
+            <Link
+              href="/what-we-do"
+              className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
+            >
               All programs →
             </Link>
           </div>
           <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-2">
             {pillars.map((p) => (
-              <div key={p.tag} className="group relative bg-background p-8 transition-colors hover:bg-secondary hover:text-secondary-foreground">
+              <div
+                key={p.tag}
+                className="group relative bg-background p-8 transition-colors hover:bg-secondary hover:text-secondary-foreground"
+              >
                 <p.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
                 <div className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
                   {p.tag}
                 </div>
                 <h3 className="mt-2 text-2xl font-semibold">{p.title}</h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed opacity-80">{p.body}</p>
+                <p className="mt-3 max-w-md text-sm leading-relaxed opacity-80">
+                  {p.body}
+                </p>
               </div>
             ))}
           </div>
@@ -163,8 +198,10 @@ export default function Home() {
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:items-end">
           <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
-            Build a venture.<br />
-            Change a community.<br />
+            Build a venture.
+            <br />
+            Change a community.
+            <br />
             <span className="text-primary">Shape a country.</span>
           </h2>
           <div className="space-y-6">
@@ -173,10 +210,16 @@ export default function Home() {
               or an industry partner — there's a seat at the table.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="inline-flex h-12 items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90">
+              <Link
+                href="/contact"
+                className="inline-flex h-12 items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              >
                 Get involved
               </Link>
-              <Link href="/impact" className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm font-semibold hover:bg-white/5">
+              <Link
+                href="/impact"
+                className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm font-semibold hover:bg-white/5"
+              >
                 Read our impact
               </Link>
             </div>
