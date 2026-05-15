@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <Image src="/enactus-logo.png" alt="Enactus" width={32} height={32} className="h-8 w-auto brightness-0 invert" />
+            <Image src="/enactus-logo.svg" alt="Enactus" width={73} height={32} className="h-8 w-auto brightness-0 invert" />
             <span className="font-mono text-[11px] uppercase tracking-[0.25em] opacity-70">
               / Philippines
             </span>

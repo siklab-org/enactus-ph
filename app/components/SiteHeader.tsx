@@ -19,7 +19,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/enactus-logo.png" alt="Enactus" width={28} height={28} className="h-7 w-auto" />
+          <Image src="/enactus-logo.svg" alt="Enactus" width={64} height={28} className="h-7 w-auto" />
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
             / Philippines
           </span>
