@@ -50,13 +50,13 @@ export default function Home() {
             <span className="inline-block h-px w-8 bg-foreground/40" />
             Enactus.ph · est. network of 33 countries
           </div>
-          <h1 className="max-w-5xl text-4xl font-semibold leading-[1.12] tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="max-w-5xl text-[3.8rem] font-semibold leading-[1.12] tracking-tight md:text-[3.3rem] lg:text-[4.3rem]">
             We believe <span className="text-foreground/30">investing</span> in{" "}
             students
             <br />
             <span className="relative inline-block">
-              who <span className="text-foreground/30">take</span>{" "}
-              <span className="inline-block bg-primary px-3 italic">
+              who <span className="text-foreground/30">take </span>
+              <span className="inline-block bg-primary italic">
                 entrepreneurial action
               </span>
             </span>
