@@ -27,7 +27,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/who-we-are" className="opacity-80 hover:opacity-100">Who We Are</Link></li>
             <li><Link href="/what-we-do" className="opacity-80 hover:opacity-100">What We Do</Link></li>
-            <li><Link href="/impact" className="opacity-80 hover:opacity-100">Our Impact</Link></li>
+             <li><Link href="/news" className="opacity-80 hover:opacity-100">News</Link></li>
             <li><Link href="/contact" className="opacity-80 hover:opacity-100">Contact</Link></li>
           </ul>
         </div>
@@ -43,7 +43,10 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60 md:flex-row md:items-center md:justify-between">
-          <span>© {new Date().getFullYear()} Enactus Philippines</span>
+          <div className="flex flex-col gap-1">
+            <span>Enactus Philippines is a chapter of Enactus Global</span>
+            <span>© {new Date().getFullYear()} Enactus Global. All rights reserved.</span>
+          </div>
           <span>Entrepreneurial · Action · Us</span>
         </div>
       </div>
