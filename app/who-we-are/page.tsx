@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 
-
 export const metadata: Metadata = {
   title: "Who We Are",
   description:
@@ -23,10 +22,10 @@ const staff = [
     email: "SMolato@enactus.org",
   },
   {
-    name: "Ton KGo",
+    name: "Ton",
     role: "COO & Country Director",
     email: "KGo@enactus.org",
-    bio: "Ton KGo serves as the Chief Operating Officer and Country Director of Enactus Philippines, bringing strategic and operational leadership to the national chapter.",
+    bio: "",
   },
   {
     name: "Sam",
@@ -79,23 +78,23 @@ export default function WhoWeAre() {
             </span>
           </>
         }
-        subtitle="Enactus is a global social innovation and entrepreneurial education network that empowers students to use business and innovation to create social impact. For over 20 years, Enactus Philippines has served as the premier platform for Filipino students to ideate, incubate, and pitch innovative solutions for their communities."
+        subtitle="The world needs more impact-focused, highly-skilled, globally-informed leaders to solve our most pressing problems. Enactus prepares the next generation of leaders we need now."
       />
 
       {/* ─── ABOUT ENACTUS ─── */}
       <section className="border-b border-border/60">
         <div className="mx-auto w-full max-w-7xl px-6 py-24">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="font-mono text-sm uppercase tracking-[0.25em] text-muted-foreground">
-              · About Enactus
+            <div className="font-mono font-bold text-xl uppercase tracking-[0.25em] text-muted-foreground">
+              About Enactus
             </div>
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-              Enactus is a global social innovation and entrepreneurial education
-              network that empowers students to use business and innovation to
-              create social impact. For over 20 years, Enactus Philippines has
-              served as the premier platform for Filipino students to ideate,
-              incubate, and pitch innovative entrepreneurial solutions to solve
-              the most pressing issues in their communities.
+              Enactus is a global social innovation and entrepreneurial
+              education network that empowers students to use business and
+              innovation to create social impact. For over 20 years, Enactus
+              Philippines has served as the premier platform for Filipino
+              students to ideate, incubate, and pitch innovative entrepreneurial
+              solutions to solve the most pressing issues in their communities.
             </p>
           </div>
         </div>
@@ -120,11 +119,11 @@ export default function WhoWeAre() {
       {/* ─── BOARD OF ADVISERS ─── */}
       <section className="border-b border-border/60">
         <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <h2 className="max-w-3xl text-2xl font-semibold tracking-tight md:text-3xl">
-            Guidance from seasoned leaders.
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Board of Advisers
           </h2>
-          <div className="mt-2 font-mono text-sm uppercase tracking-[0.25em] text-muted-foreground">
-            · Board of Advisers
+          <div className="mt-2 font-mono text-sm text-muted-foreground">
+            guidance from seasoned leaders.
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:shadow-md">
@@ -141,11 +140,11 @@ export default function WhoWeAre() {
       {/* ─── COUNTRY STAFF ─── */}
       <section className="border-b border-border/60 bg-muted/40">
         <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <h2 className="max-w-3xl text-2xl font-semibold tracking-tight md:text-3xl">
-            The team behind the movement.
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Country Staff
           </h2>
-          <div className="mt-2 font-mono text-sm uppercase tracking-[0.25em] text-muted-foreground">
-            · Country Staff
+          <div className="mt-2 font-mono text-sm  text-muted-foreground">
+            The team behind the movement.
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {staff.map((person) => (
@@ -180,9 +179,6 @@ export default function WhoWeAre() {
       {/* ─── PARTNERS ─── */}
       <section className="border-b border-border/60">
         <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            · Partners
-          </div>
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
             Powered by our partners.
           </h2>
