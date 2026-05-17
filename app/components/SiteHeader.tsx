@@ -8,8 +8,9 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/who-we-are", label: "Who We Are" },
   { href: "/what-we-do", label: "What We Do" },
-  { href: "/impact", label: "Impact" },
+  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
+  { href: "/national-2026-competition", label: "National 2026 Competition" },
 ] as const;
 
 export function SiteHeader() {
