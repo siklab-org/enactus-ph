@@ -45,18 +45,18 @@ export default function Home() {
           className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl"
           aria-hidden
         />
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 pb-28 pt-20 md:pt-28">
+        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 pb-28 pt-15 md:pt-23">
           <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <span className="inline-block h-px w-8 bg-foreground/40" />
             Enactus.ph · est. network of 33 countries
           </div>
-          <h1 className="max-w-5xl text-4xl font-semibold leading-[1.12] tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="max-w-5xl text-[3.8rem] font-semibold leading-[1.12] tracking-tight md:text-[3.3rem] lg:text-[4.3rem]">
             We believe <span className="text-foreground/30">investing</span> in{" "}
             students
             <br />
             <span className="relative inline-block">
-              who <span className="text-foreground/30">take</span>{" "}
-              <span className="inline-block bg-primary px-3 italic">
+              who <span className="text-foreground/30">take </span>
+              <span className="inline-block bg-primary italic">
                 entrepreneurial action
               </span>
             </span>
@@ -111,9 +111,6 @@ export default function Home() {
       <section className="border-b border-border/60">
         <div className="mx-auto grid w-full max-w-7xl gap-16 px-6 py-24 md:grid-cols-12">
           <div className="md:col-span-4">
-            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              · The name
-            </div>
             <h2 className="mt-4 text-5xl font-semibold tracking-tight">
               en<span className="text-primary">·</span>act
               <span className="text-primary">·</span>us
@@ -206,8 +203,8 @@ export default function Home() {
           </h2>
           <div className="space-y-6">
             <p className="text-lg opacity-80">
-              Whether you're a student forming a campus team, a faculty member,
-              or an industry partner — there's a seat at the table.
+              Whether you&apos;re a student forming a campus team, a faculty
+              member, or an industry partner, there&apos;s a seat at the table.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -217,10 +214,10 @@ export default function Home() {
                 Get involved
               </Link>
               <Link
-                href="/impact"
+                href="/news"
                 className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm font-semibold hover:bg-white/5"
               >
-                Read our impact
+                Latest news
               </Link>
             </div>
           </div>
