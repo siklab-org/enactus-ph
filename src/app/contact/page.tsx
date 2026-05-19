@@ -35,8 +35,8 @@ export default function Contact() {
     <div className="min-h-screen bg-background">
       <PageHero
         eyebrow="Contact"
-        title={<>Let's <span className="bg-primary px-2 italic">build</span> something.</>}
-        subtitle="Tell us what you're working on. We'll route you to the right team within the week."
+        title={<>Let&apos;s <span className="bg-primary px-2 italic">build</span> something.</>}
+        subtitle="Tell us what you&apos;re working on. We&apos;ll route you to the right team within the week."
       />
       <section className="border-b border-border/60">
         <div className="mx-auto w-full max-w-7xl px-6 py-24">
@@ -48,7 +48,7 @@ export default function Contact() {
               One email, whole team.
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Reach every department through a single address. We'll route your message to the right people.
+              Reach every department through a single address. We&apos;ll route your message to the right people.
             </p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
