@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { StatsCounter } from "@/components/StatsCounter";
 
 export const metadata: Metadata = {
   title: "Who We Are",
@@ -83,124 +85,130 @@ export default function WhoWeAre() {
 
       {/* ─── ABOUT ENACTUS ─── */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="font-mono font-bold text-xl uppercase tracking-[0.25em] text-muted-foreground">
-              About Enactus
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="font-mono font-bold text-xl uppercase tracking-[0.25em] text-muted-foreground">
+                About Enactus
+              </div>
+              <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+                Enactus is a global social innovation and entrepreneurial
+                education network that empowers students to use business and
+                innovation to create social impact. For over 20 years, Enactus
+                Philippines has served as the premier platform for Filipino
+                students to ideate, incubate, and pitch innovative entrepreneurial
+                solutions to solve the most pressing issues in their communities.
+              </p>
             </div>
-            <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-              Enactus is a global social innovation and entrepreneurial
-              education network that empowers students to use business and
-              innovation to create social impact. For over 20 years, Enactus
-              Philippines has served as the premier platform for Filipino
-              students to ideate, incubate, and pitch innovative entrepreneurial
-              solutions to solve the most pressing issues in their communities.
-            </p>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* ─── STATS ─── */}
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
           {stats.map((s) => (
-            <div key={s.label} className="px-6 py-14 text-center">
-              <div className="font-display text-5xl font-semibold text-primary md:text-6xl">
-                {s.value}
-              </div>
-              <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] opacity-70">
-                {s.label}
-              </div>
-            </div>
+            <StatsCounter
+              key={s.label}
+              value={s.value}
+              label={s.label}
+              className="px-6 py-14 text-center"
+            />
           ))}
         </div>
       </section>
 
       {/* ─── BOARD OF ADVISERS ─── */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
-            Board of Advisers
-          </h2>
-          <div className="mt-2 font-mono text-sm text-muted-foreground">
-            guidance from seasoned leaders.
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:shadow-md">
-              <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted/50">
-                <span className="text-4xl font-semibold text-muted-foreground/20">
-                  ──
-                </span>
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+              Board of Advisers
+            </h2>
+            <div className="mt-2 font-mono text-sm text-muted-foreground">
+              guidance from seasoned leaders.
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
+                <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted/50">
+                  <span className="text-4xl font-semibold text-muted-foreground/20">
+                    ──
+                  </span>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-muted-foreground/50">
+                  Coming Soon
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground/40">
+                  Board of Advisers to be announced.
+                </p>
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-muted-foreground/50">
-                Coming Soon
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground/40">
-                Board of Advisers to be announced.
-              </p>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* ─── COUNTRY STAFF ─── */}
       <section className="border-b border-border/60 bg-muted/40">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
-            Country Staff
-          </h2>
-          <div className="mt-2 font-mono text-sm  text-muted-foreground">
-            The team behind the movement.
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {staff.map((person) => (
-              <div
-                key={person.name}
-                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:shadow-md"
-              >
-                <PlaceholderAvatar name={person.name} />
-                <h3 className="mt-4 text-lg font-semibold">{person.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {person.role}
-                </p>
-                {person.email && (
-                  <a
-                    href={`mailto:${person.email}`}
-                    className="mt-2 block text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                  >
-                    {person.email}
-                  </a>
-                )}
-                {person.bio && (
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground/80">
-                    {person.bio}
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+              Country Staff
+            </h2>
+            <div className="mt-2 font-mono text-sm  text-muted-foreground">
+              The team behind the movement.
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {staff.map((person) => (
+                <div
+                  key={person.name}
+                  className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]"
+                >
+                  <PlaceholderAvatar name={person.name} />
+                  <h3 className="mt-4 text-lg font-semibold">{person.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {person.role}
                   </p>
-                )}
-              </div>
-            ))}
+                  {person.email && (
+                    <a
+                      href={`mailto:${person.email}`}
+                      className="mt-2 block text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    >
+                      {person.email}
+                    </a>
+                  )}
+                  {person.bio && (
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground/80">
+                      {person.bio}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* ─── PARTNERS ─── */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-            Powered by our partners.
-          </h2>
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 xl:grid-cols-6">
-            {partners.map((partner) => (
-              <div
-                key={partner.name}
-                className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-colors hover:border-border"
-              >
-                <span className="text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground/50">
-                  {partner.name}
-                </span>
-              </div>
-            ))}
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
+              Powered by our partners.
+            </h2>
+            <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 xl:grid-cols-6">
+              {partners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all duration-150 ease-out hover:border-border"
+                >
+                  <span className="text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground/50">
+                    {partner.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );

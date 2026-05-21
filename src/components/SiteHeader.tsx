@@ -30,8 +30,8 @@ export function SiteHeader() {
             <Link
               key={n.href}
               href={n.href}
-              className={`text-sm font-medium transition-colors hover:text-foreground ${
-                pathname === n.href ? "text-foreground" : "text-foreground/80"
+              className={`text-sm font-medium transition-opacity duration-150 hover:opacity-100 ${
+                pathname === n.href ? "text-foreground opacity-100" : "text-foreground/80"
               }`}
             >
               {n.label}
@@ -40,7 +40,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/contact"
-          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
         >
           Join Us
         </Link>

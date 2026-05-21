@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { AUTHOR, PLACEHOLDER, CATEGORIES, type NewsPost } from "@/lib/news-data";
+import {
+  AUTHOR,
+  PLACEHOLDER,
+  CATEGORIES,
+  type NewsPost,
+} from "@/lib/news-data";
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -30,11 +35,11 @@ export function NewsPostCard({ post }: { post: NewsPost }) {
   return (
     <Link
       href={`/news/${post.slug}`}
-      className="group block rounded-2xl border border-border/40 bg-background px-5 py-6 transition-colors hover:border-border/80 sm:px-6"
+      className="group block rounded-2xl border border-border/40 bg-background px-5 py-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-border/80 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)] sm:px-6"
     >
       {/* Author row + category tag */}
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 overflow-hidden rounded-full bg-muted">
+        <div className="h-10 w-10 overflow-hidden rounded-full">
           <img
             src={AUTHOR.avatar}
             alt={AUTHOR.name}

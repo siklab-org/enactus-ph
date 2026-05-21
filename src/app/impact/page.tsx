@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { StatsCounter } from "@/components/StatsCounter";
 
 export const metadata: Metadata = {
   title: "Impact",
@@ -35,28 +37,32 @@ export default function Impact() {
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 md:grid-cols-3">
           {numbers.map((n) => (
-            <div key={n.l} className="px-6 py-12">
-              <div className="font-display text-5xl font-semibold text-primary md:text-6xl">{n.v}</div>
-              <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] opacity-70">{n.l}</div>
-            </div>
+            <StatsCounter
+              key={n.l}
+              value={n.v}
+              label={n.l}
+              className="px-6 py-12"
+            />
           ))}
         </div>
       </section>
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">· Aligned with the UN SDGs</div>
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-            17 goals. One country. A generation of operators.
-          </h2>
-          <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-4">
-            {sdgs.map((s, i) => (
-              <li key={s} className="flex items-baseline gap-3 bg-background p-5">
-                <span className="font-mono text-[11px] text-primary">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-sm font-medium">{s}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">· Aligned with the UN SDGs</div>
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
+              17 goals. One country. A generation of operators.
+            </h2>
+            <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-4">
+              {sdgs.map((s, i) => (
+                <li key={s} className="flex items-baseline gap-3 bg-background p-5">
+                  <span className="font-mono text-[11px] text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm font-medium">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </AnimatedSection>
       </section>
     </div>
   );
