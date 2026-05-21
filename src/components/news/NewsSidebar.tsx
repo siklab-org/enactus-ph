@@ -9,9 +9,6 @@ export function NewsSidebar({ active }: { active?: NewsCategory }) {
 
   return (
     <aside className="lg:sticky lg:top-24 lg:self-start">
-      <h3 className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-        · Filter by
-      </h3>
       <nav className="mt-5 flex flex-wrap gap-2 lg:flex-col">
         {counts.map(({ key, label, count }) => {
           const href = key === "all" ? "/news" : `/news?category=${key}`;
@@ -22,18 +19,16 @@ export function NewsSidebar({ active }: { active?: NewsCategory }) {
               href={href}
               className={`
                 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors
-                ${
-                  isActive
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border/60 text-muted-foreground hover:border-border hover:text-foreground"
+                ${isActive
+                  ? "bg-primary text-primary-foreground"
+                  : "border border-border/60 text-muted-foreground hover:border-border hover:text-foreground"
                 }
               `}
             >
               {label}
               <span
-                className={`font-mono text-[11px] ${
-                  isActive ? "text-primary-foreground/70" : "text-muted-foreground/60"
-                }`}
+                className={`font-mono text-[11px] ${isActive ? "text-primary-foreground/70" : "text-muted-foreground/60"
+                  }`}
               >
                 {count}
               </span>
