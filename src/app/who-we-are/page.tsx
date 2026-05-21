@@ -22,18 +22,18 @@ const staff = [
     email: "SMolato@enactus.org",
   },
   {
-    name: "Ton",
+    name: "Kristoni Go",
     role: "COO & Country Director",
     email: "KGo@enactus.org",
     bio: "",
   },
   {
-    name: "Sam",
+    name: "Samantha Batul",
     role: "Communications & Partnerships",
     email: undefined,
   },
   {
-    name: "Paula",
+    name: "Paula Cuasay",
     role: "Support",
     email: undefined,
   },

@@ -20,7 +20,7 @@ export function SiteFooter() {
             entrepreneurial action to build a more sustainable Philippines.
           </p>
           <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] opacity-50">
-            Manila · Cebu · Davao · Iloilo
+            Bonifacio Global City, Manila
           </p>
         </div>
         <div>
@@ -72,7 +72,7 @@ export function SiteFooter() {
                 rel="noreferrer"
                 className="opacity-80 hover:opacity-100"
               >
-                Siklab — National Expo Organizers
+                Siklab
               </a>
             </li>
           </ul>
