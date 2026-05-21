@@ -160,3 +160,71 @@
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
   }
 }
+
+/* ─── Animation Keyframes ─── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ─── Animation Utility Classes ─── */
+
+.animate-fade-up {
+  animation: fade-up 600ms ease-out both;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 600ms ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2000ms ease-in-out infinite;
+}
+
+/* ─── Stagger Delay Utilities (80ms increments) ─── */
+
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 80ms; }
+.stagger-3 { animation-delay: 160ms; }
+.stagger-4 { animation-delay: 240ms; }
+.stagger-5 { animation-delay: 320ms; }
+.stagger-6 { animation-delay: 400ms; }
+.stagger-7 { animation-delay: 480ms; }
+.stagger-8 { animation-delay: 560ms; }
+
+/* ─── Reduced Motion ─── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

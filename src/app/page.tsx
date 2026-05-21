@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, Cpu, LineChart, Sprout, Users } from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { StatsCounter } from "@/components/StatsCounter";
+import { YellowSlashParallax } from "@/components/YellowSlashParallax";
 
 const stats = [
   { value: "32", label: "Partner Universities" },
@@ -42,40 +45,60 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
         <div
-          className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl"
+          className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl animate-pulse-soft"
+          style={{ animationDelay: "800ms" }}
           aria-hidden
         />
         <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 pb-28 pt-15 md:pt-23">
-          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+          {/* 3.1 Eyebrow — delay 0ms */}
+          <div
+            className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-fade-up"
+            style={{ animationDelay: "0ms" }}
+          >
             <span className="inline-block h-px w-8 bg-foreground/40" />
             Enactus.ph · est. network of 33 countries
           </div>
+          {/* 3.2 Title lines — staggered 0ms, 100ms, 200ms */}
           <h1 className="max-w-5xl text-[3.8rem] font-semibold leading-[1.12] tracking-tight md:text-[3.3rem] lg:text-[4.3rem]">
-            We believe <span className="text-foreground/30">investing</span> in{" "}
-            students
-            <br />
-            <span className="relative inline-block">
+            <span
+              className="block animate-fade-up"
+              style={{ animationDelay: "0ms" }}
+            >
+              We believe{" "}
+              <span className="text-foreground/30">investing</span> in students
+            </span>
+            <span
+              className="block animate-fade-up"
+              style={{ animationDelay: "100ms" }}
+            >
               who <span className="text-foreground/30">take </span>
               <span className="inline-block bg-primary italic">
                 entrepreneurial action
               </span>
             </span>
-            <br />
-            <span className="relative inline-block">
-              for others <span className="text-foreground/30">creates a</span>{" "}
-              better world{" "}
+            <span
+              className="block animate-fade-up"
+              style={{ animationDelay: "200ms" }}
+            >
+              for others{" "}
+              <span className="text-foreground/30">creates a</span> better
+              world{" "}
               <span className="inline-block bg-primary px-3 italic">
                 for us all.
               </span>
             </span>
           </h1>
-          <div className="flex flex-wrap items-center gap-4">
+          {/* 3.3 CTA buttons — delay 300ms */}
+          <div
+            className="flex flex-wrap items-center gap-4 animate-fade-up"
+            style={{ animationDelay: "300ms" }}
+          >
             <Link
               href="/what-we-do"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-secondary px-6 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
             >
               Explore the network
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
             </Link>
             <Link
               href="/contact"
@@ -85,24 +108,20 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div
-          className="absolute bottom-0 left-0 h-16 w-1/2 yellow-slash"
-          aria-hidden
-        />
+        {/* 3.4 Yellow slash — delay 400ms + parallax */}
+        <YellowSlashParallax />
       </section>
 
       {/* STATS */}
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="px-6 py-12">
-              <div className="font-display text-5xl font-semibold text-primary md:text-6xl">
-                {s.value}
-              </div>
-              <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] opacity-70">
-                {s.label}
-              </div>
-            </div>
+            <StatsCounter
+              key={s.label}
+              value={s.value}
+              label={s.label}
+              className="px-6 py-12"
+            />
           ))}
         </div>
       </section>
@@ -110,7 +129,7 @@ export default function Home() {
       {/* EN-ACT-US */}
       <section className="border-b border-border/60">
         <div className="mx-auto grid w-full max-w-7xl gap-16 px-6 py-24 md:grid-cols-12">
-          <div className="md:col-span-4">
+          <AnimatedSection className="md:col-span-4">
             <h2 className="mt-4 text-5xl font-semibold tracking-tight">
               en<span className="text-primary">·</span>act
               <span className="text-primary">·</span>us
@@ -119,7 +138,7 @@ export default function Home() {
               Three syllables. One operating model for solving the
               country&apos;s hardest problems.
             </p>
-          </div>
+          </AnimatedSection>
           <div className="space-y-8 md:col-span-8">
             {[
               {
@@ -134,10 +153,11 @@ export default function Home() {
                 k: "Us",
                 v: " — students, academics and business leaders building a better Philippines.",
               },
-            ].map((row) => (
+            ].map((row, i) => (
               <div
                 key={row.k}
-                className="flex gap-6 border-b border-border/60 pb-8"
+                className="flex gap-6 border-b border-border/60 pb-8 animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
               >
                 <div className="w-20 shrink-0 font-display text-3xl font-semibold text-primary">
                   {row.k}
@@ -154,27 +174,30 @@ export default function Home() {
       {/* PILLARS */}
       <section className="border-b border-border/60 bg-muted/40">
         <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                · How we work
+          <AnimatedSection>
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                  · How we work
+                </div>
+                <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
+                  A platform for the next generation of Filipino founders.
+                </h2>
               </div>
-              <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
-                A platform for the next generation of Filipino founders.
-              </h2>
+              <Link
+                href="/what-we-do"
+                className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
+              >
+                All programs →
+              </Link>
             </div>
-            <Link
-              href="/what-we-do"
-              className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
-            >
-              All programs →
-            </Link>
-          </div>
+          </AnimatedSection>
           <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-2">
-            {pillars.map((p) => (
+            {pillars.map((p, i) => (
               <div
                 key={p.tag}
-                className="group relative bg-background p-8 transition-colors hover:bg-secondary hover:text-secondary-foreground"
+                className="group relative bg-background p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-secondary hover:text-secondary-foreground hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]"
+                style={{ animationDelay: `${i * 80}ms` }}
               >
                 <p.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
                 <div className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
@@ -193,35 +216,37 @@ export default function Home() {
       {/* CTA */}
       <section className="relative overflow-hidden border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
-        <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:items-end">
-          <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
-            Build a venture.
-            <br />
-            Change a community.
-            <br />
-            <span className="text-primary">Shape a country.</span>
-          </h2>
-          <div className="space-y-6">
-            <p className="text-lg opacity-80">
-              Whether you&apos;re a student forming a campus team, a faculty
-              member, or an industry partner, there&apos;s a seat at the table.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90"
-              >
-                Get involved
-              </Link>
-              <Link
-                href="/news"
-                className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm font-semibold hover:bg-white/5"
-              >
-                Latest news
-              </Link>
+        <AnimatedSection>
+          <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:items-end">
+            <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+              Build a venture.
+              <br />
+              Change a community.
+              <br />
+              <span className="text-primary">Shape a country.</span>
+            </h2>
+            <div className="space-y-6">
+              <p className="text-lg opacity-80">
+                Whether you&apos;re a student forming a campus team, a faculty
+                member, or an industry partner, there&apos;s a seat at the table.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex h-12 items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                >
+                  Get involved
+                </Link>
+                <Link
+                  href="/news"
+                  className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm font-semibold hover:bg-white/5"
+                >
+                  Latest news
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );

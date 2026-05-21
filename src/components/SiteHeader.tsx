@@ -30,8 +30,8 @@ export function SiteHeader() {
             <Link
               key={n.href}
               href={n.href}
-              className={`text-sm font-medium transition-colors hover:text-foreground ${
-                pathname === n.href ? "text-foreground" : "text-foreground/80"
+              className={`text-sm font-medium transition-opacity duration-150 hover:opacity-100 ${
+                pathname === n.href ? "text-foreground opacity-100" : "text-foreground/80"
               }`}
             >
               {n.label}

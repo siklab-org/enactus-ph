@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "What We Do",
@@ -25,20 +26,22 @@ export default function WhatWeDo() {
         subtitle="From first idea to incorporated enterprise — our programs give Filipino students the network, skills and capital to make their ventures real."
       />
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-2">
-            {programs.map((p) => (
-              <article key={p.code} className="group relative bg-background p-8 transition-colors hover:bg-secondary hover:text-secondary-foreground">
-                <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
-                  <span>{p.code}</span>
-                  <span>↗</span>
-                </div>
-                <h3 className="mt-4 text-2xl font-semibold">{p.name}</h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed opacity-80">{p.body}</p>
-              </article>
-            ))}
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-2">
+              {programs.map((p) => (
+                <article key={p.code} className="group relative bg-background p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-secondary hover:text-secondary-foreground hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
+                  <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
+                    <span>{p.code}</span>
+                    <span>↗</span>
+                  </div>
+                  <h3 className="mt-4 text-2xl font-semibold">{p.name}</h3>
+                  <p className="mt-3 max-w-md text-sm leading-relaxed opacity-80">{p.body}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );
