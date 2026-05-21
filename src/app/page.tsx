@@ -44,31 +44,31 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
         <div
-          className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl animate-pulse-soft"
+          className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl "
           style={{ animationDelay: "800ms" }}
           aria-hidden
         />
         <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 pb-28 pt-15 md:pt-23">
-          {/* 3.1 Eyebrow — delay 0ms */}
+          {/* 3.1 Eyebrow — fast slide from right */}
           <div
-            className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-fade-up"
-            style={{ animationDelay: "0ms" }}
+            className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-slide-in-right"
+            style={{ animationDelay: "0ms", animationDuration: "600ms" }}
           >
             <span className="inline-block h-px w-8 bg-foreground/40" />
             Enactus.ph · est. network of 33 countries
           </div>
-          {/* 3.2 Title lines — staggered 0ms, 100ms, 200ms */}
+          {/* 3.2 Title lines — dramatic cascade */}
           <h1 className="max-w-5xl text-[3.8rem] font-semibold leading-[1.12] tracking-tight md:text-[3.3rem] lg:text-[4.3rem]">
             <span
-              className="block animate-fade-up animate-slide-in-right"
-              style={{ animationDelay: "1ms" }}
+              className="block animate-slide-in-right"
+              style={{ animationDelay: "0ms" }}
             >
               We believe <span className="text-foreground/30">investing</span>{" "}
               in students
             </span>
             <span
-              className="block animate-fade-up"
-              style={{ animationDelay: "100ms" }}
+              className="block animate-slide-in-right"
+              style={{ animationDelay: "120ms" }}
             >
               who <span className="text-foreground/30">take </span>
               <span className="inline-block bg-primary italic">
@@ -76,8 +76,8 @@ export default function Home() {
               </span>
             </span>
             <span
-              className="block animate-fade-up"
-              style={{ animationDelay: "200ms" }}
+              className="block animate-slide-in-right"
+              style={{ animationDelay: "240ms" }}
             >
               for others <span className="text-foreground/30">creates a</span>{" "}
               better world{" "}
@@ -86,10 +86,10 @@ export default function Home() {
               </span>
             </span>
           </h1>
-          {/* 3.3 CTA buttons — delay 300ms */}
+          {/* 3.3 CTA buttons — mid pace */}
           <div
-            className="flex flex-wrap items-center gap-4 animate-fade-up"
-            style={{ animationDelay: "300ms" }}
+            className="flex flex-wrap items-center gap-4 animate-slide-in-right"
+            style={{ animationDelay: "380ms", animationDuration: "800ms" }}
           >
             <Link
               href="/what-we-do"
