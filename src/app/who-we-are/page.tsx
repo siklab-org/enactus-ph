@@ -22,18 +22,18 @@ const staff = [
     email: "SMolato@enactus.org",
   },
   {
-    name: "Ton",
+    name: "Kristoni Go",
     role: "COO & Country Director",
     email: "KGo@enactus.org",
     bio: "",
   },
   {
-    name: "Sam",
+    name: "Samantha Batul",
     role: "Communications & Partnerships",
     email: undefined,
   },
   {
-    name: "Paula",
+    name: "Paula Cuasay",
     role: "Support",
     email: undefined,
   },
@@ -127,10 +127,16 @@ export default function WhoWeAre() {
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:shadow-md">
-              <PlaceholderAvatar name="Sir Aris" />
-              <h3 className="mt-4 text-lg font-semibold">Sir Aris</h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                President, University
+              <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted/50">
+                <span className="text-4xl font-semibold text-muted-foreground/20">
+                  ──
+                </span>
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-muted-foreground/50">
+                Coming Soon
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground/40">
+                Board of Advisers to be announced.
               </p>
             </div>
           </div>
