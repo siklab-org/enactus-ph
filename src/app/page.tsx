@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowUpRight, Cpu, LineChart, Sprout, Users } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { StatsCounter } from "@/components/StatsCounter";
-import { YellowSlashParallax } from "@/components/YellowSlashParallax";
 
 const stats = [
   { value: "32", label: "Partner Universities" },
@@ -61,11 +60,11 @@ export default function Home() {
           {/* 3.2 Title lines — staggered 0ms, 100ms, 200ms */}
           <h1 className="max-w-5xl text-[3.8rem] font-semibold leading-[1.12] tracking-tight md:text-[3.3rem] lg:text-[4.3rem]">
             <span
-              className="block animate-fade-up"
-              style={{ animationDelay: "0ms" }}
+              className="block animate-fade-up animate-slide-in-right"
+              style={{ animationDelay: "1ms" }}
             >
-              We believe{" "}
-              <span className="text-foreground/30">investing</span> in students
+              We believe <span className="text-foreground/30">investing</span>{" "}
+              in students
             </span>
             <span
               className="block animate-fade-up"
@@ -80,9 +79,8 @@ export default function Home() {
               className="block animate-fade-up"
               style={{ animationDelay: "200ms" }}
             >
-              for others{" "}
-              <span className="text-foreground/30">creates a</span> better
-              world{" "}
+              for others <span className="text-foreground/30">creates a</span>{" "}
+              better world{" "}
               <span className="inline-block bg-primary px-3 italic">
                 for us all.
               </span>
@@ -108,8 +106,12 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* 3.4 Yellow slash — delay 400ms + parallax */}
-        <YellowSlashParallax />
+        {/* 3.4 Yellow slash — delay 400ms */}
+        <div
+          className="absolute bottom-0 left-0 h-16 w-1/2 yellow-slash animate-slide-in-left"
+          style={{ animationDelay: "400ms" }}
+          aria-hidden
+        />
       </section>
 
       {/* STATS */}
@@ -228,7 +230,8 @@ export default function Home() {
             <div className="space-y-6">
               <p className="text-lg opacity-80">
                 Whether you&apos;re a student forming a campus team, a faculty
-                member, or an industry partner, there&apos;s a seat at the table.
+                member, or an industry partner, there&apos;s a seat at the
+                table.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link

@@ -40,7 +40,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/contact"
-          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
         >
           Join Us
         </Link>
