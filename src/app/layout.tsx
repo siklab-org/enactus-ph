@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Enactus Philippines",
-    template: "%s — Enactus Philippines",
+    template: "%s",
   },
   description:
     "Enactus Philippines unites student, academic and business leaders using innovation and entrepreneurship to build a sustainable future for the Philippines.",

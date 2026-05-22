@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -38,76 +39,83 @@ export default function Contact() {
         title={<>Let&apos;s <span className="bg-primary px-2 italic">build</span> something.</>}
         subtitle="Tell us what you&apos;re working on. We&apos;ll route you to the right team within the week."
       />
+      {/* ─── SOCIAL CARDS ─── */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              · Get in touch
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <div className="mx-auto max-w-2xl text-center">
+              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                · Get in touch
+              </div>
+              <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+                One email, whole team.
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Reach every department through a single address. We&apos;ll route your message to the right people.
+              </p>
             </div>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-              One email, whole team.
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Reach every department through a single address. We&apos;ll route your message to the right people.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={s.href.startsWith("mailto") ? undefined : "noreferrer"}
-                className="group flex flex-col items-center gap-4 rounded-2xl border border-border/60 p-8 text-center transition-colors hover:bg-secondary hover:text-secondary-foreground"
-              >
-                <s.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground group-hover:text-secondary-foreground/60">
-                    {s.label}
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {socials.map((s, i) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith("mailto") ? undefined : "_blank"}
+                  rel={s.href.startsWith("mailto") ? undefined : "noreferrer"}
+                  className="group flex flex-col items-center gap-4 rounded-2xl border border-border/60 p-8 text-center transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-secondary hover:text-secondary-foreground hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)] animate-slide-in-right"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  <s.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                  <div>
+                    <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground group-hover:text-secondary-foreground/60">
+                      {s.label}
+                    </div>
+                    <div className="mt-1 text-sm font-medium">{s.value}</div>
                   </div>
-                  <div className="mt-1 text-sm font-medium">{s.value}</div>
-                </div>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
+      {/* ─── CONTACT FORM ─── */}
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
-        <div className="mx-auto w-full max-w-3xl px-6 py-24">
-          <div className="font-mono text-[11px] uppercase tracking-[0.25em] opacity-60">· General inquiries</div>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Drop us a line</h2>
-          <form
-            action="mailto:EnactusPH@enactus.org"
-            method="POST"
-            encType="text/plain"
-            className="mt-10 grid gap-5"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Full name"
-              className="h-12 rounded-md border border-white/15 bg-white/5 px-4 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email address"
-              className="h-12 rounded-md border border-white/15 bg-white/5 px-4 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none"
-            />
-            <textarea
-              name="message"
-              placeholder="What can we help with?"
-              rows={5}
-              className="rounded-md border border-white/15 bg-white/5 px-4 py-3 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="inline-flex h-12 w-fit items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90"
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-3xl px-6 py-24">
+            <div className="font-mono text-[11px] uppercase tracking-[0.25em] opacity-60">· General inquiries</div>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Drop us a line</h2>
+            <form
+              action="mailto:EnactusPH@enactus.org"
+              method="POST"
+              encType="text/plain"
+              className="mt-10 grid gap-5"
             >
-              Send message
-            </button>
-          </form>
-        </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full name"
+                className="h-12 rounded-md border border-white/15 bg-white/5 px-4 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none transition-all duration-200 focus:border-white/40 focus:bg-white/10"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                className="h-12 rounded-md border border-white/15 bg-white/5 px-4 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none transition-all duration-200 focus:border-white/40 focus:bg-white/10"
+              />
+              <textarea
+                name="message"
+                placeholder="What can we help with?"
+                rows={5}
+                className="rounded-md border border-white/15 bg-white/5 px-4 py-3 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none transition-all duration-200 focus:border-white/40 focus:bg-white/10"
+              />
+              <button
+                type="submit"
+                className="inline-flex h-12 w-fit items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.2)]"
+              >
+                Send message
+              </button>
+            </form>
+          </div>
+        </AnimatedSection>
       </section>
     </div>
   );

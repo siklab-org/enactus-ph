@@ -19,7 +19,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="group flex items-center gap-2 transition-all duration-200 hover:opacity-80">
           <Image src="/enactus-logo.svg" alt="Enactus" width={64} height={28} className="h-7 w-auto" />
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
             / Philippines
@@ -30,8 +30,10 @@ export function SiteHeader() {
             <Link
               key={n.href}
               href={n.href}
-              className={`text-sm font-medium transition-opacity duration-150 hover:opacity-100 ${
-                pathname === n.href ? "text-foreground opacity-100" : "text-foreground/80"
+              className={`relative text-sm font-medium transition-all duration-200 hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 hover:after:scale-x-100 ${
+                pathname === n.href
+                  ? "text-foreground after:scale-x-100"
+                  : "text-foreground/80"
               }`}
             >
               {n.label}
@@ -40,7 +42,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/contact"
-          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
+          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
         >
           Join Us
         </Link>
