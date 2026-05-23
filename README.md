@@ -8,6 +8,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-cyan?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
+  
+<img width="1919" height="1090" alt="image" src="https://github.com/user-attachments/assets/34953315-d8c5-45ae-99e5-28bd45c64f40" />
+
 ## About
 
 Enactus Philippines unites student, academic, and business leaders using innovation and entrepreneurship to build a sustainable future for the Philippines. The organization supports 32 partner universities, 78 active ventures, and has generated 12K+ volunteer hours impacting 240K+ lives.
