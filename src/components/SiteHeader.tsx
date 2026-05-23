@@ -3,13 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
 const nav = [
@@ -69,25 +70,26 @@ export function SiteHeader() {
           <NavLink href="/" label="Home" pathname={pathname} />
 
           {/* ─── Who We Are dropdown ─── */}
-          <NavigationMenu className="flex-initial">
+          <NavigationMenu className="flex-initial" delayDuration={0}>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={`relative h-auto cursor-pointer bg-transparent px-0 py-0 text-sm font-medium transition-all duration-200 hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 data-[state=open]:text-foreground hover:after:scale-x-100 ${
+                <NavigationMenuPrimitive.Trigger
+                  className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${
                     isWhoWeAreActive
                       ? "text-foreground after:scale-x-100"
                       : "text-foreground/80"
                   }`}
                 >
                   Who We Are
-                </NavigationMenuTrigger>
+                  <ChevronDown className="h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" />
+                </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-56 gap-1 p-3">
+                  <ul className="grid w-48 gap-0.5 p-2">
                     <li>
                       <NavigationMenuLink asChild active={pathname === "/about"}>
                         <Link
                           href="/about"
-                          className="block rounded-md px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           About Enactus
                         </Link>
@@ -100,7 +102,7 @@ export function SiteHeader() {
                       >
                         <Link
                           href="/country-leadership"
-                          className="block rounded-md px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           Country Leadership
                         </Link>
