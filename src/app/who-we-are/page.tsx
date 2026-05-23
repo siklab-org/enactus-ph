@@ -118,35 +118,6 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* ─── BOARD OF ADVISERS ─── */}
-      <section className="border-b border-border/60">
-        <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-6 py-24">
-            <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
-              Board of Advisers
-            </h2>
-            <div className="mt-2 font-mono text-sm text-muted-foreground">
-              guidance from seasoned leaders.
-            </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
-                <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted/50">
-                  <span className="text-4xl font-semibold text-muted-foreground/20">
-                    ──
-                  </span>
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-muted-foreground/50">
-                  Coming Soon
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground/40">
-                  Board of Advisers to be announced.
-                </p>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
-      </section>
-
       {/* ─── COUNTRY STAFF ─── */}
       <section className="border-b border-border/60 bg-muted/40">
         <AnimatedSection>
@@ -183,6 +154,35 @@ export default function WhoWeAre() {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── BOARD OF ADVISERS ─── */}
+      <section className="border-b border-border/60">
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+            <h2 className="max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+              Board of Advisers
+            </h2>
+            <div className="mt-2 font-mono text-sm text-muted-foreground">
+              guidance from seasoned leaders.
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
+                <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted/50">
+                  <span className="text-4xl font-semibold text-muted-foreground/20">
+                    ──
+                  </span>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-muted-foreground/50">
+                  Coming Soon
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground/40">
+                  Board of Advisers to be announced.
+                </p>
+              </div>
             </div>
           </div>
         </AnimatedSection>
