@@ -77,46 +77,6 @@ export default function Contact() {
           </div>
         </AnimatedSection>
       </section>
-      {/* ─── CONTACT FORM ─── */}
-      <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
-        <AnimatedSection>
-          <div className="mx-auto w-full max-w-3xl px-6 py-24">
-            <div className="font-mono text-[11px] uppercase tracking-[0.25em] opacity-60">· General inquiries</div>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Drop us a line</h2>
-            <form
-              action="mailto:EnactusPH@enactus.org"
-              method="POST"
-              encType="text/plain"
-              className="mt-10 grid gap-5"
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Full name"
-                className="h-12 rounded-md border border-white/15 bg-white/5 px-4 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none transition-all duration-200 focus:border-white/40 focus:bg-white/10"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email address"
-                className="h-12 rounded-md border border-white/15 bg-white/5 px-4 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none transition-all duration-200 focus:border-white/40 focus:bg-white/10"
-              />
-              <textarea
-                name="message"
-                placeholder="What can we help with?"
-                rows={5}
-                className="rounded-md border border-white/15 bg-white/5 px-4 py-3 text-sm placeholder:opacity-60 focus:border-primary focus:outline-none transition-all duration-200 focus:border-white/40 focus:bg-white/10"
-              />
-              <button
-                type="submit"
-                className="inline-flex h-12 w-fit items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.2)]"
-              >
-                Send message
-              </button>
-            </form>
-          </div>
-        </AnimatedSection>
-      </section>
     </div>
   );
 }
