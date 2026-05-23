@@ -25,11 +25,11 @@ const staff = [
   {
     name: "Samantha Batul",
     role: "Communications & Partnerships",
-    email: undefined,
+    email: "SBatul@enactus.org",
   },
   {
     name: "Paula Cuasay",
-    role: "Support",
+    role: "Programs Associate",
     email: undefined,
   },
 ];
