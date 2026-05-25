@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
@@ -43,6 +44,7 @@ function NavLink({
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [activeMenu, setActiveMenu] = useState<"who" | "what" | null>(null);
   const isWhoWeAreActive =
     pathname === "/about" || pathname === "/country-leadership";
   const isWhatWeDoActive =
@@ -71,7 +73,19 @@ export function SiteHeader() {
           <NavLink href="/" label="Home" pathname={pathname} />
 
           {/* ─── Who We Are dropdown ─── */}
-          <NavigationMenu className="flex-initial" delayDuration={0}>
+          <NavigationMenu
+            className="flex-initial"
+            delayDuration={0}
+            onMouseEnter={() => setActiveMenu("who")}
+            style={{
+              zIndex:
+                activeMenu === "who"
+                  ? 20
+                  : activeMenu === "what"
+                    ? 10
+                    : undefined,
+            }}
+          >
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuPrimitive.Trigger
@@ -118,7 +132,19 @@ export function SiteHeader() {
           </NavigationMenu>
 
           {/* ─── What We Do dropdown ─── */}
-          <NavigationMenu className="flex-initial" delayDuration={0}>
+          <NavigationMenu
+            className="flex-initial"
+            delayDuration={0}
+            onMouseEnter={() => setActiveMenu("what")}
+            style={{
+              zIndex:
+                activeMenu === "what"
+                  ? 20
+                  : activeMenu === "who"
+                    ? 10
+                    : undefined,
+            }}
+          >
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuPrimitive.Trigger
