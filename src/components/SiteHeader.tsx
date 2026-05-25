@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
@@ -45,6 +45,13 @@ function NavLink({
 export function SiteHeader() {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<"who" | "what" | null>(null);
+  const [compSubOpen, setCompSubOpen] = useState(false);
+
+  // Reset sub-menu when the What We Do dropdown closes
+  useEffect(() => {
+    if (activeMenu !== "what") setCompSubOpen(false);
+  }, [activeMenu]);
+
   const isWhoWeAreActive =
     pathname === "/about" || pathname === "/country-leadership";
   const isWhatWeDoActive =
@@ -97,7 +104,7 @@ export function SiteHeader() {
                     }`}
                 >
                   Who We Are
-                  <ChevronDown className="h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" />
+                  <ChevronDown className="h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" />
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
                   <ul className="grid w-48 gap-0.5 p-2">
@@ -156,25 +163,33 @@ export function SiteHeader() {
                     }`}
                 >
                   What We Do
-                  <ChevronDown className="h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" />
+                  <ChevronDown className="h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" />
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-48 gap-0.5 p-2">
-                    <li className="group relative">
+                  <ul className="grid w-56 gap-0.5 p-2">
+                    <li onMouseEnter={() => setCompSubOpen(true)}>
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/competitions"}
                       >
                         <Link
                           href="/competitions"
-                          className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                         >
                           Competitions
-                          <ChevronRight className="h-3 w-3 transition-transform duration-200 group-hover:rotate-90" />
+                          <ChevronRight
+                            className={`h-3 w-3 transition-transform duration-200 ${
+                              compSubOpen ? "rotate-90" : ""
+                            }`}
+                          />
                         </Link>
                       </NavigationMenuLink>
-                      {/* Nested sub-menu */}
-                      <div className="hidden group-hover:block">
+                      {/* Sub-items: toggle on hover (stays open until hovered again) */}
+                      <div
+                         className={`overflow-hidden transition-all duration-200 ease-out ${
+                           compSubOpen ? "max-h-32" : "max-h-0"
+                         }`}
+                      >
                         <div className="border-t border-border/40 mx-2 my-1" />
                         <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
                           <Link
@@ -194,7 +209,7 @@ export function SiteHeader() {
                         </NavigationMenuLink>
                       </div>
                     </li>
-                    <li>
+                    <li onMouseEnter={() => setCompSubOpen(false)}>
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/partnerships"}
@@ -207,7 +222,7 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li>
+                    <li onMouseEnter={() => setCompSubOpen(false)}>
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/resources"}
@@ -220,7 +235,7 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li>
+                    <li onMouseEnter={() => setCompSubOpen(false)}>
                       <NavigationMenuLink asChild active={pathname === "/news"}>
                         <Link
                           href="/news"

@@ -104,7 +104,7 @@ export default function HandbookPage() {
     <div className="min-h-screen bg-background">
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-muted/10">
-        <div className="absolute inset-0 bg-[url('/grid-bg.svg')] bg-center opacity-[0.03]" />
+        <div className="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-28 text-center sm:pb-28 sm:pt-36">
           <Link
             href="/competitions"

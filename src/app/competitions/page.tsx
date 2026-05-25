@@ -13,7 +13,10 @@ export default function CompetitionsLanding() {
     <div className="min-h-screen bg-background">
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-muted/10">
-        <div className="absolute inset-0 bg-[url('/grid-bg.svg')] bg-center opacity-[0.03]" />
+        <div
+          className="absolute inset-0 grid-bg opacity-[0.04]"
+          aria-hidden="true"
+        />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-28 text-center sm:pb-28 sm:pt-36">
           <span className="mb-6 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             Competitions
@@ -47,9 +50,9 @@ export default function CompetitionsLanding() {
             </h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
               The complete guide to the Enactus Core Competition. Learn about
-              the judging criterion, presentation format, reporting requirements,
-              and how to prepare your team for the National Competition and
-              Enactus World Cup.
+              the judging criterion, presentation format, reporting
+              requirements, and how to prepare your team for the National
+              Competition and Enactus World Cup.
             </p>
             <ul className="mt-5 space-y-1.5 text-sm text-muted-foreground">
               {[
