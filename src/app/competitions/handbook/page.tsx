@@ -169,8 +169,8 @@ export default function HandbookPage() {
       {/* ─── HANDBOOK CONTENT ─── */}
       <div className="mx-auto max-w-4xl px-6 pb-24">
         <ImageCredit
-          src="/competitions/enactus-logo.png"
-          alt="Enactus Logo"
+          src="/competitions/team.webp"
+          alt="Team"
           caption='The Enactus World Cup — where national champions from every Enactus country compete.'
         />
 
@@ -658,7 +658,7 @@ export default function HandbookPage() {
           <Body>
             When partnering on projects, it&apos;s crucial to emphasize that the
             focus is on the impact created by the <strong>student-led team&apos;s
-            efforts</strong>, rather than the partner&apos;s contributions.
+              efforts</strong>, rather than the partner&apos;s contributions.
             Collaborations should enhance the project&apos;s reach and
             effectiveness, but the primary measurement of success is the change
             your team directly facilitates. Always articulate your role clearly
@@ -703,7 +703,7 @@ export default function HandbookPage() {
             know and articulate clearly the difference between what they put in
             (<strong>inputs</strong>), what they produce (<strong>outputs</strong>),
             the positive changes they create (<strong>direct &amp; indirect
-            impact</strong> — also known as outcomes), and the longer term and
+              impact</strong> — also known as outcomes), and the longer term and
             wider impact they have (<strong>sustainable long-term impact</strong>).
           </Body>
           <Body>
@@ -795,7 +795,7 @@ export default function HandbookPage() {
             environmental, or economic improvements that persist after direct
             project activities have ended and come as a result of a series of
             interventions and outcomes. <em>This impact may not be achieved
-            during the Enactus project timeline.</em>
+              during the Enactus project timeline.</em>
           </Body>
 
           <SubHeading>Projections</SubHeading>
@@ -836,8 +836,8 @@ export default function HandbookPage() {
           />
           <Body>
             <em>Note: Only student members of the competition team may
-            participate in the presentation and answer questions from the
-            judges.</em>
+              participate in the presentation and answer questions from the
+              judges.</em>
           </Body>
 
           <SubHeading>Impact Reporting Guidelines</SubHeading>
@@ -1107,7 +1107,7 @@ export default function HandbookPage() {
             with the official Enactus Impact Definitions. Misrepresentation,
             exaggeration of impact, or failure to address discrepancies may
             result in <strong>disqualification from competing at the Enactus
-            World Cup</strong>.
+              World Cup</strong>.
           </Body>
         </section>
 
@@ -1165,7 +1165,7 @@ export default function HandbookPage() {
 
           <Body>
             💡 <strong>Strong documentation boosts your Annual Report,
-            competition presentations, and credibility.</strong>
+              competition presentations, and credibility.</strong>
           </Body>
         </section>
 
