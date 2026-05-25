@@ -15,7 +15,6 @@ import {
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/what-we-do", label: "What We Do" },
   { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
   { href: "/national-2026-competition", label: "National 2026 Competition" },
@@ -34,9 +33,8 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`relative text-sm font-medium transition-all duration-200 hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 hover:after:scale-x-100 ${
-        isActive ? "text-foreground after:scale-x-100" : "text-foreground/80"
-      }`}
+      className={`relative text-sm font-medium transition-all duration-200 hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 hover:after:scale-x-100 ${isActive ? "text-foreground after:scale-x-100" : "text-foreground/80"
+        }`}
     >
       {label}
     </Link>
@@ -47,6 +45,11 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isWhoWeAreActive =
     pathname === "/about" || pathname === "/country-leadership";
+  const isWhatWeDoActive =
+    pathname === "/competitions" ||
+    pathname === "/partnerships" ||
+    pathname === "/resources" ||
+    pathname === "/news";
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -56,17 +59,15 @@ export function SiteHeader() {
           className="group flex items-center gap-2 transition-all duration-200 hover:opacity-80"
         >
           <Image
-            src="/enactus-logo.svg"
+            src="/enactus-logo.webp"
             alt="Enactus"
-            width={64}
-            height={28}
-            className="h-7 w-auto"
+            width={110}
+            height={48}
+            className="h-12 w-auto"
           />
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-            / Philippines
-          </span>
+
         </Link>
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="flex items-center gap-8">
           <NavLink href="/" label="Home" pathname={pathname} />
 
           {/* ─── Who We Are dropdown ─── */}
@@ -74,11 +75,10 @@ export function SiteHeader() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuPrimitive.Trigger
-                  className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${
-                    isWhoWeAreActive
+                  className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${isWhoWeAreActive
                       ? "text-foreground after:scale-x-100"
                       : "text-foreground/80"
-                  }`}
+                    }`}
                 >
                   Who We Are
                   <ChevronDown className="h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" />
@@ -86,7 +86,10 @@ export function SiteHeader() {
                 <NavigationMenuContent>
                   <ul className="grid w-48 gap-0.5 p-2">
                     <li>
-                      <NavigationMenuLink asChild active={pathname === "/about"}>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/about"}
+                      >
                         <Link
                           href="/about"
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
@@ -105,6 +108,76 @@ export function SiteHeader() {
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           Country Leadership
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* ─── What We Do dropdown ─── */}
+          <NavigationMenu className="flex-initial" delayDuration={0}>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuPrimitive.Trigger
+                  className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${isWhatWeDoActive
+                      ? "text-foreground after:scale-x-100"
+                      : "text-foreground/80"
+                    }`}
+                >
+                  What We Do
+                  <ChevronDown className="h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" />
+                </NavigationMenuPrimitive.Trigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-48 gap-0.5 p-2">
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/competitions"}
+                      >
+                        <Link
+                          href="/competitions"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Competitions
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/partnerships"}
+                      >
+                        <Link
+                          href="/partnerships"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Partnerships
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/resources"}
+                      >
+                        <Link
+                          href="/resources"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Resources
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild active={pathname === "/news"}>
+                        <Link
+                          href="/news"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          News
                         </Link>
                       </NavigationMenuLink>
                     </li>

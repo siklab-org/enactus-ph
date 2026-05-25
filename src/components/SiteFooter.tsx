@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <Image
-              src="/enactus-logo.svg"
+              src="/enactus-logo.webp"
               alt="Enactus"
               width={73}
               height={32}
