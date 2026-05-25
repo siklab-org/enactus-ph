@@ -99,8 +99,8 @@ export function SiteHeader() {
               <NavigationMenuItem>
                 <NavigationMenuPrimitive.Trigger
                   className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${isWhoWeAreActive
-                      ? "text-foreground after:scale-x-100"
-                      : "text-foreground/80"
+                    ? "text-foreground after:scale-x-100"
+                    : "text-foreground/80"
                     }`}
                 >
                   Who We Are
@@ -159,8 +159,8 @@ export function SiteHeader() {
               <NavigationMenuItem>
                 <NavigationMenuPrimitive.Trigger
                   className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${isWhatWeDoActive
-                      ? "text-foreground after:scale-x-100"
-                      : "text-foreground/80"
+                    ? "text-foreground after:scale-x-100"
+                    : "text-foreground/80"
                     }`}
                 >
                   What We Do
@@ -180,15 +180,14 @@ export function SiteHeader() {
                         >
                           Competitions
                           <ChevronRight
-                            className={`h-3 w-3 transition-transform duration-200 ${
-                              compSubOpen ? "rotate-90" : ""
-                            }`}
+                            className={`h-3 w-3 transition-transform duration-200 ${compSubOpen ? "rotate-90" : ""
+                              }`}
                           />
                         </Link>
                       </NavigationMenuLink>
                       {/* Sub-items: toggle on re-hovering the Competitions <a> tag */}
                       <div
-                        className={`overflow-hidden transition-all duration-200 ease-out ${
+                        className={`overflow-hidden ${
                           compSubOpen ? "max-h-32" : "max-h-0"
                         }`}
                       >
@@ -198,7 +197,7 @@ export function SiteHeader() {
                             href="/competitions/handbook"
                             className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                           >
-                            ├─ Competition Handbook
+                            Competition Handbook
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
@@ -206,7 +205,7 @@ export function SiteHeader() {
                             href="/competitions/early-stage-collaboration"
                             className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
-                            └─ Early Stage Track
+                            Early Stage Track
                           </Link>
                         </NavigationMenuLink>
                       </div>
