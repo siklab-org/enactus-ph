@@ -187,7 +187,7 @@ export function SiteHeader() {
                       </NavigationMenuLink>
                       {/* Sub-items: toggle on re-hovering the Competitions <a> tag */}
                       <div
-                        className={`overflow-hidden ${
+                        className={`overflow-hidden transition-all duration-200 ease-out ${
                           compSubOpen ? "max-h-32" : "max-h-0"
                         }`}
                       >
