@@ -167,13 +167,14 @@ export function SiteHeader() {
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
                   <ul className="grid w-56 gap-0.5 p-2">
-                    <li onMouseEnter={() => setCompSubOpen(true)}>
+                    <li>
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/competitions"}
                       >
                         <Link
                           href="/competitions"
+                          onMouseEnter={() => setCompSubOpen((prev) => !prev)}
                           className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                         >
                           Competitions
@@ -184,11 +185,11 @@ export function SiteHeader() {
                           />
                         </Link>
                       </NavigationMenuLink>
-                      {/* Sub-items: toggle on hover (stays open until hovered again) */}
+                      {/* Sub-items: toggle on re-hovering the Competitions <a> tag */}
                       <div
-                         className={`overflow-hidden transition-all duration-200 ease-out ${
-                           compSubOpen ? "max-h-32" : "max-h-0"
-                         }`}
+                        className={`overflow-hidden transition-all duration-200 ease-out ${
+                          compSubOpen ? "max-h-32" : "max-h-0"
+                        }`}
                       >
                         <div className="border-t border-border/40 mx-2 my-1" />
                         <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
@@ -209,7 +210,7 @@ export function SiteHeader() {
                         </NavigationMenuLink>
                       </div>
                     </li>
-                    <li onMouseEnter={() => setCompSubOpen(false)}>
+                    <li>
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/partnerships"}
@@ -222,7 +223,7 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li onMouseEnter={() => setCompSubOpen(false)}>
+                    <li>
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/resources"}
@@ -235,7 +236,7 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li onMouseEnter={() => setCompSubOpen(false)}>
+                    <li>
                       <NavigationMenuLink asChild active={pathname === "/news"}>
                         <Link
                           href="/news"
