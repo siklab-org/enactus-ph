@@ -145,6 +145,7 @@ export function SiteHeader() {
             className="flex-initial"
             delayDuration={0}
             onMouseEnter={() => setActiveMenu("what")}
+            onMouseLeave={() => setCompSubOpen(false)}
             style={{
               zIndex:
                 activeMenu === "what"
@@ -203,7 +204,7 @@ export function SiteHeader() {
                         <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
                           <Link
                             href="/competitions/early-stage-collaboration"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             └─ Early Stage Track
                           </Link>
