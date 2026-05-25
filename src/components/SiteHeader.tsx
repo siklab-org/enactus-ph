@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import {
   NavigationMenu,
@@ -49,6 +49,8 @@ export function SiteHeader() {
     pathname === "/about" || pathname === "/country-leadership";
   const isWhatWeDoActive =
     pathname === "/competitions" ||
+    pathname.startsWith("/competitions/handbook") ||
+    pathname.startsWith("/competitions/early-stage") ||
     pathname === "/partnerships" ||
     pathname === "/resources" ||
     pathname === "/news";
@@ -158,18 +160,39 @@ export function SiteHeader() {
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
                   <ul className="grid w-48 gap-0.5 p-2">
-                    <li>
+                    <li className="group relative">
                       <NavigationMenuLink
                         asChild
                         active={pathname === "/competitions"}
                       >
                         <Link
                           href="/competitions"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           Competitions
+                          <ChevronRight className="h-3 w-3 transition-transform duration-200 group-hover:rotate-90" />
                         </Link>
                       </NavigationMenuLink>
+                      {/* Nested sub-menu */}
+                      <div className="hidden group-hover:block">
+                        <div className="border-t border-border/40 mx-2 my-1" />
+                        <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
+                          <Link
+                            href="/competitions/handbook"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          >
+                            ├─ Competition Handbook
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
+                          <Link
+                            href="/competitions/early-stage-collaboration"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          >
+                            └─ Early Stage Track
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
                     </li>
                     <li>
                       <NavigationMenuLink
