@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
@@ -39,6 +39,52 @@ function NavLink({
     >
       {label}
     </Link>
+  );
+}
+
+function SubMenuContent({
+  isOpen,
+  children,
+}: {
+  isOpen: boolean;
+  children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const first = useRef(true);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (first.current) {
+      first.current = false;
+      el.style.transition = "none";
+      el.style.height = "0px";
+      return;
+    }
+
+    // Defer to requestAnimationFrame to align with Radix's ResizeObserver.
+    // Radix detects content size changes via ResizeObserver, then calls
+    // rAF(handleSizeChange) which sets the viewport CSS variable.
+    // Scheduling our height change in the same rAF batch ensures both
+    // the sub-menu and the viewport start transitioning in the same frame.
+    const rafId = requestAnimationFrame(() => {
+      if (isOpen) {
+        el.style.transition = "height 200ms ease-out";
+        el.style.height = `${el.scrollHeight}px`;
+      } else {
+        el.style.transition = "height 200ms ease-out";
+        el.style.height = "0px";
+      }
+    });
+
+    return () => cancelAnimationFrame(rafId);
+  }, [isOpen]);
+
+  return (
+    <div ref={ref} className="overflow-hidden">
+      {children}
+    </div>
   );
 }
 
@@ -186,11 +232,7 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                       {/* Sub-items: toggle on re-hovering the Competitions <a> tag */}
-                      <div
-                        className={`overflow-hidden ${
-                          compSubOpen ? "max-h-32" : "max-h-0"
-                        }`}
-                      >
+                      <SubMenuContent isOpen={compSubOpen}>
                         <div className="border-t border-border/40 mx-2 my-1" />
                         <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
                           <Link
@@ -208,7 +250,7 @@ export function SiteHeader() {
                             Early Stage Track
                           </Link>
                         </NavigationMenuLink>
-                      </div>
+                      </SubMenuContent>
                     </li>
                     <li>
                       <NavigationMenuLink

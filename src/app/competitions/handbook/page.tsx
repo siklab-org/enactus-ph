@@ -121,7 +121,7 @@ export default function HandbookPage() {
             <br />
             <span className="text-foreground/40">Handbook</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
             Never doubt that a small group of thoughtful, committed people can
             change the world. Indeed, it&apos;s the only thing that ever has.
             <br />
