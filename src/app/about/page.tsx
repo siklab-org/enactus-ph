@@ -17,11 +17,6 @@ const stats = [
   { value: "ONE", label: "Team qualified until Global Semi-Finals in 2018" },
 ];
 
-const partners = Array.from({ length: 8 }, (_, i) => ({
-  name: `Partner ${i + 1}`,
-  src: null as string | null,
-}));
-
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
@@ -76,28 +71,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* ─── PARTNERS ─── */}
-      <section className="border-b border-border/60">
-        <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-6 py-24">
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-              Powered by our partners.
-            </h2>
-            <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 xl:grid-cols-6">
-              {partners.map((partner) => (
-                <div
-                  key={partner.name}
-                  className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all duration-150 ease-out hover:border-border"
-                >
-                  <span className="text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground/50">
-                    {partner.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-      </section>
     </div>
   );
 }
