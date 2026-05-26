@@ -4,8 +4,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Partners | Enactus Philippines",
-  description:
-    "Meet the organizations that make Enactus Philippines possible — from presenting sponsors to university, host, and travel partners.",
+  description: "Meet the organizations that make Enactus Philippines possible.",
 };
 
 /* ─── Data ─── */
@@ -41,8 +40,7 @@ const tiers: Tier[] = [
   },
   {
     name: "Host Partners",
-    intro:
-      "Venue partners who host our national competitions and events.",
+    intro: "Venue partners who host our national competitions and events.",
     count: 3,
   },
   {
@@ -86,7 +84,7 @@ export default function Partners() {
             <span className="text-foreground/40">Partners.</span>
           </>
         }
-        subtitle="The organizations that power Enactus Philippines — from sponsors and government agencies to universities and venues."
+        subtitle="Meet the organizations that power Enactus Philippines."
       />
 
       {/* ─── TIER SECTIONS ─── */}
