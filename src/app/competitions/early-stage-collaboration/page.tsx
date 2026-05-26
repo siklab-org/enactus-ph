@@ -114,10 +114,42 @@ export default function EarlyStagePage() {
         </div>
       </section>
 
+      {/* ─── TABLE OF CONTENTS ─── */}
+      <div className="mx-auto max-w-4xl px-6">
+        <nav className="mb-12 mt-6 rounded-xl border border-border/60 bg-muted/10 p-5">
+          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            On this page
+          </p>
+          <ul className="space-y-1">
+            {[
+              { id: "overview", label: "Overview" },
+              { id: "selecting-a-team", label: "Selecting a Team" },
+              { id: "purpose", label: "Purpose" },
+              { id: "experience", label: "Experience" },
+              { id: "recognition-certification", label: "Recognition & Certification" },
+              { id: "outcomes", label: "Outcomes" },
+              { id: "university-value", label: "University Value" },
+              { id: "supporting-participation", label: "Supporting Participation" },
+              { id: "faq", label: "FAQ" },
+            ].map((s) => (
+              <li key={s.id}>
+                <a
+                  href={`#${s.id}`}
+                  className="group flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-sm transition-colors hover:bg-primary/10 text-muted-foreground hover:text-primary"
+                >
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/30 transition-colors group-hover:bg-primary" />
+                  <span className="flex-1">{s.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
       {/* ─── CONTENT ─── */}
       <div className="mx-auto max-w-4xl px-6 pb-24">
         {/* ── Overview ── */}
-        <section className="scroll-mt-24">
+        <section id="overview" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">Overview</h2>
           <Body>
             The Early Stage Collaboration &amp; Competition Track is designed
@@ -132,7 +164,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── Selecting a Team ── */}
-        <section className="scroll-mt-24">
+        <section id="selecting-a-team" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">
             Selecting a Team
           </h2>
@@ -153,7 +185,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── Purpose ── */}
-        <section className="scroll-mt-24">
+        <section id="purpose" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">Purpose</h2>
           <Body>
             The Early Stage Track exists to lower the barrier to entry for
@@ -168,7 +200,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── Experience ── */}
-        <section className="scroll-mt-24">
+        <section id="experience" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">Experience</h2>
           <Body>
             Participants in the Early Stage Track go through a structured
@@ -200,7 +232,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── Recognition & Certification ── */}
-        <section className="scroll-mt-24">
+        <section id="recognition-certification" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">
             Recognition &amp; Certification
           </h2>
@@ -223,7 +255,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── Outcomes ── */}
-        <section className="scroll-mt-24">
+        <section id="outcomes" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">Outcomes</h2>
           <Body>
             Teams gain valuable experience and concrete outcomes that accelerate
@@ -244,7 +276,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── University Value ── */}
-        <section className="scroll-mt-24">
+        <section id="university-value" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">
             University Value
           </h2>
@@ -266,7 +298,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── Supporting Participation ── */}
-        <section className="scroll-mt-24">
+        <section id="supporting-participation" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">
             Supporting Participation
           </h2>
@@ -289,7 +321,7 @@ export default function EarlyStagePage() {
         <hr className="my-12 border-border/40" />
 
         {/* ── FAQ ── */}
-        <section className="scroll-mt-24">
+        <section id="faq" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">
             Frequently Asked Questions
           </h2>
