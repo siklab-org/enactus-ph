@@ -86,7 +86,10 @@ export default function EarlyStagePage() {
     <div className="min-h-screen bg-background">
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-muted/10">
-        <div className="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden="true" />
+        <div
+          className="absolute inset-0 grid-bg opacity-[0.04]"
+          aria-hidden="true"
+        />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-28 text-center sm:pb-28 sm:pt-36">
           <Link
             href="/competitions"
@@ -103,7 +106,7 @@ export default function EarlyStagePage() {
             <br />
             <span className="text-foreground/40">Collaboration Track</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
             A supportive environment where emerging teams can gain competition
             experience, receive mentorship, and build toward the Main
             Competition.
@@ -113,22 +116,16 @@ export default function EarlyStagePage() {
 
       {/* ─── CONTENT ─── */}
       <div className="mx-auto max-w-4xl px-6 pb-24">
-        <ImageCredit
-          src="/competitions/enactus-gray-logo.png"
-          alt="Enactus collaboration"
-          caption="Emerging teams building skills through the Early Stage Track."
-        />
-
         {/* ── Overview ── */}
         <section className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">Overview</h2>
           <Body>
-            The Early Stage Collaboration &amp; Competition Track is designed for
-            teams that are newer to Enactus or in the early stages of developing
-            their projects. This track provides a supportive environment where
-            emerging teams can gain competition experience, receive mentorship,
-            and build toward the Main Competition track. Projects must be
-            validated but not yet delivering full impact.
+            The Early Stage Collaboration &amp; Competition Track is designed
+            for teams that are newer to Enactus or in the early stages of
+            developing their projects. This track provides a supportive
+            environment where emerging teams can gain competition experience,
+            receive mentorship, and build toward the Main Competition track.
+            Projects must be validated but not yet delivering full impact.
           </Body>
         </section>
 
@@ -160,10 +157,11 @@ export default function EarlyStagePage() {
           <h2 className="text-2xl font-semibold tracking-tight">Purpose</h2>
           <Body>
             The Early Stage Track exists to lower the barrier to entry for
-            competition. It provides emerging teams with the scaffolding they need
-            to develop competitive projects — training, mentorship, peer learning,
-            and a low-stakes environment to practice their presentation and
-            storytelling skills before advancing to the main stage.
+            competition. It provides emerging teams with the scaffolding they
+            need to develop competitive projects — training, mentorship, peer
+            learning, and a low-stakes environment to practice their
+            presentation and storytelling skills before advancing to the main
+            stage.
           </Body>
         </section>
 
@@ -179,9 +177,9 @@ export default function EarlyStagePage() {
 
           <SubHeading>Immersion</SubHeading>
           <Body>
-            Teams begin with an immersion phase where they learn the fundamentals
-            of the Enactus methodology, competition expectations, and project
-            development frameworks.
+            Teams begin with an immersion phase where they learn the
+            fundamentals of the Enactus methodology, competition expectations,
+            and project development frameworks.
           </Body>
 
           <SubHeading>Showcase &amp; Workshops</SubHeading>
@@ -193,9 +191,9 @@ export default function EarlyStagePage() {
 
           <SubHeading>Pitch</SubHeading>
           <Body>
-            The culmination is a pitch event where teams present their projects to
-            a panel of judges in a supportive setting, receiving detailed feedback
-            regardless of competitive outcome.
+            The culmination is a pitch event where teams present their projects
+            to a panel of judges in a supportive setting, receiving detailed
+            feedback regardless of competitive outcome.
           </Body>
         </section>
 
