@@ -15,6 +15,7 @@ export interface Resource {
   fileSize: string;
   category: ResourceCategory;
   localPath: string;
+  googleDriveId?: string;
 }
 
 /* ─── Categories ─── */
@@ -44,7 +45,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "getting-started",
-    localPath: "/resources/1. Enactus 101 Guides_Welcome to Enactus.pdf",
+    localPath: "/resources/welcome-to-enactus.pdf",
+    googleDriveId: "1WntEXUKE2qeXvfzugcpjcTqQrlDAx2Fd",
   },
   {
     id: "building-an-enactus-team",
@@ -55,8 +57,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "team-toolkits",
-    localPath:
-      "/resources/2. Enactus 101 Guides_Building an Enactus Team (Team Structure, Leadership & Culture).pdf",
+    localPath: "/resources/building-an-enactus-team.pdf",
+    googleDriveId: "1JGqezq3UsBpSOQi8fuFA26-x3DU8V0ng",
   },
   {
     id: "project-development-and-criterion",
@@ -67,8 +69,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "competitions",
-    localPath:
-      "/resources/3. Enactus 101 Guides_Project Development & the Enactus Criterion.pdf",
+    localPath: "/resources/project-development-and-criterion.pdf",
+    googleDriveId: "1joFgLyLeUczZnzs6DpAi4R8xnL-2V7-4",
   },
   {
     id: "measuring-impact",
@@ -79,8 +81,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "impact-reporting",
-    localPath:
-      "/resources/4. Enactus 101 Guides_Measuring Impact (Data, Storytelling & Reporting).pdf",
+    localPath: "/resources/measuring-impact.pdf",
+    googleDriveId: "1ReTJaqYKui8fo8qzuBMQ0ImUmJtnvakv",
   },
   {
     id: "preparing-for-competitions",
@@ -91,7 +93,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "competitions",
-    localPath: "/resources/5. Enactus 101 Guides_Preparing for Competition.pdf",
+    localPath: "/resources/preparing-for-competitions.pdf",
+    googleDriveId: "1vpdi9GGVf5JeadrmuyZN7Sig_Btdwl7W",
   },
   {
     id: "faculty-advisor-guide",
@@ -102,8 +105,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "team-toolkits",
-    localPath:
-      "/resources/6. Enactus 101 Guides_Faculty Adviser_Best Practice Guide.pdf",
+    localPath: "/resources/faculty-advisor-guide.pdf",
+    googleDriveId: "1y5M-F2Tp2Pg_4R8ZhNmvAOX_92c7WynI",
   },
 ];
 
