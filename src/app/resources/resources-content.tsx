@@ -15,8 +15,6 @@ import type { Resource } from "@/lib/resources-data";
 import {
   CATEGORIES,
   getResourcesByCategory,
-  googleDriveViewUrl,
-  googleDriveDownloadUrl,
 } from "@/lib/resources-data";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
@@ -157,22 +155,21 @@ function ResourceRow({ resource }: { resource: Resource }) {
       {/* Buttons */}
       <div className="flex shrink-0 flex-col gap-2">
         <a
-          href={googleDriveDownloadUrl(resource.googleDriveId)}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={resource.localPath}
+          download
           className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 hover:bg-primary/90"
         >
           <Download className="size-4" />
           Download
         </a>
         <a
-          href={googleDriveViewUrl(resource.googleDriveId)}
+          href={resource.localPath}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:text-foreground"
         >
           <ExternalLink className="size-4" />
-          View in Drive
+          Open
         </a>
       </div>
     </div>

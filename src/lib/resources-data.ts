@@ -14,7 +14,7 @@ export interface Resource {
   fileType: "pdf" | "docx" | "xlsx" | "pptx" | "zip" | "image";
   fileSize: string;
   category: ResourceCategory;
-  googleDriveId: string;
+  localPath: string;
 }
 
 /* ─── Categories ─── */
@@ -44,7 +44,7 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "getting-started",
-    googleDriveId: "PLACEHOLDER_1",
+    localPath: "/resources/1. Enactus 101 Guides_Welcome to Enactus.pdf",
   },
   {
     id: "building-an-enactus-team",
@@ -55,7 +55,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "team-toolkits",
-    googleDriveId: "PLACEHOLDER_2",
+    localPath:
+      "/resources/2. Enactus 101 Guides_Building an Enactus Team (Team Structure, Leadership & Culture).pdf",
   },
   {
     id: "project-development-and-criterion",
@@ -66,7 +67,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "competitions",
-    googleDriveId: "PLACEHOLDER_3",
+    localPath:
+      "/resources/3. Enactus 101 Guides_Project Development & the Enactus Criterion.pdf",
   },
   {
     id: "measuring-impact",
@@ -77,7 +79,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "impact-reporting",
-    googleDriveId: "PLACEHOLDER_4",
+    localPath:
+      "/resources/4. Enactus 101 Guides_Measuring Impact (Data, Storytelling & Reporting).pdf",
   },
   {
     id: "preparing-for-competitions",
@@ -88,7 +91,7 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "competitions",
-    googleDriveId: "PLACEHOLDER_5",
+    localPath: "/resources/5. Enactus 101 Guides_Preparing for Competition.pdf",
   },
   {
     id: "faculty-advisor-guide",
@@ -99,7 +102,8 @@ const resources: Resource[] = [
     fileType: "pdf",
     fileSize: "TBD",
     category: "team-toolkits",
-    googleDriveId: "PLACEHOLDER_6",
+    localPath:
+      "/resources/6. Enactus 101 Guides_Faculty Adviser_Best Practice Guide.pdf",
   },
 ];
 
