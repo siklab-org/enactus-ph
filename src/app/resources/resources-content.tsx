@@ -107,7 +107,7 @@ function FilterPill({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full px-5 py-2 text-sm font-medium tracking-tight transition-all duration-200 ${
+      className={`cursor-pointer rounded-full px-5 py-2 text-sm font-medium tracking-tight transition-all duration-200 ${
         active
           ? "bg-primary text-primary-foreground shadow-sm"
           : "border border-border/60 bg-background text-muted-foreground hover:border-primary/30 hover:text-foreground"
@@ -213,7 +213,7 @@ export function ResourcesContent() {
       params.set("category", key);
     }
     const query = params.toString();
-    router.push(query ? `${pathname}?${query}` : pathname);
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }
 
   return (
