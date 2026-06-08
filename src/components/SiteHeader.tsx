@@ -16,8 +16,6 @@ import {
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
   { href: "/national-2026-competition", label: "National 2026 Competition" },
 ] as const;
 
@@ -99,14 +97,16 @@ export function SiteHeader() {
   }, [activeMenu]);
 
   const isWhoWeAreActive =
-    pathname === "/about" || pathname === "/country-leadership";
+    pathname === "/about" || pathname === "/country-leadership" || pathname === "/contact";
   const isWhatWeDoActive =
     pathname === "/competitions" ||
     pathname.startsWith("/competitions/handbook") ||
     pathname.startsWith("/competitions/early-stage") ||
     pathname === "/partners" ||
     pathname === "/resources" ||
-    pathname === "/news";
+    pathname === "/news" ||
+    pathname === "/university-engagement" ||
+    pathname === "/faculty-development";
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -177,6 +177,19 @@ export function SiteHeader() {
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           Country Leadership
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/contact"}
+                      >
+                        <Link
+                          href="/contact"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Contact
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -285,6 +298,26 @@ export function SiteHeader() {
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           News
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild active={pathname === "/university-engagement"}>
+                        <Link
+                          href="/university-engagement"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          University Engagement
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
+                        <Link
+                          href="/faculty-development"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Faculty Development
                         </Link>
                       </NavigationMenuLink>
                     </li>
