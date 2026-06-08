@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Users } from "lucide-react";
 export const metadata: Metadata = {
   title: "Competitions | Enactus Philippines",
   description:
-    "Enactus Philippines competitions — from the Main Competition Handbook to the Early Stage Collaboration Track. Find your path to compete, collaborate, and create impact.",
+    "Enactus Philippines competitions — from the Core Competition to the Early Stage Collaboration Track. Find your path to compete, collaborate, and create impact.",
 };
 
 export default function CompetitionsLanding() {
@@ -46,7 +46,7 @@ export default function CompetitionsLanding() {
               <BookOpen className="h-6 w-6 text-primary" />
             </div>
             <h2 className="text-2xl font-semibold tracking-tight">
-              Competition Handbook
+              Core Competition
             </h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
               The complete guide to the Enactus Core Competition. Learn about

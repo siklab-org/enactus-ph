@@ -252,7 +252,7 @@ export function SiteHeader() {
                             href="/competitions/handbook"
                             className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                           >
-                            Competition Handbook
+                            Core Competition
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>

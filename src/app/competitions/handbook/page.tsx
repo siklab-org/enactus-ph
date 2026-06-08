@@ -4,9 +4,9 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Competition Handbook | Enactus Philippines",
+  title: "Core Competition Official Handbook | Enactus Philippines",
   description:
-    "The complete Enactus Competition Handbook — your guide to developing high-impact projects, understanding evaluation criteria, and presenting your work at competitions.",
+    "The complete Core Competition Official Handbook — your guide to developing high-impact projects, understanding evaluation criteria, and presenting your work at competitions.",
 };
 
 /* ─── Shared helpers (server-safe) ─── */
@@ -114,12 +114,12 @@ export default function HandbookPage() {
             Back to Competitions
           </Link>
           <span className="mb-6 block font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            Enactus Competition Handbook — Core Competition
+            Core Competition Official Handbook
           </span>
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
-            Enactus Competition
+            Core Competition
             <br />
-            <span className="text-foreground/40">Handbook</span>
+            <span className="text-foreground/40">Official Handbook</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
             Never doubt that a small group of thoughtful, committed people can
@@ -1244,7 +1244,7 @@ export default function HandbookPage() {
 
           <Qa
             q="Where can I find official guidelines and definitions?"
-            a="All teams must align with Enactus' official impact and financial definitions, as listed on this Enactus Competition Handbook webpage."
+            a="All teams must align with Enactus' official impact and financial definitions, as listed on this Core Competition Official Handbook webpage."
           />
 
           <Qa
