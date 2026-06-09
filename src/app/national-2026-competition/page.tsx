@@ -5,7 +5,7 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 export const metadata: Metadata = {
   title: "National 2026 Competition | Enactus Philippines",
   description:
-    "Enactus Philippines National Competition 2026 — September 11, 2026.",
+    "Enactus Philippines National Competition 2026",
 };
 
 export default function National2026Page() {
@@ -41,7 +41,7 @@ export default function National2026Page() {
               National 2026 Competition
             </h1>
             <p className="mt-3 text-base text-foreground/60 md:text-lg">
-              September 11, 2026
+              September 11 - 13, 2026
             </p>
           </div>
 
