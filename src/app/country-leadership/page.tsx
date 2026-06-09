@@ -9,32 +9,31 @@ export const metadata: Metadata = {
     "The team and advisers leading Enactus Philippines — country staff and board of advisers.",
 };
 
-/* ─── Data ─── */
-
 const staff = [
   {
     name: "Saje Molato",
     role: "CEO & Country Lead",
     email: "SMolato@enactus.org",
-    image: "/people/saje.png",
+    image: "/people/saje.webp",
   },
   {
     name: "Kristoni Go",
     role: "COO & Country Director",
     email: "KGo@enactus.org",
-    image: "/people/kristoni.jpg",
+    image: "/people/ton.webp",
     bio: "",
   },
   {
     name: "Samantha Batul",
     role: "Communications & Partnerships",
     email: "SBatul@enactus.org",
+    image: "/people/sam.webp",
   },
   {
     name: "Paula Cuasay",
     role: "Programs Associate",
     email: "EnactusPH@enactus.org",
-    image: "/people/paula.png",
+    image: "/people/paula.webp",
   },
 ];
 
