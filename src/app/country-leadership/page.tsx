@@ -16,6 +16,7 @@ const staff = [
     name: "Saje Molato",
     role: "CEO & Country Lead",
     email: "SMolato@enactus.org",
+    image: "/people/saje.jpg",
   },
   {
     name: "Kristoni Go",
