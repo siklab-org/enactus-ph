@@ -16,7 +16,7 @@ const staff = [
     name: "Saje Molato",
     role: "CEO & Country Lead",
     email: "SMolato@enactus.org",
-    image: "/people/saje.jpg",
+    image: "/people/saje.png",
   },
   {
     name: "Kristoni Go",
@@ -33,7 +33,8 @@ const staff = [
   {
     name: "Paula Cuasay",
     role: "Programs Associate",
-    email: undefined,
+    email: "EnactusPH@enactus.org",
+    image: "/people/paula.png",
   },
 ];
 
