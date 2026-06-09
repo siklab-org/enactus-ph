@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
@@ -20,6 +21,7 @@ const staff = [
     name: "Kristoni Go",
     role: "COO & Country Director",
     email: "KGo@enactus.org",
+    image: "/people/kristoni.jpg",
     bio: "",
   },
   {
@@ -34,6 +36,12 @@ const staff = [
   },
 ];
 
+const advisers = [
+  {
+    name: "Roberto G. Manabat",
+  },
+];
+
 /* ─── Components ─── */
 
 function PlaceholderAvatar({ name }: { name: string }) {
@@ -45,7 +53,7 @@ function PlaceholderAvatar({ name }: { name: string }) {
     .toUpperCase();
 
   return (
-    <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted">
+    <div className="flex aspect-[4/5] w-full items-center justify-center rounded-xl bg-muted">
       <span className="font-display text-4xl font-semibold text-muted-foreground/40">
         {initials}
       </span>
@@ -83,10 +91,20 @@ export default function CountryLeadership() {
               {staff.map((person) => (
                 <div
                   key={person.name}
-                  className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-background p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]"
                 >
-                  <PlaceholderAvatar name={person.name} />
-                  <h3 className="mt-4 text-lg font-semibold">{person.name}</h3>
+                  {person.image ? (
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      width={400}
+                      height={400}
+                      className="aspect-[4/5] w-full rounded-xl object-cover"
+                    />
+                  ) : (
+                    <PlaceholderAvatar name={person.name} />
+                  )}
+                  <h3 className="mt-5 text-lg font-semibold">{person.name}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {person.role}
                   </p>
@@ -121,19 +139,15 @@ export default function CountryLeadership() {
               guidance from seasoned leaders.
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
-                <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-muted/50">
-                  <span className="text-4xl font-semibold text-muted-foreground/20">
-                    ──
-                  </span>
+              {advisers.map((person) => (
+                <div
+                  key={person.name}
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-background p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]"
+                >
+                  <PlaceholderAvatar name={person.name} />
+                  <h3 className="mt-5 text-lg font-semibold">{person.name}</h3>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-muted-foreground/50">
-                  Coming Soon
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground/40">
-                  Board of Advisers to be announced.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </AnimatedSection>
