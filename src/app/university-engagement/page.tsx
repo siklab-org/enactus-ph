@@ -29,12 +29,12 @@ export default function UniversityEngagement() {
       {/* OVERVIEW */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Onboarding System
               </div>
-              <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+              <h2 className="mt-4 text-section font-semibold">
                 Enactus Philippines Educational Institution Onboarding System
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -55,7 +55,7 @@ export default function UniversityEngagement() {
 
       {/* 10-STEP PROCESS */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="space-y-10 md:space-y-12">
             {/* STEP 1 */}
             <StepCard step={1} title="Expression of Interest (EOI)">
@@ -383,7 +383,7 @@ export default function UniversityEngagement() {
       <section className="relative overflow-hidden border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:items-end">
+          <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 py-16 md:py-24 md:grid-cols-2 md:items-end">
             <div>
               <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
                 Ready to bring Enactus

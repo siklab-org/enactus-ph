@@ -4,7 +4,7 @@ import Image from "next/image";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-secondary text-secondary-foreground">
-      <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
+      <div className="mx-auto grid w-full max-w-7xl gap-12 px-4 sm:px-6 lg:px-8 py-12 md:py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <Image
@@ -79,7 +79,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 sm:px-6 lg:px-8 py-6 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-1">
             <span>Enactus Philippines is a chapter of Enactus Global</span>
             <span>

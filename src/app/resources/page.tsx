@@ -28,7 +28,7 @@ export default function Resources() {
       {/* ─── FILTERABLE LIST ─── */}
       <Suspense
         fallback={
-          <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
             <p className="text-muted-foreground">Loading resources…</p>
           </div>
         }

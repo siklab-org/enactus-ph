@@ -8,6 +8,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --text-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --text-section: clamp(1.75rem, 3.5vw, 2.5rem);
+  --text-subsection: clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-body: clamp(0.938rem, 1.5vw, 1.063rem);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

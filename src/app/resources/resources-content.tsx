@@ -154,11 +154,11 @@ function ResourceRow({ resource }: { resource: Resource }) {
       </div>
 
       {/* Buttons */}
-      <div className="flex shrink-0 flex-col gap-2">
+      <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
         <a
           href={resource.localPath}
           download
-          className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 hover:bg-primary/90"
+          className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 hover:bg-primary/90 max-sm:w-full"
         >
           <Download className="size-4" />
           Download
@@ -167,7 +167,7 @@ function ResourceRow({ resource }: { resource: Resource }) {
           href={resource.localPath}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:text-foreground"
+          className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:text-foreground max-sm:w-full"
         >
           <ExternalLink className="size-4" />
           Open
@@ -177,7 +177,7 @@ function ResourceRow({ resource }: { resource: Resource }) {
             href={googleDriveViewUrl(resource.googleDriveId)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:text-foreground"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:text-foreground max-sm:w-full"
           >
             <ExternalLink className="size-4" />
             Drive
@@ -227,7 +227,7 @@ export function ResourcesContent() {
 
   return (
     <AnimatedSection>
-      <section className="mx-auto w-full max-w-7xl px-6 pb-24 pt-16">
+      <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-12 md:pt-16">
         {/* Filter bar */}
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
           {CATEGORIES.map((cat) => (
