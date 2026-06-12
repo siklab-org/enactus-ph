@@ -134,7 +134,7 @@ const frameworkStages = [
 ];
 
 export default function FacultyDevelopment() {
-  const deadline = new Date("2026-06-12T23:59:00+08:00");
+  const deadline = new Date("2026-06-19T23:59:00+08:00");
 
   return (
     <div className="min-h-screen bg-background">
@@ -159,7 +159,7 @@ export default function FacultyDevelopment() {
             <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
-                  · Applications close June 12, 2026
+                   · Applications close June 19, 2026
                 </div>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
                   Apply to the Fellowship
@@ -586,7 +586,7 @@ export default function FacultyDevelopment() {
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <p className="text-sm text-secondary-foreground/60">
-                Applications close June 12, 2026
+                Applications close June 19, 2026
               </p>
             </div>
           </div>

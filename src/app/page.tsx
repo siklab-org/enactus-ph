@@ -59,32 +59,38 @@ export default function Home() {
           </div>
           {/* 3.2 Title lines — dramatic cascade */}
           <h1 className="max-w-5xl text-hero font-semibold leading-[1.12] tracking-tight">
-            <span
-              className="block animate-slide-in-right"
-              style={{ animationDelay: "0ms" }}
-            >
-              We believe <span className="text-foreground/30">investing</span>{" "}
-              in students
-            </span>
-            <span
-              className="block animate-slide-in-right"
-              style={{ animationDelay: "120ms" }}
-            >
-              who <span className="text-foreground/30">take </span>
-              <span className="inline-block bg-primary italic">
-                entrepreneurial action
+              <span
+                className="block animate-slide-in-right"
+                style={{ animationDelay: "0ms" }}
+              >
+                We believe{" "}
+                <span className="text-foreground/30">investing</span> in
               </span>
-            </span>
-            <span
-              className="block animate-slide-in-right"
-              style={{ animationDelay: "240ms" }}
-            >
-              for others <span className="text-foreground/30">creates a</span>{" "}
-              better world{" "}
-              <span className="inline-block bg-primary px-3 italic">
-                for us all.
+              <span
+                className="block animate-slide-in-right"
+                style={{ animationDelay: "100ms" }}
+              >
+                students who <span className="text-foreground/30">take </span>
               </span>
-            </span>
+              <span
+                className="block animate-slide-in-right"
+                style={{ animationDelay: "200ms" }}
+              >
+                <span className="inline-block bg-primary italic">
+                  entrepreneurial action
+                </span>{" "}
+                for others
+              </span>
+              <span
+                className="block animate-slide-in-right"
+                style={{ animationDelay: "300ms" }}
+              >
+                <span className="text-foreground/30">creates a</span> better
+                world{" "}
+                <span className="inline-block bg-primary px-3 italic">
+                  for us all.
+                </span>
+              </span>
           </h1>
           {/* 3.3 CTA buttons — mid pace */}
           <div
