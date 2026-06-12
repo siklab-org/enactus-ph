@@ -1,0 +1,132 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Enactus" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Enactus" [ref=e5]
+      - button "Open navigation menu" [ref=e164] [cursor=pointer]:
+        - img [ref=e165]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: Enactus.ph · est. network of 33 countries
+        - heading "We believe investing in students who take entrepreneurial action for others creates a better world for us all." [level=1] [ref=e32]:
+          - generic [ref=e33]: We believe investing in students
+          - generic [ref=e34]:
+            - text: who take
+            - generic [ref=e35]: entrepreneurial action
+          - generic [ref=e36]:
+            - text: for others creates a better world
+            - generic [ref=e37]: for us all.
+        - generic [ref=e38]:
+          - link "Explore the network" [ref=e39] [cursor=pointer]:
+            - /url: /what-we-do
+            - text: Explore the network
+            - img [ref=e40]
+          - link "Start a team" [ref=e43] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: "0"
+          - generic [ref=e49]: Partner Universities
+        - generic [ref=e50]:
+          - generic [ref=e51]: "0"
+          - generic [ref=e52]: Active Ventures
+        - generic [ref=e53]:
+          - generic [ref=e54]: "0"
+          - generic [ref=e55]: Volunteer Hours
+        - generic [ref=e56]:
+          - generic [ref=e57]: "0"
+          - generic [ref=e58]: Lives Impacted
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - heading "en·act·us" [level=2] [ref=e62]
+          - paragraph [ref=e63]: Three syllables. One operating model for solving the country's hardest problems.
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]: En
+            - paragraph [ref=e67]: trepreneurial — initiating innovation with integrity and passion.
+          - generic [ref=e68]:
+            - generic [ref=e69]: Act
+            - paragraph [ref=e70]: ion — the experience of social impact that sparks social enterprise.
+          - generic [ref=e71]:
+            - generic [ref=e72]: Us
+            - paragraph [ref=e73]: — students, academics and business leaders building a better Philippines.
+      - generic [ref=e75]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]: · How we work
+            - heading "A platform for the next generation of Filipino founders." [level=2] [ref=e80]
+          - link "All programs →" [ref=e81] [cursor=pointer]:
+            - /url: /what-we-do
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - generic [ref=e87]: 01 / Innovation
+            - heading "Tech-enabled ventures" [level=3] [ref=e88]
+            - paragraph [ref=e89]: We back student teams shipping software, IoT, fintech and AI solutions for Philippine communities.
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e94]: 02 / Sustainability
+            - heading "Climate-positive enterprise" [level=3] [ref=e95]
+            - paragraph [ref=e96]: From agri-tech to circular plastics, our projects align with the UN Sustainable Development Goals.
+          - generic [ref=e97]:
+            - img [ref=e98]
+            - generic [ref=e103]: 03 / Community
+            - heading "Inclusive by design" [level=3] [ref=e104]
+            - paragraph [ref=e105]: Co-built with farmers, MSMEs, and out-of-school youth across Luzon, Visayas and Mindanao.
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e110]: 04 / Scale
+            - heading "From campus to country" [level=3] [ref=e111]
+            - paragraph [ref=e112]: Mentors, partners and capital that take a thesis project into a registered social enterprise.
+      - generic [ref=e116]:
+        - heading "Build a venture. Change a community. Shape a country." [level=2] [ref=e117]:
+          - text: Build a venture.
+          - text: Change a community.
+          - text: Shape a country.
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: Whether you're a student forming a campus team, a faculty member, or an industry partner, there's a seat at the table.
+          - generic [ref=e120]:
+            - link "Get involved" [ref=e121] [cursor=pointer]:
+              - /url: /contact
+            - link "Latest news" [ref=e122] [cursor=pointer]:
+              - /url: /news
+  - contentinfo [ref=e123]:
+    - generic [ref=e124]:
+      - generic [ref=e125]:
+        - img "Enactus" [ref=e127]
+        - paragraph [ref=e128]: A national network of student, academic and business leaders using entrepreneurial action to build a more sustainable Philippines.
+        - paragraph [ref=e129]: Bonifacio Global City, Manila
+      - generic [ref=e130]:
+        - heading "Explore" [level=4] [ref=e131]
+        - list [ref=e132]:
+          - listitem [ref=e133]:
+            - link "Who We Are" [ref=e134] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e135]:
+            - link "What We Do" [ref=e136] [cursor=pointer]:
+              - /url: /what-we-do
+          - listitem [ref=e137]:
+            - link "News" [ref=e138] [cursor=pointer]:
+              - /url: /news
+          - listitem [ref=e139]:
+            - link "Contact" [ref=e140] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e141]:
+        - heading "Network" [level=4] [ref=e142]
+        - list [ref=e143]:
+          - listitem [ref=e144]:
+            - link "Enactus Global" [ref=e145] [cursor=pointer]:
+              - /url: https://enactus.org
+          - listitem [ref=e146]:
+            - link "Siklab" [ref=e147] [cursor=pointer]:
+              - /url: https://siklab.org.ph/
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]: Enactus Philippines is a chapter of Enactus Global
+        - generic [ref=e152]: © 2026 Enactus Global. All rights reserved.
+      - generic [ref=e153]: Entrepreneurial · Action · Us
+  - button "Open Next.js Dev Tools" [ref=e159] [cursor=pointer]:
+    - img [ref=e160]
+  - alert [ref=e163]

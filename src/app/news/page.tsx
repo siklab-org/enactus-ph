@@ -24,7 +24,7 @@ export default async function NewsPage(props: {
         subtitle="Partnerships, events, and stories from across the Enactus Philippines community."
       />
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-6 py-16 md:py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-24">
           <div className="lg:grid lg:grid-cols-[14rem_1fr] lg:gap-12">
             <NewsSidebar active={activeCategory} />
             <div className="mt-10 lg:mt-0">

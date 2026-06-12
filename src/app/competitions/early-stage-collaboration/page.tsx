@@ -90,7 +90,7 @@ export default function EarlyStagePage() {
           className="absolute inset-0 grid-bg opacity-[0.04]"
           aria-hidden="true"
         />
-        <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-28 text-center sm:pb-28 sm:pt-36">
+        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-20 pt-20 md:pt-28 text-center sm:pb-28 sm:pt-36">
           <Link
             href="/competitions"
             className="mb-6 inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground"
@@ -101,7 +101,7 @@ export default function EarlyStagePage() {
           <span className="mb-6 block font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             Early Stage Collaboration &amp; Competition Track
           </span>
-          <h1 className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="text-hero font-bold leading-[1.1] tracking-tight">
             Early Stage
             <br />
             <span className="text-foreground/40">Collaboration Track</span>
@@ -115,7 +115,7 @@ export default function EarlyStagePage() {
       </section>
 
       {/* ─── TABLE OF CONTENTS ─── */}
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <nav className="mb-12 mt-6 rounded-xl border border-border/60 bg-muted/10 p-5">
           <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             On this page
@@ -147,7 +147,7 @@ export default function EarlyStagePage() {
       </div>
 
       {/* ─── CONTENT ─── */}
-      <div className="mx-auto max-w-4xl px-6 pb-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
         {/* ── Overview ── */}
         <section id="overview" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight">Overview</h2>

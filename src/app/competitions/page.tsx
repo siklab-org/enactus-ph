@@ -17,11 +17,11 @@ export default function CompetitionsLanding() {
           className="absolute inset-0 grid-bg opacity-[0.04]"
           aria-hidden="true"
         />
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-28 text-center sm:pb-28 sm:pt-36">
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center px-4 sm:px-6 lg:px-8 pb-16 md:pb-20 pt-20 md:pt-28 text-center sm:pb-28 sm:pt-36">
           <span className="mb-6 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             Competitions
           </span>
-          <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="max-w-4xl text-hero font-bold leading-[1.1] tracking-tight">
             Where teams prove their
             <br />
             <span className="text-foreground/40">impact.</span>
@@ -35,7 +35,7 @@ export default function CompetitionsLanding() {
       </section>
 
       {/* ─── TRACK CARDS ─── */}
-      <div className="mx-auto max-w-5xl px-6 pb-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
         <div className="grid gap-8 md:grid-cols-2">
           {/* Main Competition Card */}
           <Link

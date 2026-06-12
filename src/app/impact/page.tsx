@@ -35,7 +35,7 @@ export default function Impact() {
         subtitle="We track outcomes, not just outputs. Every team reports against the UN Sustainable Development Goals."
       />
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 md:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 divide-y divide-white/10 md:grid-cols-3 md:divide-x">
           {numbers.map((n) => (
             <StatsCounter
               key={n.l}
@@ -48,12 +48,12 @@ export default function Impact() {
       </section>
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-6 py-24">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">· Aligned with the UN SDGs</div>
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
+            <h2 className="mt-4 max-w-3xl text-section font-semibold">
               17 goals. One country. A generation of operators.
             </h2>
-            <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-4">
+            <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-4 break-words">
               {sdgs.map((s, i) => (
                 <li key={s} className="flex items-baseline gap-3 bg-background p-5">
                   <span className="font-mono text-[11px] text-primary">{String(i + 1).padStart(2, "0")}</span>

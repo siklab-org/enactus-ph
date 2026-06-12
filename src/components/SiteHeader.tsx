@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import {
   NavigationMenu,
@@ -13,6 +13,24 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@/components/ui/collapsible";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -61,11 +79,6 @@ function SubMenuContent({
       return;
     }
 
-    // Defer to requestAnimationFrame to align with Radix's ResizeObserver.
-    // Radix detects content size changes via ResizeObserver, then calls
-    // rAF(handleSizeChange) which sets the viewport CSS variable.
-    // Scheduling our height change in the same rAF batch ensures both
-    // the sub-menu and the viewport start transitioning in the same frame.
     const rafId = requestAnimationFrame(() => {
       if (isOpen) {
         el.style.transition = "height 200ms ease-out";
@@ -86,15 +99,206 @@ function SubMenuContent({
   );
 }
 
+interface NavLinkItem {
+  href?: string;
+  label: string;
+  children?: NavLinkItem[];
+}
+
+const mobileNavLinks: NavLinkItem[] = [
+  { href: "/", label: "Home" },
+  {
+    label: "Who We Are",
+    children: [
+      { href: "/about", label: "About Enactus" },
+      { href: "/country-leadership", label: "Country Leadership" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    label: "What We Do",
+    children: [
+      {
+        label: "Competitions",
+        children: [
+          { href: "/competitions/handbook", label: "Core Competition" },
+          { href: "/competitions/early-stage-collaboration", label: "Early Stage Track" },
+        ],
+      },
+      { href: "/partners", label: "Partnerships" },
+      { href: "/resources", label: "Resources" },
+      { href: "/news", label: "News" },
+      { href: "/university-engagement", label: "University Engagement" },
+      { href: "/faculty-development", label: "Faculty Development" },
+    ],
+  },
+  { href: "/national-2026-competition", label: "National 2026 Competition" },
+];
+
+const whoWeArePaths = ["/about", "/country-leadership", "/contact"];
+const whatWeDoPaths = [
+  "/competitions", "/competitions/handbook",
+  "/competitions/early-stage-collaboration",
+  "/partners", "/resources", "/news",
+  "/university-engagement", "/faculty-development",
+];
+
+function getMobileAccordionValue(pathname: string): string | undefined {
+  if (whoWeArePaths.includes(pathname)) return "who-we-are";
+  if (whatWeDoPaths.includes(pathname)) return "what-we-do";
+  return undefined;
+}
+
+function MobileNavItem({ item, pathname, depth = 0 }: { item: NavLinkItem; pathname: string; depth?: number }) {
+  if (item.href && !item.children) {
+    const isActive = pathname === item.href;
+    return (
+      <SheetClose asChild>
+        <Link
+          href={item.href}
+          className={`block rounded-lg px-3 py-3.5 text-sm font-medium transition-colors ${
+            isActive
+              ? "bg-accent text-accent-foreground"
+              : "text-foreground/80 hover:bg-accent/50 hover:text-foreground"
+          }`}
+          style={{ paddingLeft: `${1 + depth * 0.75}rem` }}
+        >
+          {item.label}
+        </Link>
+      </SheetClose>
+    );
+  }
+
+  if (item.children && depth === 0) {
+    return (
+      <Collapsible className="w-full">
+        <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg px-3 py-3.5 text-sm font-medium text-foreground/80 hover:bg-accent/50 hover:text-foreground cursor-pointer">
+          {item.label}
+          <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 ui-open:rotate-180" />
+        </CollapsibleTrigger>
+        <CollapsibleContent className="pl-4 pt-1 space-y-0.5">
+          {item.children.map((child) => (
+            <MobileNavItem key={child.label} item={child} pathname={pathname} depth={depth + 1} />
+          ))}
+        </CollapsibleContent>
+      </Collapsible>
+    );
+  }
+
+  if (item.children) {
+    return (
+      <div className="space-y-0.5">
+        {item.children.map((child) => (
+          <MobileNavItem key={child.label} item={child} pathname={pathname} depth={depth + 1} />
+        ))}
+      </div>
+    );
+  }
+
+  return null;
+}
+
+function MobileNav({ pathname }: { pathname: string }) {
+  const [open, setOpen] = useState(false);
+  const accordionValue = getMobileAccordionValue(pathname);
+
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <button
+          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-foreground/80 hover:bg-accent/50 hover:text-foreground transition-colors cursor-pointer"
+          aria-label="Open navigation menu"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+      </SheetTrigger>
+      <SheetContent
+        side="right"
+        className="w-[18rem] max-w-[85vw] bg-background p-0 [&>button]:hidden"
+      >
+        <div className="flex h-full flex-col">
+          <div className="flex items-center justify-between border-b border-border/60 px-4 py-4">
+            <Link href="/" onClick={() => setOpen(false)}>
+              <Image
+                src="/enactus-logo.webp"
+                alt="Enactus"
+                width={90}
+                height={40}
+                className="h-8 w-auto"
+              />
+            </Link>
+            <button
+              onClick={() => setOpen(false)}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-foreground/60 hover:bg-accent/50 hover:text-foreground transition-colors cursor-pointer"
+              aria-label="Close navigation menu"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+          <ScrollArea className="flex-1 px-3 py-4">
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue={accordionValue}
+              className="space-y-1"
+            >
+              {mobileNavLinks.map((item) => {
+                if (item.href && !item.children) {
+                  const isActive = pathname === item.href;
+                  return (
+                    <SheetClose key={item.label} asChild>
+                      <Link
+                        href={item.href}
+          className={`block rounded-lg px-3 py-3.5 text-sm font-medium transition-colors ${
+                          isActive
+                            ? "bg-accent text-accent-foreground"
+                            : "text-foreground/80 hover:bg-accent/50 hover:text-foreground"
+                        }`}
+                        >
+                          {item.label}
+                        </Link>
+                    </SheetClose>
+                  );
+                }
+                if (item.children) {
+                  return (
+                    <AccordionItem key={item.label} value={item.label === "Who We Are" ? "who-we-are" : "what-we-do"} className="border-0">
+                      <AccordionTrigger className="rounded-lg px-3 py-3.5 text-sm font-medium text-foreground/80 hover:bg-accent/50 hover:text-foreground no-underline [&[data-state=open]>svg]:rotate-180 cursor-pointer">
+                        {item.label}
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-1 pt-1">
+                        <div className="space-y-0.5 pl-2">
+                          {item.children.map((child) => (
+                            <MobileNavItem key={child.label} item={child} pathname={pathname} depth={1} />
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  );
+                }
+                return null;
+              })}
+            </Accordion>
+          </ScrollArea>
+          <div className="border-t border-border/60 p-4">
+            <SheetClose asChild>
+              <Link
+                href="/contact"
+                className="flex w-full items-center justify-center rounded-full bg-secondary px-5 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-200 hover:bg-secondary/90"
+              >
+                Compete
+              </Link>
+            </SheetClose>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
-  const [activeMenu, setActiveMenu] = useState<"who" | "what" | null>(null);
   const [compSubOpen, setCompSubOpen] = useState(false);
-
-  // Reset sub-menu when the What We Do dropdown closes
-  useEffect(() => {
-    if (activeMenu !== "what") setCompSubOpen(false);
-  }, [activeMenu]);
 
   const isWhoWeAreActive =
     pathname === "/about" || pathname === "/country-leadership" || pathname === "/contact";
@@ -110,7 +314,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="group flex items-center gap-2 transition-all duration-200 hover:opacity-80"
@@ -124,22 +328,14 @@ export function SiteHeader() {
           />
 
         </Link>
-        <nav className="flex items-center gap-8">
+        <MobileNav pathname={pathname} />
+        <nav className="hidden lg:flex items-center gap-8">
           <NavLink href="/" label="Home" pathname={pathname} />
 
           {/* ─── Who We Are dropdown ─── */}
           <NavigationMenu
             className="flex-initial"
             delayDuration={0}
-            onMouseEnter={() => setActiveMenu("who")}
-            style={{
-              zIndex:
-                activeMenu === "who"
-                  ? 20
-                  : activeMenu === "what"
-                    ? 10
-                    : undefined,
-            }}
           >
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -203,16 +399,6 @@ export function SiteHeader() {
           <NavigationMenu
             className="flex-initial"
             delayDuration={0}
-            onMouseEnter={() => setActiveMenu("what")}
-            onMouseLeave={() => setCompSubOpen(false)}
-            style={{
-              zIndex:
-                activeMenu === "what"
-                  ? 20
-                  : activeMenu === "who"
-                    ? 10
-                    : undefined,
-            }}
           >
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -228,23 +414,26 @@ export function SiteHeader() {
                 <NavigationMenuContent>
                   <ul className="grid w-56 gap-0.5 p-2">
                     <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/competitions"}
-                      >
-                        <Link
-                          href="/competitions"
-                          onMouseEnter={() => setCompSubOpen((prev) => !prev)}
-                          className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+                        <NavigationMenuLink asChild active={pathname === "/competitions"}>
+                          <Link
+                            href="/competitions"
+                            className="flex-1"
+                          >
+                            Competitions
+                          </Link>
+                        </NavigationMenuLink>
+                        <button
+                          onClick={() => setCompSubOpen((prev) => !prev)}
+                          className="flex items-center justify-center h-6 w-6 rounded hover:bg-accent-foreground/10 transition-colors cursor-pointer"
+                          aria-label={compSubOpen ? "Collapse competitions" : "Expand competitions"}
                         >
-                          Competitions
                           <ChevronRight
-                            className={`h-3 w-3 transition-transform duration-200 ${compSubOpen ? "rotate-90" : ""
+                            className={`h-3.5 w-3.5 transition-transform duration-200 ${compSubOpen ? "rotate-90" : ""
                               }`}
                           />
-                        </Link>
-                      </NavigationMenuLink>
-                      {/* Sub-items: toggle on re-hovering the Competitions <a> tag */}
+                        </button>
+                      </div>
                       <SubMenuContent isOpen={compSubOpen}>
                         <div className="border-t border-border/40 mx-2 my-1" />
                         <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
@@ -338,7 +527,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/contact"
-          className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
+          className="hidden lg:inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
         >
           Compete
         </Link>

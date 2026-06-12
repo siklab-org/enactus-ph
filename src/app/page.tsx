@@ -48,7 +48,7 @@ export default function Home() {
           style={{ animationDelay: "800ms" }}
           aria-hidden
         />
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 pb-28 pt-15 md:pt-23">
+        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:px-8 pb-20 md:pb-28 pt-12 md:pt-23">
           {/* 3.1 Eyebrow — fast slide from right */}
           <div
             className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-slide-in-right"
@@ -58,7 +58,7 @@ export default function Home() {
             Enactus.ph · est. network of 33 countries
           </div>
           {/* 3.2 Title lines — dramatic cascade */}
-          <h1 className="max-w-5xl text-[3.8rem] font-semibold leading-[1.12] tracking-tight md:text-[3.3rem] lg:text-[4.3rem]">
+          <h1 className="max-w-5xl text-hero font-semibold leading-[1.12] tracking-tight">
             <span
               className="block animate-slide-in-right"
               style={{ animationDelay: "0ms" }}
@@ -130,7 +130,7 @@ export default function Home() {
 
       {/* EN-ACT-US */}
       <section className="border-b border-border/60">
-        <div className="mx-auto grid w-full max-w-7xl gap-16 px-6 py-24 md:grid-cols-12">
+        <div className="mx-auto grid w-full max-w-7xl gap-16 px-4 sm:px-6 lg:px-8 py-16 md:py-24 md:grid-cols-12">
           <AnimatedSection className="md:col-span-4">
             <h2 className="mt-4 text-5xl font-semibold tracking-tight">
               en<span className="text-primary">·</span>act
@@ -175,14 +175,14 @@ export default function Home() {
 
       {/* PILLARS */}
       <section className="border-b border-border/60 bg-muted/40">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <AnimatedSection>
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                   · How we work
                 </div>
-                <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
+                <h2 className="mt-4 max-w-2xl text-section font-semibold">
                   A platform for the next generation of Filipino founders.
                 </h2>
               </div>
@@ -205,7 +205,7 @@ export default function Home() {
                 <div className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
                   {p.tag}
                 </div>
-                <h3 className="mt-2 text-2xl font-semibold">{p.title}</h3>
+                <h3 className="mt-2 text-subsection font-semibold">{p.title}</h3>
                 <p className="mt-3 max-w-md text-sm leading-relaxed opacity-80">
                   {p.body}
                 </p>
@@ -219,8 +219,8 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:items-end">
-            <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+          <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 py-16 md:py-24 md:grid-cols-2 md:items-end">
+            <h2 className="text-hero font-semibold leading-[1.05] tracking-tight">
               Build a venture.
               <br />
               Change a community.

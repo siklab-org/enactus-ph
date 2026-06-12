@@ -15,7 +15,7 @@ export default function National2026Page() {
     <div className="min-h-screen bg-background">
       {/* ─── HERO IMAGE ─── */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto flex justify-center px-6 pt-10 md:pt-16">
+        <div className="mx-auto flex justify-center px-4 sm:px-6 lg:px-8 pt-8 md:pt-16">
           <div className="relative w-full max-w-5xl overflow-hidden rounded-2xl">
             <Image
               src="/national-2026-hero.png"
@@ -32,12 +32,12 @@ export default function National2026Page() {
 
       {/* ─── CONTENT BELOW ─── */}
       <section className="relative">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-6 pb-16 pt-12 text-center md:pt-16">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-4 sm:px-6 lg:px-8 pb-12 md:pb-16 pt-10 md:pt-16">
           <div className="animate-fade-up">
             <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
               Enactus Philippines
             </div>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+            <h1 className="mt-4 text-hero font-semibold leading-[1.05] tracking-tight">
               National 2026 Competition
             </h1>
             <p className="mt-3 text-base text-foreground/60 md:text-lg">
@@ -56,11 +56,11 @@ export default function National2026Page() {
 
       {/* ─── MORE SOON ─── */}
       <section className="border-t border-border/60 bg-gradient-to-b from-background via-background to-transparent pb-48">
-        <div className="mx-auto flex max-w-3xl flex-col items-center px-6 pt-24 text-center">
+        <div className="mx-auto flex max-w-3xl flex-col items-center px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
           <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             · Stay tuned
           </div>
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="mt-6 text-subsection font-semibold">
             More soon<span className="text-primary">.</span>
             <span className="text-primary/40">.</span>
             <span className="text-primary/20">.</span>
