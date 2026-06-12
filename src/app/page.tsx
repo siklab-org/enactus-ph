@@ -79,14 +79,19 @@ export default function Home() {
                 <span className="inline-block bg-primary italic">
                   entrepreneurial action
                 </span>{" "}
-                for others
+                for
               </span>
               <span
                 className="block animate-slide-in-right"
                 style={{ animationDelay: "300ms" }}
               >
-                <span className="text-foreground/30">creates a</span> better
-                world{" "}
+                others <span className="text-foreground/30">creates a</span>{" "}
+                better world
+              </span>
+              <span
+                className="block animate-slide-in-right"
+                style={{ animationDelay: "400ms" }}
+              >
                 <span className="inline-block bg-primary px-3 italic">
                   for us all.
                 </span>
