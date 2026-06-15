@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
@@ -55,47 +55,6 @@ function NavLink({
     >
       {label}
     </Link>
-  );
-}
-
-function SubMenuContent({
-  isOpen,
-  children,
-}: {
-  isOpen: boolean;
-  children: React.ReactNode;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const first = useRef(true);
-
-  useLayoutEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (first.current) {
-      first.current = false;
-      el.style.transition = "none";
-      el.style.height = "0px";
-      return;
-    }
-
-    const rafId = requestAnimationFrame(() => {
-      if (isOpen) {
-        el.style.transition = "height 200ms ease-out";
-        el.style.height = `${el.scrollHeight}px`;
-      } else {
-        el.style.transition = "height 200ms ease-out";
-        el.style.height = "0px";
-      }
-    });
-
-    return () => cancelAnimationFrame(rafId);
-  }, [isOpen]);
-
-  return (
-    <div ref={ref} className="overflow-hidden">
-      {children}
-    </div>
   );
 }
 
@@ -434,25 +393,27 @@ export function SiteHeader() {
                           />
                         </button>
                       </div>
-                      <SubMenuContent isOpen={compSubOpen}>
-                        <div className="border-t border-border/40 mx-2 my-1" />
-                        <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
-                          <Link
-                            href="/competitions/handbook"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                          >
-                            Core Competition
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
-                          <Link
-                            href="/competitions/early-stage-collaboration"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            Early Stage Track
-                          </Link>
-                        </NavigationMenuLink>
-                      </SubMenuContent>
+                      {compSubOpen && (
+                        <>
+                          <div className="border-t border-border/40 mx-2 my-1" />
+                          <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
+                            <Link
+                              href="/competitions/handbook"
+                              className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                            >
+                              Core Competition
+                            </Link>
+                          </NavigationMenuLink>
+                          <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
+                            <Link
+                              href="/competitions/early-stage-collaboration"
+                              className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                            >
+                              Early Stage Track
+                            </Link>
+                          </NavigationMenuLink>
+                        </>
+                      )}
                     </li>
                     <li>
                       <NavigationMenuLink

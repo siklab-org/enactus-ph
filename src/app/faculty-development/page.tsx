@@ -3,19 +3,18 @@ import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import {
-  BookOpen,
   Building2,
   Calendar,
   ChevronRight,
+  Globe,
   GraduationCap,
   HeartHandshake,
   Lightbulb,
-  LineChart,
   Sparkles,
   Target,
   Users,
   Waypoints,
- ClipboardList,
+  ClipboardList,
   ScrollText,
   Route,
   ArrowUpRight,
@@ -65,33 +64,28 @@ const objectives = [
     title: "Ecosystem Readiness",
     body: "Prepare faculty to establish, support, and sustain Enactus teams and innovation ecosystems within their institutions.",
   },
+  {
+    icon: Globe,
+    title: "Thought Leadership",
+    body: "Position educators as thought leaders and advocates for entrepreneurship, innovation, and sustainable development in higher education.",
+  },
 ];
 
 const sessions = [
   {
     day: 1,
-    date: "June 15, 2026",
-    title: "Entrepreneurial Leadership and the Future of Higher Education",
+    date: "June 22, 2026",
+    title: "Sustainability and Social Impact",
   },
   {
     day: 2,
-    date: "June 17, 2026",
-    title: "Design Thinking, Systems Thinking, and Social Innovation",
+    date: "June 24, 2026",
+    title: "Design Thinking and Social Innovation",
   },
   {
     day: 3,
-    date: "June 19, 2026",
-    title: "Sustainable Development and Creating Impact",
-  },
-  {
-    day: 4,
-    date: "June 22, 2026",
+    date: "June 26, 2026",
     title: "Mentoring Student Innovators and Building High-Performing Teams",
-  },
-  {
-    day: 5,
-    date: "June 24, 2026",
-    title: "The Enactus Ecosystem and Capstone Fellowship Session",
   },
 ];
 
@@ -133,6 +127,16 @@ const frameworkStages = [
   { label: "Elevate", color: "bg-rose-400" },
 ];
 
+const competencies = [
+  "Entrepreneurship and Innovation",
+  "Design Thinking and Systems Thinking",
+  "Sustainable Development and Social Impact",
+  "Project Development and Impact Measurement",
+  "Mentorship and Student Leadership Development",
+  "Community Engagement and Partnership Building",
+  "Future-Ready Higher Education Practices",
+];
+
 export default function FacultyDevelopment() {
   const deadline = new Date("2026-06-19T23:59:00+08:00");
 
@@ -159,7 +163,7 @@ export default function FacultyDevelopment() {
             <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
-                   · Applications close June 19, 2026
+                  · Applications open June 12 — close June 19, 2026
                 </div>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
                   Apply to the Fellowship
@@ -187,8 +191,33 @@ export default function FacultyDevelopment() {
         <div className="absolute bottom-0 left-0 h-8 w-1/4 yellow-slash" aria-hidden />
       </section>
 
-      {/* ─── BACKGROUND & RATIONALE ─── */}
+      {/* ─── ABOUT ENACTUS ─── */}
       <section className="border-b border-border/60">
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div className="mx-auto max-w-3xl">
+              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                · About Enactus
+              </div>
+              <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
+                A global platform for{" "}
+                <span className="text-foreground/50">social innovation.</span>
+              </h2>
+              <p className="mt-8 text-body leading-relaxed text-muted-foreground">
+                ENACTUS is a global social innovation and entrepreneurial
+                education platform that engages university students in developing
+                impactful solutions through innovation and business. In 2026,
+                Enactus Philippines is undertaking a full-scale national relaunch
+                including regional and national events, culminating in the
+                Enactus World Cup in São Paulo, Brazil.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── BACKGROUND & RATIONALE ─── */}
+      <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -204,34 +233,54 @@ export default function FacultyDevelopment() {
               </h2>
               <div className="mt-8 space-y-5 text-body leading-relaxed text-muted-foreground">
                 <p>
-                  The future of entrepreneurship education extends beyond
-                  teaching business concepts. It requires educators who can
-                  cultivate innovation, guide multidisciplinary teams, mentor
-                  student leaders, build partnerships, and create learning
-                  experiences that translate into measurable social and economic
-                  impact.
+                  Entrepreneurship education now goes beyond business concepts
+                  and requires educators who can foster innovation, mentor
+                  leaders, and build partnerships that create real social and
+                  economic impact.
                 </p>
                 <p>
-                  As Enactus Philippines undergoes its national relaunch in
-                  2026, the organization recognizes that strong student teams
-                  are built upon strong faculty leadership. However, the role of
-                  a Faculty Advisor goes far beyond understanding competition
-                  mechanics or overseeing student activities. Faculty Advisors
-                  are educators, mentors, ecosystem builders, institutional
-                  champions, and catalysts for innovation.
+                  As Enactus Philippines relaunches in 2026, strong student
+                  teams are anchored on strong faculty leadership. Faculty
+                  Advisors play multiple roles including educators, mentors,
+                  ecosystem builders, institutional champions, and innovation
+                  catalysts. Their role extends beyond supervising competitions
+                  and activities.
                 </p>
                 <p>
-                  The Enactus Philippines Faculty Fellows Program is therefore
-                  designed not merely as a training on Enactus operations, but
-                  as a leadership and professional development fellowship that
-                  equips educators with competencies in entrepreneurship and
-                  innovation; design thinking and systems thinking; sustainable
-                  development and social impact; project development and impact
-                  measurement; mentorship and student leadership development;
-                  community engagement and partnership building; and future-ready
-                  higher education practices.
+                  The Enactus Philippines Faculty Fellows Program is a
+                  leadership and professional development fellowship for
+                  educators, building competencies that strengthen faculty not
+                  only in Enactus methodologies but in their broader role as
+                  leaders of innovation and change in their institutions and
+                  communities.
                 </p>
               </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── COMPETENCIES ─── */}
+      <section className="border-b border-border/60">
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                · Competency Areas
+              </div>
+              <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
+                What the Fellowship builds
+              </h2>
+            </div>
+            <div className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {competencies.map((c) => (
+                <div
+                  key={c}
+                  className="rounded-xl border border-border/60 bg-background p-4 text-sm font-medium leading-snug transition-colors hover:border-primary/40 hover:bg-muted/50"
+                >
+                  {c}
+                </div>
+              ))}
             </div>
           </div>
         </AnimatedSection>
@@ -243,13 +292,13 @@ export default function FacultyDevelopment() {
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                · Fellowship Objectives
+                · Program Goals
               </div>
               <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
                 What the Fellowship aims to achieve
               </h2>
             </div>
-            <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-3">
+            <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-3 lg:grid-cols-4">
               {objectives.map((obj) => (
                 <div
                   key={obj.title}
@@ -278,10 +327,10 @@ export default function FacultyDevelopment() {
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                · Fellowship Structure
+                · Fellowship Structure &amp; Schedule
               </div>
               <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
-                Five-day virtual fellowship,
+                Three-day virtual fellowship,
                 <br />
                 <span className="text-foreground/50">
                   one in-person awarding ceremony.
@@ -289,14 +338,14 @@ export default function FacultyDevelopment() {
               </h2>
             </div>
 
-            <div className="mt-12 grid gap-4 md:grid-cols-5">
+            <div className="mt-12 grid gap-4 md:grid-cols-3">
               {sessions.map((s) => (
                 <Card
                   key={s.day}
                   className="relative overflow-hidden border-border/60 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="absolute right-2 top-2 font-mono text-[10px] font-semibold uppercase tracking-wider text-primary">
-                    Day {s.day}
+                    Session {s.day}
                   </div>
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -311,6 +360,9 @@ export default function FacultyDevelopment() {
                     <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
                       05:00 PM – 07:00 PM PHT
                     </div>
+                    <Badge variant="outline" className="mt-2 text-[10px] border-primary/30 text-primary">
+                      Virtual (Zoom)
+                    </Badge>
                   </CardContent>
                 </Card>
               ))}
@@ -586,7 +638,7 @@ export default function FacultyDevelopment() {
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <p className="text-sm text-secondary-foreground/60">
-                Applications close June 19, 2026
+                Applications Open: June 12, 2026 &middot; Deadline: June 19, 2026
               </p>
             </div>
           </div>
