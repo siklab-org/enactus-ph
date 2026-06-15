@@ -40,6 +40,12 @@ const staff = [
 
 const advisers = [
   {
+    name: "Joey Leviste",
+    role: "Founding Chairman & CEO",
+    organization: "Enactus Philippines",
+    bio: 'Dr. Jose "Joey" Paredes Leviste Jr. is a prominent Filipino corporate leader, former public servant, and social development advocate who serves as the founding Chairman and Chief Executive Officer of Enactus Philippines. Born in Malvar, Batangas, to a family rooted in public service, he cultivated a strong academic foundation, earning a Bachelor of Arts in Economics from Ateneo de Manila University, a Master of Arts in Economics from Fordham University, and a Master of Business Administration from Columbia University. His early career was marked by significant contributions to the public sector, serving as a young delegate to the 1970 Constitutional Convention, Secretary-General of the Office of the Prime Minister, and Deputy Minister of Trade and Industry. In the private sector, Dr. Leviste has held top executive roles across major industrial enterprises, serving as the Chairman of OceanaGold Philippines, Vice Chairman of the Chamber of Mines of the Philippines, and Chairman of Constellation Energy Corporation.',
+  },
+  {
     name: "Geraldine Sunshine Acuna",
     role: "President",
     organization: "Resolution Project",
@@ -51,13 +57,13 @@ const advisers = [
     image: "/people/roberto.png",
     bio: "Roberto G. Manabat has more than 50 years of track record in the field of accounting and has been an adviser to a number of corporations on financial reporting, internal audit and good corporate governance. He is a recipient of many awards in recognition of his achievements in the accounting profession and in the business community.",
   },
-  {
-    name: "Sharon Dayoan",
-    role: "Chairman and Chief Executive Officer",
-    organization: "KPMG RG Manabat & Co.",
-    image: "/people/sharon.png",
-    bio: "Sharon G. Dayoan is the Chairman and Chief Executive Officer of R.G. Manabat & Co. (KPMG in the Philippines). She brings over 30 years of experience in professional services, with expertise in Risk Management and Audit and Assurance. Over the years, she has worked with many of the country\u2019s top conglomerates across a range of industries. Sharon plays a key role in shaping the firm\u2019s direction as it continues to evolve into a more digitally enabled and technology-driven organization, aligned with KPMG\u2019s global commitment to innovation and long-term value. As Chairman and CEO, Sharon champions the firm\u2019s People, Performance, and Culture agenda, with a strong focus on professional growth, inclusion, and collaboration. Sharon chairs the Auditing and Assurance Standards Council of the Philippines and collaborates actively with regulators, the academe, and professional organizations to support the development of the accountancy profession. She is also a Trustee and Treasurer of the NextGen Organization of Women Corporate Directors (NOWCD), empowering future women leaders in their career journeys. A proud cum laude graduate of the University of the Philippines Diliman, she was honored with the UP Alumni Association\u2019s Distinguished Alumna Award for Public Service in Financial Management and Audit. She is also a Distinguished Alumna Awardee of the UP Virata School of Business. She is passionate about developing future leaders and advancing good governance, diversity, and inclusion.",
-  },
+  // {
+  //   name: "Sharon Dayoan",
+  //   role: "Chairman and Chief Executive Officer",
+  //   organization: "KPMG RG Manabat & Co.",
+  //   image: "/people/sharon.png",
+  //   bio: "Sharon G. Dayoan is the Chairman and Chief Executive Officer of R.G. Manabat & Co. (KPMG in the Philippines). She brings over 30 years of experience in professional services, with expertise in Risk Management and Audit and Assurance. Over the years, she has worked with many of the country\u2019s top conglomerates across a range of industries. Sharon plays a key role in shaping the firm\u2019s direction as it continues to evolve into a more digitally enabled and technology-driven organization, aligned with KPMG\u2019s global commitment to innovation and long-term value. As Chairman and CEO, Sharon champions the firm\u2019s People, Performance, and Culture agenda, with a strong focus on professional growth, inclusion, and collaboration. Sharon chairs the Auditing and Assurance Standards Council of the Philippines and collaborates actively with regulators, the academe, and professional organizations to support the development of the accountancy profession. She is also a Trustee and Treasurer of the NextGen Organization of Women Corporate Directors (NOWCD), empowering future women leaders in their career journeys. A proud cum laude graduate of the University of the Philippines Diliman, she was honored with the UP Alumni Association\u2019s Distinguished Alumna Award for Public Service in Financial Management and Audit. She is also a Distinguished Alumna Awardee of the UP Virata School of Business. She is passionate about developing future leaders and advancing good governance, diversity, and inclusion.",
+  // },
 ];
 
 export default function CountryLeadership() {
