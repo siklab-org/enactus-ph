@@ -147,6 +147,9 @@ function MobileNavItem({ item, pathname, depth = 0 }: { item: NavLinkItem; pathn
   if (item.children) {
     return (
       <div className="space-y-0.5">
+        <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">
+          {item.label}
+        </div>
         {item.children.map((child) => (
           <MobileNavItem key={child.label} item={child} pathname={pathname} depth={depth + 1} />
         ))}
@@ -372,7 +375,7 @@ export function SiteHeader() {
                 <NavigationMenuContent>
                   <ul className="grid w-56 gap-0.5 p-2">
                     <li className="group relative">
-                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
                         <NavigationMenuLink asChild active={pathname === "/competitions"}>
                           <Link
                             href="/competitions"
@@ -381,9 +384,9 @@ export function SiteHeader() {
                             Competitions
                           </Link>
                         </NavigationMenuLink>
-                        <ChevronRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-90" />
+                        <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                       </div>
-                      <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200">
+                      <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-[-4px] group-hover:translate-y-0 transition-all duration-200">
                         <div className="border-t border-border/40 mx-2 my-1" />
                         <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
                           <Link
