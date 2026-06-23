@@ -257,7 +257,6 @@ function MobileNav({ pathname }: { pathname: string }) {
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [compSubOpen, setCompSubOpen] = useState(false);
 
   const isWhoWeAreActive =
     pathname === "/about" || pathname === "/country-leadership" || pathname === "/contact";
@@ -372,7 +371,7 @@ export function SiteHeader() {
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
                   <ul className="grid w-56 gap-0.5 p-2">
-                    <li>
+                    <li className="group relative">
                       <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
                         <NavigationMenuLink asChild active={pathname === "/competitions"}>
                           <Link
@@ -382,38 +381,27 @@ export function SiteHeader() {
                             Competitions
                           </Link>
                         </NavigationMenuLink>
-                        <button
-                          onClick={() => setCompSubOpen((prev) => !prev)}
-                          className="flex items-center justify-center h-6 w-6 rounded hover:bg-accent-foreground/10 transition-colors cursor-pointer"
-                          aria-label={compSubOpen ? "Collapse competitions" : "Expand competitions"}
-                        >
-                          <ChevronRight
-                            className={`h-3.5 w-3.5 transition-transform duration-200 ${compSubOpen ? "rotate-90" : ""
-                              }`}
-                          />
-                        </button>
+                        <ChevronRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-90" />
                       </div>
-                      {compSubOpen && (
-                        <>
-                          <div className="border-t border-border/40 mx-2 my-1" />
-                          <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
-                            <Link
-                              href="/competitions/handbook"
-                              className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                            >
-                              Core Competition
-                            </Link>
-                          </NavigationMenuLink>
-                          <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
-                            <Link
-                              href="/competitions/early-stage-collaboration"
-                              className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                            >
-                              Early Stage Track
-                            </Link>
-                          </NavigationMenuLink>
-                        </>
-                      )}
+                      <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200">
+                        <div className="border-t border-border/40 mx-2 my-1" />
+                        <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
+                          <Link
+                            href="/competitions/handbook"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          >
+                            Core Competition
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild active={pathname === "/competitions/early-stage-collaboration"}>
+                          <Link
+                            href="/competitions/early-stage-collaboration"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Early Stage Track
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
                     </li>
                     <li>
                       <NavigationMenuLink

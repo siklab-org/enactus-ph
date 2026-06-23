@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { StatsCounter } from "@/components/StatsCounter";
@@ -39,19 +40,30 @@ export default function About() {
       <section className="border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="font-mono font-bold text-xl uppercase tracking-[0.25em] text-muted-foreground">
-                About Enactus
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div>
+                <div className="font-mono font-bold text-xl uppercase tracking-[0.25em] text-muted-foreground">
+                  About Enactus
+                </div>
+                <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+                  Enactus is a global social innovation and entrepreneurial
+                  education network that empowers students to use business and
+                  innovation to create social impact. For over 20 years, Enactus
+                  Philippines has served as the premier platform for Filipino
+                  students to ideate, incubate, and pitch innovative
+                  entrepreneurial solutions to solve the most pressing issues in
+                  their communities.
+                </p>
               </div>
-              <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-                Enactus is a global social innovation and entrepreneurial
-                education network that empowers students to use business and
-                innovation to create social impact. For over 20 years, Enactus
-                Philippines has served as the premier platform for Filipino
-                students to ideate, incubate, and pitch innovative
-                entrepreneurial solutions to solve the most pressing issues in
-                their communities.
-              </p>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src="https://enactus.org/wp-content/uploads/2025/05/54067528179_5273976cae_c-e1746800710979.jpg"
+                  alt="Enactus World Cup event with student participants"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </AnimatedSection>

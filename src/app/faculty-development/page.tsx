@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
@@ -195,22 +196,33 @@ export default function FacultyDevelopment() {
       <section className="border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="mx-auto max-w-3xl">
-              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                · About Enactus
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                  · About Enactus
+                </div>
+                <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
+                  A global platform for{" "}
+                  <span className="text-foreground/50">social innovation.</span>
+                </h2>
+                <p className="mt-8 text-body leading-relaxed text-muted-foreground">
+                  ENACTUS is a global social innovation and entrepreneurial
+                  education platform that engages university students in developing
+                  impactful solutions through innovation and business. In 2026,
+                  Enactus Philippines is undertaking a full-scale national relaunch
+                  including regional and national events, culminating in the
+                  Enactus World Cup in São Paulo, Brazil.
+                </p>
               </div>
-              <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
-                A global platform for{" "}
-                <span className="text-foreground/50">social innovation.</span>
-              </h2>
-              <p className="mt-8 text-body leading-relaxed text-muted-foreground">
-                ENACTUS is a global social innovation and entrepreneurial
-                education platform that engages university students in developing
-                impactful solutions through innovation and business. In 2026,
-                Enactus Philippines is undertaking a full-scale national relaunch
-                including regional and national events, culminating in the
-                Enactus World Cup in São Paulo, Brazil.
-              </p>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src="https://enactus.org/wp-content/uploads/2025/05/54066342782_620bbcac57_c-e1746800647500.jpg"
+                  alt="Enactus students collaborating on social innovation projects"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </AnimatedSection>
