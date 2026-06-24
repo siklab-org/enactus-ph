@@ -52,8 +52,8 @@ const advisers = [
   // },
   {
     name: "Roberto G. Manabat",
-    role: "Chairman Emeritus",
-    organization: "KPMG RG Manabat & Co.",
+    role: "Lead Independent Director",
+    organization: "Union Bank of the Philippines",
     image: "/people/roberto.png",
     bio: "Roberto G. Manabat has more than 50 years of track record in the field of accounting and has been an adviser to a number of corporations on financial reporting, internal audit and good corporate governance. He is a recipient of many awards in recognition of his achievements in the accounting profession and in the business community.",
   },
