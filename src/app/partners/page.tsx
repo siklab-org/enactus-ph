@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
@@ -13,6 +14,7 @@ interface Tier {
   name: string;
   intro: string;
   count: number;
+  logo?: { src: string; name: string };
 }
 
 const tiers: Tier[] = [
@@ -20,12 +22,13 @@ const tiers: Tier[] = [
     name: "Presenting Sponsor",
     intro: "Our presenting sponsor makes our national events possible.",
     count: 1,
+    logo: { src: "/khan-academy-logo.svg", name: "Khan Academy" },
   },
   {
-    name: "Innovation Partners",
-    intro:
-      "Partners who contribute expertise and resources outside formal tiers.",
-    count: 3,
+    name: "Data Management Partners",
+    intro: "Partners who contribute specialized expertise and resources.",
+    count: 1,
+    logo: { src: "/kpmg-logo.svg", name: "KPMG" },
   },
   {
     name: "Impact Partners",
@@ -33,29 +36,46 @@ const tiers: Tier[] = [
       "Government agencies and private organizations driving social impact.",
     count: 4,
   },
-  {
-    name: "University Partners",
-    intro: "Academic institutions that partner with Enactus Philippines.",
-    count: 6,
-  },
+  // {
+  //   name: "University Partners",
+  //   intro: "Academic institutions that partner with Enactus Philippines.",
+  //   count: 6,
+  // },
   {
     name: "Host Partners",
     intro: "Venue partners who host our national competitions and events.",
-    count: 3,
+    count: 1,
+    logo: { src: "/arete-logo.png", name: "Arete" },
   },
-  {
-    name: "Travel Partners",
-    intro: "Travel and logistics partners supporting our teams.",
-    count: 2,
-  },
+  // {
+  //   name: "Travel Partners",
+  //   intro: "Travel and logistics partners supporting our teams.",
+  //   count: 2,
+  // },
 ];
 
 /* ─── Helpers ─── */
 
-function PlaceholderGrid({ count }: { count: number }) {
+function TierGrid({ tier }: { tier: Tier }) {
+  if (tier.logo) {
+    return (
+      <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
+        <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all duration-150 ease-out hover:border-border">
+          <Image
+            src={tier.logo.src}
+            alt={tier.logo.name}
+            width={160}
+            height={64}
+            className="h-12 w-auto object-contain"
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
-      {Array.from({ length: count }, (_, i) => (
+      {Array.from({ length: tier.count }, (_, i) => (
         <div
           key={i}
           className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all duration-150 ease-out hover:border-border"
@@ -101,7 +121,7 @@ export default function Partners() {
               <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
                 {tier.intro}
               </p>
-              <PlaceholderGrid count={tier.count} />
+              <TierGrid tier={tier} />
             </div>
           </AnimatedSection>
         </section>
