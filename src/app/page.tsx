@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Cpu, LineChart, Sprout, Users } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { StatsCounter } from "@/components/StatsCounter";
@@ -180,6 +181,57 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section className="border-b border-border/60">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <AnimatedSection>
+            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              · Our Partners
+            </div>
+            <h2 className="mt-4 max-w-2xl text-section font-semibold">
+              The organizations powering our mission.
+            </h2>
+          </AnimatedSection>
+          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all hover:border-border">
+              <Image
+                src="/khan-academy-logo.svg"
+                alt="Khan Academy"
+                width={240}
+                height={96}
+                className="h-20 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all hover:border-border">
+              <Image
+                src="/kpmg-logo.svg"
+                alt="KPMG"
+                width={240}
+                height={96}
+                className="h-20 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all hover:border-border">
+              <Image
+                src="/arete-logo.png"
+                alt="Arete"
+                width={240}
+                height={96}
+                className="h-20 w-auto object-contain"
+              />
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/partners"
+              className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
+            >
+              View all partners →
+            </Link>
           </div>
         </div>
       </section>
