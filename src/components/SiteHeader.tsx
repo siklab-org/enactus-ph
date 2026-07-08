@@ -192,9 +192,9 @@ function MobileNav({ pathname }: { pathname: string }) {
               <Image
                 src="/khan-academy-logo.svg"
                 alt="Khan Academy"
-                width={70}
-                height={28}
-                className="h-6 w-auto"
+                width={100}
+                height={40}
+                className="h-8 w-auto"
               />
             </Link>
             <button
@@ -299,9 +299,9 @@ export function SiteHeader() {
           <Image
             src="/khan-academy-logo.svg"
             alt="Khan Academy"
-            width={80}
-            height={32}
-            className="h-7 w-auto"
+            width={120}
+            height={48}
+            className="h-10 w-auto"
           />
         </Link>
         <MobileNav pathname={pathname} />
@@ -389,7 +389,7 @@ export function SiteHeader() {
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
                   <ul className="grid w-56 gap-0.5 p-2">
-                    <li className="group relative">
+                    <li className="relative">
                       <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
                         <NavigationMenuLink asChild active={pathname === "/competitions"}>
                           <Link
@@ -399,9 +399,9 @@ export function SiteHeader() {
                             Competitions
                           </Link>
                         </NavigationMenuLink>
-                        <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                        <ChevronDown className="h-3.5 w-3.5" />
                       </div>
-                      <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-[-4px] group-hover:translate-y-0 transition-all duration-200">
+                      <div>
                         <div className="border-t border-border/40 mx-2 my-1" />
                         <NavigationMenuLink asChild active={pathname === "/competitions/handbook"}>
                           <Link

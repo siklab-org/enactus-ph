@@ -18,9 +18,9 @@ export function SiteFooter() {
             <Image
               src="/khan-academy-logo.svg"
               alt="Khan Academy"
-              width={80}
-              height={32}
-              className="h-7 w-auto"
+              width={120}
+              height={48}
+              className="h-10 w-auto brightness-0 invert"
             />
           </div>
           <p className="mt-6 max-w-md text-sm leading-relaxed opacity-75">
