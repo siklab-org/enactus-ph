@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, TriangleAlert } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Core Competition Official Handbook | Enactus Philippines",
@@ -129,6 +129,16 @@ export default function HandbookPage() {
           </p>
         </div>
       </section>
+
+      {/* ─── ON HOLD NOTICE ─── */}
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="rounded-xl border-2 border-amber-500/30 bg-amber-500/10 px-5 py-4 text-center shadow-sm">
+          <span className="inline-flex items-center gap-2 text-sm font-bold text-amber-600">
+            <TriangleAlert className="h-4 w-4 text-amber-500" />
+            On Hold for Philippines 2026
+          </span>
+        </div>
+      </div>
 
       {/* ─── TABLE OF CONTENTS ─── */}
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

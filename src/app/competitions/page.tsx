@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Users } from "lucide-react";
+import { ArrowRight, BookOpen, TriangleAlert, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Competitions | Enactus Philippines",
@@ -48,6 +48,10 @@ export default function CompetitionsLanding() {
             <h2 className="text-2xl font-semibold tracking-tight">
               Core Competition
             </h2>
+            <span className="mt-2 inline-flex items-center gap-1.5 rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-600">
+              <TriangleAlert className="h-3.5 w-3.5 text-amber-500" />
+              On Hold for Philippines 2026
+            </span>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
               The complete guide to the Enactus Core Competition. Learn about
               the judging criterion, presentation format, reporting
