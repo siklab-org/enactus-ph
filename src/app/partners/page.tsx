@@ -37,9 +37,9 @@ const tiers: Tier[] = [
       "Government agencies and private organizations driving social impact.",
     count: 4,
     logos: [
-      { src: "/pacsb-logo.jpg", name: "PACSB" },
-      { src: "/eneda-logo.jpg", name: "ENEDA" },
-      { src: "/naseea-logo.jpg", name: "NASEEA" },
+      { src: "/pacsb-logo.svg", name: "PACSB" },
+      { src: "/eneda-logo.svg", name: "ENEDA" },
+      { src: "/naseea-logo.svg", name: "NASEEA" },
       { src: "/ja-philippines-logo.png", name: "JA Philippines" },
     ],
   },

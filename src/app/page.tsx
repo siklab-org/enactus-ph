@@ -226,7 +226,7 @@ export default function Home() {
             </div>
             <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
-                src="/pacsb-logo.jpg"
+                src="/pacsb-logo.svg"
                 alt="PACSB"
                 width={240}
                 height={96}
@@ -235,7 +235,7 @@ export default function Home() {
             </div>
             <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
-                src="/eneda-logo.jpg"
+                src="/eneda-logo.svg"
                 alt="ENEDA"
                 width={240}
                 height={96}
@@ -244,7 +244,7 @@ export default function Home() {
             </div>
             <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
-                src="/naseea-logo.jpg"
+                src="/naseea-logo.svg"
                 alt="NASEEA"
                 width={240}
                 height={96}
