@@ -197,31 +197,76 @@ export default function Home() {
             </h2>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all hover:border-border">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
                 src="/khan-academy-logo.svg"
                 alt="Khan Academy"
                 width={240}
                 height={96}
-                className="h-20 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all hover:border-border">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
                 src="/kpmg-logo.svg"
                 alt="KPMG"
                 width={240}
                 height={96}
-                className="h-20 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all hover:border-border">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
                 src="/arete-logo.png"
                 alt="Arete"
                 width={240}
                 height={96}
-                className="h-20 w-auto object-contain"
+                className="h-28 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+              <Image
+                src="/pacsb-logo.jpg"
+                alt="PACSB"
+                width={240}
+                height={96}
+                className="h-28 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+              <Image
+                src="/eneda-logo.jpg"
+                alt="ENEDA"
+                width={240}
+                height={96}
+                className="h-28 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+              <Image
+                src="/naseea-logo.jpg"
+                alt="NASEEA"
+                width={240}
+                height={96}
+                className="h-28 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+              <Image
+                src="/ja-philippines-logo.png"
+                alt="JA Philippines"
+                width={240}
+                height={96}
+                className="h-28 w-auto object-contain"
+              />
+            </div>
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+              <Image
+                src="/acent-logo.png"
+                alt="ACeNT"
+                width={240}
+                height={96}
+                className="h-28 w-auto object-contain"
               />
             </div>
           </div>

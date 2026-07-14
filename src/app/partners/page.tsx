@@ -15,6 +15,7 @@ interface Tier {
   intro: string;
   count: number;
   logo?: { src: string; name: string };
+  logos?: { src: string; name: string }[];
 }
 
 const tiers: Tier[] = [
@@ -35,38 +36,61 @@ const tiers: Tier[] = [
     intro:
       "Government agencies and private organizations driving social impact.",
     count: 4,
+    logos: [
+      { src: "/pacsb-logo.jpg", name: "PACSB" },
+      { src: "/eneda-logo.jpg", name: "ENEDA" },
+      { src: "/naseea-logo.jpg", name: "NASEEA" },
+      { src: "/ja-philippines-logo.png", name: "JA Philippines" },
+    ],
   },
-  // {
-  //   name: "University Partners",
-  //   intro: "Academic institutions that partner with Enactus Philippines.",
-  //   count: 6,
-  // },
+  {
+    name: "Event Assistance Partner",
+    intro: "Organizations providing event support and venue assistance.",
+    count: 1,
+    logo: { src: "/acent-logo.png", name: "ACeNT" },
+  },
   {
     name: "Host Partners",
     intro: "Venue partners who host our national competitions and events.",
     count: 1,
     logo: { src: "/arete-logo.png", name: "Arete" },
   },
-  // {
-  //   name: "Travel Partners",
-  //   intro: "Travel and logistics partners supporting our teams.",
-  //   count: 2,
-  // },
 ];
 
 /* ─── Helpers ─── */
 
 function TierGrid({ tier }: { tier: Tier }) {
+  if (tier.logos) {
+    return (
+      <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
+        {tier.logos.map((logo) => (
+          <div
+            key={logo.name}
+            className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all duration-150 ease-out"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.name}
+              width={240}
+              height={96}
+              className="h-28 w-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   if (tier.logo) {
     return (
       <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
-        <div className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all duration-150 ease-out hover:border-border">
+        <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all duration-150 ease-out">
           <Image
             src={tier.logo.src}
             alt={tier.logo.name}
             width={240}
             height={96}
-            className="h-20 w-auto object-contain"
+            className="h-28 w-auto object-contain"
           />
         </div>
       </div>
@@ -78,7 +102,7 @@ function TierGrid({ tier }: { tier: Tier }) {
       {Array.from({ length: tier.count }, (_, i) => (
         <div
           key={i}
-          className="flex aspect-[3/2] items-center justify-center rounded-xl border border-border/60 bg-muted/20 p-6 transition-all duration-150 ease-out hover:border-border"
+          className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all duration-150 ease-out"
         >
           <span className="text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground/50">
             Placeholder
