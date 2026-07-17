@@ -194,7 +194,7 @@ export default function Home() {
                 · Co-presented by
               </div>
               <div className="mt-8 flex justify-center">
-                <div className="flex items-center justify-center rounded-2xl bg-muted/30 px-12 py-10">
+                <div className="flex items-center justify-center px-12 py-10">
                   <Image
                     src="/khan-academy-logo.svg"
                     alt="Khan Academy"
