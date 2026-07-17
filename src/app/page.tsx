@@ -185,6 +185,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CO-PRESENTED BY */}
+      <section className="border-b border-border/60">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <AnimatedSection>
+            <div className="text-center">
+              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                · Co-presented by
+              </div>
+              <div className="mt-8 flex justify-center">
+                <div className="flex items-center justify-center rounded-2xl bg-muted/30 px-12 py-10">
+                  <Image
+                    src="/khan-academy-logo.svg"
+                    alt="Khan Academy"
+                    width={400}
+                    height={160}
+                    className="h-36 w-auto object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* PARTNERS */}
       <section className="border-b border-border/60">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -197,15 +221,6 @@ export default function Home() {
             </h2>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
-              <Image
-                src="/khan-academy-logo.svg"
-                alt="Khan Academy"
-                width={240}
-                height={96}
-                className="h-28 w-auto object-contain"
-              />
-            </div>
             <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
                 src="/kpmg-logo.svg"
