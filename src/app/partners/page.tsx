@@ -16,14 +16,16 @@ interface Tier {
   count: number;
   logo?: { src: string; name: string };
   logos?: { src: string; name: string }[];
+  large?: boolean;
 }
 
 const tiers: Tier[] = [
   {
-    name: "Presenting Sponsor",
-    intro: "Our presenting sponsor makes our national events possible.",
+    name: "Co-presented by",
+    intro: "Our co-presenter makes our national events possible.",
     count: 1,
     logo: { src: "/khan-academy-logo.svg", name: "Khan Academy" },
+    large: true,
   },
   {
     name: "Data Management Partners",
@@ -82,6 +84,22 @@ function TierGrid({ tier }: { tier: Tier }) {
   }
 
   if (tier.logo) {
+    if (tier.large) {
+      return (
+        <div className="mt-10">
+          <div className="flex justify-start">
+            <Image
+              src={tier.logo.src}
+              alt={tier.logo.name}
+              width={400}
+              height={160}
+              className="h-36 w-auto object-contain"
+            />
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
         <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all duration-150 ease-out">
