@@ -190,7 +190,7 @@ export default function Home() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <AnimatedSection>
             <div className="text-center">
-              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <div className="font-mono text-sm uppercase tracking-[0.3em] text-foreground">
                 · Co-presented by
               </div>
               <div className="mt-8 flex justify-center">
