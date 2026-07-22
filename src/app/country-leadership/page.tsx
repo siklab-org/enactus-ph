@@ -21,14 +21,14 @@ const staff = [
     name: "Kristoni Go",
     role: "COO & Country Director",
     email: "KGo@enactus.org",
-    image: "/people/ton.webp",
+    image: "/people/kristoni.webp",
     bio: "",
   },
   {
     name: "Samantha Batul",
     role: "Communications & Partnerships",
     email: "SBatul@enactus.org",
-    image: "/people/sam.webp",
+    image: "/people/samantha.webp",
   },
   {
     name: "Paula Cuasay",
