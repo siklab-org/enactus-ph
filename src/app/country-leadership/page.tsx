@@ -39,13 +39,13 @@ const staff = [
 ];
 
 const advisers = [
-  {
-    name: "Joey Leviste",
-    role: "Founding Chairman & CEO",
-    organization: "Enactus Philippines",
-    image: "/people/joey.webp",
-    bio: 'Dr. Jose "Joey" Paredes Leviste Jr. is a prominent Filipino corporate leader, former public servant, and social development advocate who serves as the founding Chairman and Chief Executive Officer of Enactus Philippines. Born in Malvar, Batangas, to a family rooted in public service, he cultivated a strong academic foundation, earning a Bachelor of Arts in Economics from Ateneo de Manila University, a Master of Arts in Economics from Fordham University, and a Master of Business Administration from Columbia University. His early career was marked by significant contributions to the public sector, serving as a young delegate to the 1970 Constitutional Convention, Secretary-General of the Office of the Prime Minister, and Deputy Minister of Trade and Industry. In the private sector, Dr. Leviste has held top executive roles across major industrial enterprises, serving as the Chairman of OceanaGold Philippines, Vice Chairman of the Chamber of Mines of the Philippines, and Chairman of Constellation Energy Corporation.',
-  },
+//   {
+//     name: "Joey Leviste",
+//     role: "Founding Chairman & CEO",
+//     organization: "Enactus Philippines",
+//     image: "/people/joey.webp",
+//     bio: 'Dr. Jose "Joey" Paredes Leviste Jr. is a prominent Filipino corporate leader, former public servant, and social development advocate who serves as the founding Chairman and Chief Executive Officer of Enactus Philippines. Born in Malvar, Batangas, to a family rooted in public service, he cultivated a strong academic foundation, earning a Bachelor of Arts in Economics from Ateneo de Manila University, a Master of Arts in Economics from Fordham University, and a Master of Business Administration from Columbia University. His early career was marked by significant contributions to the public sector, serving as a young delegate to the 1970 Constitutional Convention, Secretary-General of the Office of the Prime Minister, and Deputy Minister of Trade and Industry. In the private sector, Dr. Leviste has held top executive roles across major industrial enterprises, serving as the Chairman of OceanaGold Philippines, Vice Chairman of the Chamber of Mines of the Philippines, and Chairman of Constellation Energy Corporation.',
+//   },
   // {
   //   name: "Geraldine Sunshine Acuna",
   //   role: "President",
