@@ -331,37 +331,18 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li className="relative">
-                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
-                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
-                          <Link
-                            href="/faculty-development"
-                            className="flex-1"
-                          >
-                            Faculty Development
-                          </Link>
-                        </NavigationMenuLink>
-                        <ChevronDown className="h-3.5 w-3.5" />
-                      </div>
-                      <div>
-                        <div className="border-t border-border/40 mx-2 my-1" />
-                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
-                          <Link
-                            href="/faculty-development"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                          >
-                            Program
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild active={pathname === "/faculty-development/2026-fellows"}>
-                          <Link
-                            href="/faculty-development/2026-fellows"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            2026 Fellows
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/country-leadership"}
+                      >
+                        <Link
+                          href="/country-leadership"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Country Leadership
+                        </Link>
+                      </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink
@@ -478,15 +459,37 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li>
-                      <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
-                        <Link
-                          href="/faculty-development"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          Faculty Development
-                        </Link>
-                      </NavigationMenuLink>
+                    <li className="relative">
+                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
+                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
+                          <Link
+                            href="/faculty-development"
+                            className="flex-1"
+                          >
+                            Faculty Development
+                          </Link>
+                        </NavigationMenuLink>
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      </div>
+                      <div>
+                        <div className="border-t border-border/40 mx-2 my-1" />
+                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
+                          <Link
+                            href="/faculty-development"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          >
+                            Program
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild active={pathname === "/faculty-development/2026-fellows"}>
+                          <Link
+                            href="/faculty-development/2026-fellows"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            2026 Fellows
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
                     </li>
                   </ul>
                 </NavigationMenuContent>
