@@ -14,14 +14,6 @@ export function SiteFooter() {
               height={32}
               className="h-8 w-auto brightness-0 invert"
             />
-            <span className="h-6 w-px bg-white/20" />
-            <Image
-              src="/khan-academy-logo.svg"
-              alt="Khan Academy"
-              width={120}
-              height={48}
-              className="h-10 w-auto brightness-0 invert"
-            />
           </div>
           <p className="mt-6 max-w-md text-sm leading-relaxed opacity-75">
             A national network of student, academic and business leaders using

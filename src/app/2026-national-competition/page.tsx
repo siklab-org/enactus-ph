@@ -3,13 +3,13 @@ import Image from "next/image";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
 export const metadata: Metadata = {
-  title: "National 2026 Competition | Enactus Philippines",
+  title: "2026 National Competition | Enactus Philippines",
   description:
-    "Enactus Philippines National Competition 2026",
+    "Enactus Philippines 2026 National Competition",
 };
 
 export default function National2026Page() {
-  const targetDate = new Date("2026-09-11T00:00:00+08:00");
+  const targetDate = new Date("2026-10-08T00:00:00+08:00");
 
   return (
     <div className="min-h-screen bg-background">
@@ -19,7 +19,7 @@ export default function National2026Page() {
           <div className="relative w-full max-w-5xl overflow-hidden rounded-2xl">
             <Image
               src="/national-2026-hero.png"
-              alt="National 2026 Competition"
+              alt="2026 National Competition"
               width={1920}
               height={1080}
               className="h-auto w-full object-cover"
@@ -38,10 +38,10 @@ export default function National2026Page() {
               Enactus Philippines
             </div>
             <h1 className="mt-4 text-hero font-semibold leading-[1.05] tracking-tight">
-              National 2026 Competition
+              2026 National Competition
             </h1>
             <p className="mt-3 text-base text-foreground/60 md:text-lg">
-              September 11 - 13, 2026
+              October 8 - 10, 2026
             </p>
           </div>
 

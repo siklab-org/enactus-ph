@@ -34,7 +34,7 @@ import {
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/national-2026-competition", label: "National 2026 Competition" },
+  { href: "/2026-national-competition", label: "2026 National Competition" },
 ] as const;
 
 function NavLink({
@@ -88,10 +88,16 @@ const mobileNavLinks: NavLinkItem[] = [
       { href: "/resources", label: "Resources" },
       { href: "/news", label: "News" },
       { href: "/university-engagement", label: "University Engagement" },
-      { href: "/faculty-development", label: "Faculty Development" },
+      {
+        label: "Faculty Development",
+        children: [
+          { href: "/faculty-development", label: "Program" },
+          { href: "/faculty-development/2026-fellows", label: "2026 Fellows" },
+        ],
+      },
     ],
   },
-  { href: "/national-2026-competition", label: "National 2026 Competition" },
+  { href: "/2026-national-competition", label: "2026 National Competition" },
 ];
 
 const whoWeArePaths = ["/about", "/country-leadership", "/contact"];
@@ -100,6 +106,7 @@ const whatWeDoPaths = [
   "/competitions/early-stage-collaboration",
   "/partners", "/resources", "/news",
   "/university-engagement", "/faculty-development",
+  "/faculty-development/2026-fellows",
 ];
 
 function getMobileAccordionValue(pathname: string): string | undefined {
@@ -188,14 +195,6 @@ function MobileNav({ pathname }: { pathname: string }) {
                 height={40}
                 className="h-8 w-auto"
               />
-              <span className="h-6 w-px bg-border/60" />
-              <Image
-                src="/khan-academy-logo.svg"
-                alt="Khan Academy"
-                width={100}
-                height={40}
-                className="h-8 w-auto"
-              />
             </Link>
             <button
               onClick={() => setOpen(false)}
@@ -279,7 +278,8 @@ export function SiteHeader() {
     pathname === "/resources" ||
     pathname === "/news" ||
     pathname === "/university-engagement" ||
-    pathname === "/faculty-development";
+    pathname === "/faculty-development" ||
+    pathname === "/faculty-development/2026-fellows";
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -294,14 +294,6 @@ export function SiteHeader() {
             width={110}
             height={48}
             className="h-12 w-auto"
-          />
-          <span className="h-8 w-px bg-border/60" />
-          <Image
-            src="/khan-academy-logo.svg"
-            alt="Khan Academy"
-            width={120}
-            height={48}
-            className="h-10 w-auto"
           />
         </Link>
         <MobileNav pathname={pathname} />
@@ -339,18 +331,37 @@ export function SiteHeader() {
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/country-leadership"}
-                      >
-                        <Link
-                          href="/country-leadership"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          Country Leadership
-                        </Link>
-                      </NavigationMenuLink>
+                    <li className="relative">
+                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
+                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
+                          <Link
+                            href="/faculty-development"
+                            className="flex-1"
+                          >
+                            Faculty Development
+                          </Link>
+                        </NavigationMenuLink>
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      </div>
+                      <div>
+                        <div className="border-t border-border/40 mx-2 my-1" />
+                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
+                          <Link
+                            href="/faculty-development"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          >
+                            Program
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild active={pathname === "/faculty-development/2026-fellows"}>
+                          <Link
+                            href="/faculty-development/2026-fellows"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            2026 Fellows
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
                     </li>
                     <li>
                       <NavigationMenuLink

@@ -21,14 +21,14 @@ interface Tier {
 
 const tiers: Tier[] = [
   {
-    name: "Co-presented by",
+    name: "Co-presenter",
     intro: "Our co-presenter makes our national events possible.",
     count: 1,
     logo: { src: "/khan-academy-logo.svg", name: "Khan Academy" },
     large: true,
   },
   {
-    name: "Data Management Partners",
+    name: "Data Management Partner",
     intro: "Partners who contribute specialized expertise and resources.",
     count: 1,
     logo: { src: "/kpmg-logo.svg", name: "KPMG" },

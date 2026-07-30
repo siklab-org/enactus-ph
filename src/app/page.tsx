@@ -200,7 +200,7 @@ export default function Home() {
                     alt="Khan Academy"
                     width={400}
                     height={160}
-                    className="h-36 w-auto object-contain"
+                    className="h-40 w-auto object-contain"
                   />
                 </div>
               </div>
