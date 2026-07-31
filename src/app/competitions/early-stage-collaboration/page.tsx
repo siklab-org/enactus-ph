@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Early Stage Collaboration & Competition Track | Enactus Philippines",
@@ -113,6 +113,30 @@ export default function EarlyStagePage() {
           </p>
         </div>
       </section>
+
+      {/* ─── 2026 NATIONAL COMPETITION PROMPT ─── */}
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="flex flex-col items-start gap-4 rounded-xl border-2 border-primary/30 bg-primary/5 px-5 py-6 shadow-sm md:flex-row md:items-center">
+          <div>
+            <p className="text-sm font-bold text-foreground">
+              2026 National Competition
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              The Enactus Philippines National Competition 2026 will
+              exclusively feature the Early-Stage Project Competition Track.
+              Visit the official page for eligibility, mechanics, and
+              application details.
+            </p>
+          </div>
+          <Link
+            href="/2026-national-competition"
+            className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+          >
+            Learn More
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
 
       {/* ─── TABLE OF CONTENTS ─── */}
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

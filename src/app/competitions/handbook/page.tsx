@@ -4,9 +4,9 @@ import Image from "next/image";
 import { ArrowLeft, TriangleAlert } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Core Competition Official Handbook | Enactus Philippines",
+  title: "Core Competition | Enactus Philippines",
   description:
-    "The complete Core Competition Official Handbook — your guide to developing high-impact projects, understanding evaluation criteria, and presenting your work at competitions.",
+    "The complete Core Competition guide — develop high-impact projects, understand evaluation criteria, and prepare your team for the National Competition and Enactus World Cup.",
 };
 
 /* ─── Shared helpers (server-safe) ─── */
@@ -114,12 +114,12 @@ export default function HandbookPage() {
             Back to Competitions
           </Link>
           <span className="mb-6 block font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            Core Competition Official Handbook
+            Core Competition
           </span>
           <h1 className="text-hero font-bold leading-[1.1] tracking-tight">
             Core Competition
             <br />
-            <span className="text-foreground/40">Official Handbook</span>
+            <span className="text-foreground/40">Official Guide</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
             Never doubt that a small group of thoughtful, committed people can
@@ -132,11 +132,33 @@ export default function HandbookPage() {
 
       {/* ─── ON HOLD NOTICE ─── */}
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="rounded-xl border-2 border-amber-500/30 bg-amber-500/10 px-5 py-4 text-center shadow-sm">
+        <div className="rounded-xl border-2 border-amber-500/30 bg-amber-500/10 px-5 py-6 shadow-sm">
           <span className="inline-flex items-center gap-2 text-sm font-bold text-amber-600">
             <TriangleAlert className="h-4 w-4 text-amber-500" />
             On Hold for Philippines 2026
           </span>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            As 2026 marks the relaunch of Enactus Philippines, the Enactus Core
+            Competition Track will not yet be conducted at the national level
+            this year.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            Instead, the{" "}
+            <Link
+              href="/2026-national-competition"
+              className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
+            >
+              Enactus Philippines National Competition 2026
+            </Link>{" "}
+            will exclusively feature the Early-Stage Project Competition Track,
+            an official competition format introduced by Enactus Global to
+            support student teams at the earliest stages of developing their
+            social entrepreneurial ventures. It is envisioned that many of the
+            projects developed through this year&apos;s competition will mature
+            into high-impact ventures ready to compete in the Enactus Core
+            Competition, which Enactus Philippines aims to launch beginning in
+            2027.
+          </p>
         </div>
       </div>
 
@@ -144,7 +166,7 @@ export default function HandbookPage() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <nav className="mb-12 rounded-xl border border-border/60 bg-muted/10 p-5">
           <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            In this handbook
+            In this guide
           </p>
           <ul className="space-y-1">
             {[
@@ -1254,7 +1276,7 @@ export default function HandbookPage() {
 
           <Qa
             q="Where can I find official guidelines and definitions?"
-            a="All teams must align with Enactus' official impact and financial definitions, as listed on this Core Competition Official Handbook webpage."
+            a="All teams must align with Enactus' official impact and financial definitions, as listed on this Core Competition webpage."
           />
 
           <Qa
@@ -1276,7 +1298,7 @@ export default function HandbookPage() {
           enactus.org/competition-handbook/
         </a>
         . Images &copy; Enactus. Last reviewed May 2026. Verify exact wording
-        against the official handbook.
+        against the official source.
       </div>
     </div>
   );
