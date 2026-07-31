@@ -143,6 +143,617 @@ const scheduleSlots = [
   { activity: "Judges' Question and Answer", duration: "4 minutes" },
 ];
 
+const faqCategories: {
+  title: string;
+  items: { q: string; a: React.ReactNode }[];
+}[] = [
+  {
+    title: "General",
+    items: [
+      {
+        q: "Who may participate in the Enactus Philippines National Competition 2026?",
+        a: "The competition is open to all teams (students and faculty) from recognized Higher Education Institutions (HEIs) in the Philippines that meet the eligibility requirements set by Enactus Philippines.",
+      },
+      {
+        q: "Is the competition open to Senior High School students?",
+        a: "No. Only officially enrolled students (undergraduate and/or graduate) of Higher Education Institutions (colleges and universities) are eligible to compete.",
+      },
+      {
+        q: "What competition track will be held during the Enactus Philippines National Competition 2026?",
+        a: (
+          <span>
+            As 2026 marks the relaunch of Enactus Philippines, this
+            year&apos;s National Competition will exclusively feature the
+            Early-Stage Project Competition Track, an official competition
+            format introduced by Enactus Global to support student teams in
+            developing innovative social entrepreneurial ventures before they
+            have generated measurable impact.
+            <br />
+            <br />
+            The Early-Stage Track provides students with the opportunity to
+            receive capacity-building, mentorship, and expert feedback while
+            refining their projects. It is envisioned that many of these
+            projects will mature and become eligible to compete in the Enactus
+            Core Competition, which Enactus Philippines intends to launch
+            beginning in 2027.
+          </span>
+        ),
+      },
+      {
+        q: "Can we still participate even if our project is only an idea or is still in its early stages?",
+        a: (
+          <span>
+            Yes. This competition is specifically designed for projects that
+            are still in the ideation, validation, prototype development, or
+            early implementation stages and have not yet generated measurable
+            or tangible impact. If your team has identified a community need
+            and developed a promising entrepreneurial solution, you are
+            encouraged to apply.
+          </span>
+        ),
+      },
+      {
+        q: "What is an Early-Stage Project?",
+        a: (
+          <span>
+            An Early-Stage Project is a social entrepreneurial project that
+            has not yet generated measurable or tangible impact at the time of
+            competition. Projects may already be in:
+            <br />
+            &bull; Ideation
+            <br />
+            &bull; Validation
+            <br />
+            &bull; Prototype development
+            <br />
+            &bull; Pilot implementation
+            <br />
+            &bull; Early testing
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Campus Eligibility",
+    items: [
+      {
+        q: "How many teams may a university send?",
+        a: "Under Enactus Global policy: Only one (1) team may represent each campus of a Higher Education Institution.",
+      },
+      {
+        q: "Our university has several campuses. Can each campus participate?",
+        a: (
+          <span>
+            Yes. If the campuses are legally recognized and administratively
+            distinct, each campus may send one (1) official team.
+            <br />
+            <br />
+            For example:
+            <br />
+            &bull; University ABC – North Campus
+            <br />
+            &bull; University ABC – South Campus
+            <br />
+            &bull; University ABC – East Campus
+            <br />
+            <br />
+            Each campus may independently compete.
+          </span>
+        ),
+      },
+      {
+        q: "Can two teams from the same campus participate?",
+        a: "No. Regardless of the number of colleges, departments, or student organizations within a campus, only one official team may represent that campus.",
+      },
+    ],
+  },
+  {
+    title: "Team Composition",
+    items: [
+      {
+        q: "Who composes the official delegation?",
+        a: (
+          <span>
+            Each competing team shall consist of:
+            <br />
+            &bull; Three (3) student representatives
+            <br />
+            &bull; One (1) faculty advisor
+          </span>
+        ),
+      },
+      {
+        q: "May additional students accompany the team?",
+        a: (
+          <span>
+            Yes. Teams may be composed of an unlimited number of students.
+            However, only the three (3) officially declared student
+            representatives are allowed to pitch and answer questions during
+            Q&amp;A.
+            <br />
+            <br />
+            Other students, faculty, administrators, non-teaching personnel,
+            observers, coaches, or supporters may attend, subject to the event
+            registration policies, venue capacity, and (applicable)
+            registration fees. However, only the officially registered student
+            representatives may compete and present during the competition.
+          </span>
+        ),
+      },
+      {
+        q: "May a student belong to multiple teams?",
+        a: "No. Each student may only represent one official team during the competition.",
+      },
+      {
+        q: "May a faculty advisor mentor more than one campus?",
+        a: "No. Each participating campus should designate its own official faculty advisor.",
+      },
+    ],
+  },
+  {
+    title: "Team Substitutions",
+    items: [
+      {
+        q: "May we replace a student after our team has been accepted?",
+        a: (
+          <span>
+            Yes. Substitutions may be permitted before the deadline specified
+            by the Organizing Committee, provided that:
+            <br />
+            &bull; the replacement student is officially enrolled in the same
+            campus;
+            <br />
+            &bull; all required documents are submitted; and
+            <br />
+            &bull; the Organizing Committee approves the substitution.
+            <br />
+            <br />
+            No substitutions will be allowed after the final registration
+            deadline except under exceptional circumstances approved by
+            Enactus Philippines.
+          </span>
+        ),
+      },
+      {
+        q: "May we replace our faculty advisor?",
+        a: "Yes. Faculty advisor substitutions may be allowed before the competition upon written notification and approval by the Organizing Committee.",
+      },
+    ],
+  },
+  {
+    title: "Project Eligibility",
+    items: [
+      {
+        q: "May we submit an existing community project?",
+        a: "Yes, provided that the project remains in the Early-Stage phase and has not yet generated measurable or tangible impact.",
+      },
+      {
+        q: "Can we submit a project that has already won another competition?",
+        a: (
+          <span>
+            Yes, provided that:
+            <br />
+            &bull; the project satisfies the Early-Stage definition;
+            <br />
+            &bull; it remains substantially developed by the competing
+            students; and
+            <br />
+            &bull; it complies with all Enactus eligibility rules.
+            <br />
+            <br />
+            The Organizing Committee reserves the right to determine
+            eligibility.
+          </span>
+        ),
+      },
+      {
+        q: "May we submit more than one project?",
+        a: "No. Each official team may submit only one project.",
+      },
+      {
+        q: "Can we modify our project after being accepted?",
+        a: (
+          <span>
+            Yes. In fact, this is encouraged. Teams are expected to improve
+            and refine their projects throughout the Capacity-Building Program
+            before presenting at the National Competition.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Intellectual Property",
+    items: [
+      {
+        q: "Who owns the intellectual property of our project?",
+        a: (
+          <span>
+            The intellectual property remains with the student team and/or
+            their institution in accordance with their university&apos;s
+            intellectual property policies and applicable Philippine laws.
+            Submission to the competition does not transfer ownership to
+            Enactus Philippines.
+          </span>
+        ),
+      },
+      {
+        q: "Will Enactus Philippines keep our project confidential?",
+        a: (
+          <span>
+            Competition presentations are intended for public presentation
+            before judges and attendees. Teams should avoid disclosing
+            confidential trade secrets or proprietary information they are
+            unwilling to make public.
+          </span>
+        ),
+      },
+      {
+        q: "May we patent or commercialize our idea after the competition?",
+        a: (
+          <span>
+            Yes. Enactus strongly encourages student entrepreneurs to continue
+            developing, protecting, and commercializing their innovations.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Capacity-Building Program",
+    items: [
+      {
+        q: "Is participation in the Capacity-Building Program mandatory?",
+        a: (
+          <span>
+            Yes. All accepted teams are expected to actively participate in
+            the four (4) mandatory Saturday Capacity-Building Sessions
+            organized by Enactus Philippines in partnership with the
+            Department of Science and Technology – Philippine Council for
+            Industry, Energy and Emerging Technology Research and Development
+            (DOST-PCIEERD) and its Regional Consortia. Failure to participate
+            without valid justification may affect the team&apos;s eligibility
+            to compete at the National Competition.
+          </span>
+        ),
+      },
+      {
+        q: "Will certificates be issued?",
+        a: (
+          <span>
+            Yes. Certificates of participation will be awarded to teams that
+            satisfy the attendance requirements and successfully complete the
+            Capacity-Building Program.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Competition Proper",
+    items: [
+      {
+        q: "How long is the presentation?",
+        a: (
+          <span>
+            Each team receives a total competition slot of ten (10) minutes:
+            <br />
+            &bull; 1 minute – Set-up
+            <br />
+            &bull; 5 minutes – Presentation
+            <br />
+            &bull; 4 minutes – Judges&apos; Question and Answer
+          </span>
+        ),
+      },
+      {
+        q: "May we exceed the five-minute presentation?",
+        a: (
+          <span>
+            No. Presentations exceeding the allotted time may be stopped by
+            the Competition Manager. Unused presentation time cannot be
+            transferred to the Question-and-Answer period.
+          </span>
+        ),
+      },
+      {
+        q: "May we use presentation slides?",
+        a: (
+          <span>
+            Yes. Teams may only use presentation slides with or without audio
+            to effectively communicate their ideas. Props and other visual
+            aids are not allowed.
+          </span>
+        ),
+      },
+      {
+        q: "What language should be used?",
+        a: (
+          <span>
+            Presentations shall be delivered in English. Judges may ask
+            clarifying questions in English.
+          </span>
+        ),
+      },
+      {
+        q: "Are props or demonstrations allowed?",
+        a: "No. Only presentation slides with or without audio are allowed.",
+      },
+    ],
+  },
+  {
+    title: "Judging: Pitching at the National Competition",
+    items: [
+      {
+        q: "What criteria will judges use?",
+        a: (
+          <span>
+            Judges will evaluate teams based on:
+            <br />
+            &bull; Needs Assessment
+            <br />
+            &bull; Business Principles &amp; Financials
+            <br />
+            &bull; Innovation
+            <br />
+            &bull; Potential to Scale
+            <br />
+            &bull; Potential Positive Impact
+            <br />
+            &bull; Pitch
+            <br />
+            &bull; Question &amp; Answer
+          </span>
+        ),
+      },
+      {
+        q: "Are judges' decisions final?",
+        a: (
+          <span>
+            Yes. All decisions of the judges and the Organizing Committee
+            regarding competition results are final and non-appealable.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Travel and Accommodation",
+    items: [
+      {
+        q: "Will Enactus Philippines provide transportation to the National Competition?",
+        a: (
+          <span>
+            No. Participating schools are responsible for arranging and
+            funding their own transportation to and from the competition
+            venue.
+          </span>
+        ),
+      },
+      {
+        q: "Will Enactus Philippines provide transportation, accommodation, or meals during the National Competition?",
+        a: (
+          <span>
+            No. Participation in the Enactus Philippines National Competition
+            2026 is free of charge. However, participating teams are
+            responsible for arranging and funding their own:
+            <br />
+            &bull; Transportation to and from the competition venue;
+            <br />
+            &bull; Accommodation;
+            <br />
+            &bull; Meals; and
+            <br />
+            &bull; Other personal or incidental expenses incurred during the
+            event.
+          </span>
+        ),
+      },
+      {
+        q: "Will Enactus Philippines assist participating teams with accommodation arrangements?",
+        a: (
+          <span>
+            Yes. While accommodation expenses will remain the responsibility
+            of participating institutions, Enactus Philippines may facilitate
+            discounted hotel rates, partner accommodations, or special lodging
+            packages with accredited accommodation providers for the
+            convenience of participants.
+            <br />
+            <br />
+            If such arrangements become available, they will be announced
+            through an official competition advisory. Teams are free to avail
+            of these negotiated rates or make their own accommodation
+            arrangements.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Registration Fees",
+    items: [
+      {
+        q: "Is there a registration fee?",
+        a: (
+          <span>
+            No. Participation in the Enactus Philippines National Competition
+            2026, including the application process and the National
+            Capacity-Building Program for accepted teams, is entirely free of
+            charge. Enactus Philippines does not charge any registration or
+            competition fee for official participating teams.
+          </span>
+        ),
+      },
+      {
+        q: "What expenses are the responsibility of participating teams?",
+        a: (
+          <span>
+            While participation in the competition is free, participating
+            institutions are responsible for all expenses related to their
+            attendance at the National Competition, including but not limited
+            to:
+            <br />
+            &bull; Transportation to and from the competition venue;
+            <br />
+            &bull; Accommodation;
+            <br />
+            &bull; Meals;
+            <br />
+            &bull; Personal expenses; and
+            <br />
+            &bull; Other incidental costs not expressly covered by Enactus
+            Philippines.
+            <br />
+            <br />
+            Participants are encouraged to make the necessary arrangements and
+            budget accordingly prior to attending the competition.
+          </span>
+        ),
+      },
+      {
+        q: "Who is entitled to complimentary admission to the National Competition?",
+        a: (
+          <span>
+            Complimentary admission is reserved exclusively for officially
+            registered participants, including competing students, faculty
+            advisors, judges, speakers, volunteers, invited guests, VIPs,
+            sponsors, partners, and other individuals accredited by Enactus
+            Philippines.
+            <br />
+            <br />
+            Information regarding attendance by observers and the general
+            public will be released through a separate official advisory.
+            Admission policies, registration procedures, and any applicable
+            fees for non-competing attendees, if any, shall be determined by
+            Enactus Philippines.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Attendance",
+    items: [
+      {
+        q: "Is attendance required throughout the event?",
+        a: (
+          <span>
+            Yes. All competing teams are expected to attend:
+            <br />
+            &bull; Capacity-Building Sessions (for accepted teams)
+            <br />
+            &bull; Opening Ceremony
+            <br />
+            &bull; Competition sessions
+            <br />
+            &bull; Impact Celebration and Awards Ceremony
+          </span>
+        ),
+      },
+      {
+        q: "What happens if a team fails to appear during its assigned schedule?",
+        a: (
+          <span>
+            Failure to report on time may result in forfeiture of the
+            team&apos;s presentation slot and possible disqualification,
+            subject to the decision of the Organizing Committee.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Awards",
+    items: [
+      {
+        q: "What awards will be presented?",
+        a: (
+          <span>
+            The competition shall confer the following major awards:
+            <br />
+            &bull; Enactus Philippines Early-Stage Project National Champion –
+            PHP 100,000
+            <br />
+            &bull; First Runner-Up – PHP 50,000
+            <br />
+            &bull; Second Runner-Up – PHP 25,000
+            <br />
+            <br />
+            The National Champion shall also be designated as the Philippine
+            Representative to the Enactus World Cup 2026 – Early-Stage
+            Competition Track, subject to compliance with the eligibility
+            requirements and participation policies of Enactus Global, and
+            shall receive an all-expense-paid delegation sponsorship for three
+            (3) students and one (1) faculty advisor in accordance with
+            Enactus Philippines&apos; travel policies and funding
+            availability.
+            <br />
+            <br />
+            Additional special awards may also be presented by Enactus
+            Philippines and its partners.
+          </span>
+        ),
+      },
+      {
+        q: "What happens if the National Champion cannot represent the Philippines at the Enactus World Cup?",
+        a: (
+          <span>
+            Should the National Champion decline, forfeit, or become
+            ineligible to participate in the Enactus World Cup 2026 –
+            Early-Stage Competition Track, Enactus Philippines reserves the
+            right to designate the next highest-ranked eligible team (e.g.,
+            the First Runner-Up, followed by the Second Runner-Up, if
+            necessary) as the official Philippine Representative, subject to
+            compliance with Enactus Global&apos;s eligibility requirements and
+            participation policies.
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Other Matters",
+    items: [
+      {
+        q: "May the competition schedule change?",
+        a: (
+          <span>
+            Yes. Enactus Philippines reserves the right to modify schedules,
+            venues, procedures, competition mechanics, or other operational
+            arrangements whenever necessary to ensure the successful conduct
+            of the event.
+          </span>
+        ),
+      },
+      {
+        q: "How may we contact the Organizing Committee?",
+        a: (
+          <span>
+            For inquiries regarding eligibility, registration, submissions,
+            competition mechanics, sponsorship, or participation, please
+            contact the Enactus Philippines Secretariat through the official
+            contact details published on the Enactus Philippines website and
+            official communication channels.
+          </span>
+        ),
+      },
+      {
+        q: "Where can we obtain official announcements and updates?",
+        a: (
+          <span>
+            Official announcements, competition advisories, downloadable
+            templates, forms, and updates will only be released through the
+            official Enactus Philippines website and official social media
+            platforms. Participants are strongly encouraged to regularly
+            monitor these channels for the latest information.
+          </span>
+        ),
+      },
+    ],
+  },
+];
+
 export default function National2026Page() {
   const targetDate = new Date("2026-10-08T00:00:00+08:00");
 
