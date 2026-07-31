@@ -1236,7 +1236,7 @@ export default function HandbookPage() {
 
           <Qa
             q="What information must be included in the Annual Report?"
-            a={<span><strong>Page limits:</strong> Teams may submit up to four single-sided pages (A4 or 8½\" x 11\"), or two double-sided sheets. Covers count toward the limit, and QR codes to bypass the limit are not allowed.<br /><br /><strong>Must include:</strong> Project descriptions & target beneficiaries, actual impacts achieved in the previous year, and a <strong>Standardized Impact Page</strong> displaying Direct Impact, Indirect Impact, Reach, Projections, and Financial Results (income/revenue & profit/surplus).<br /><br /><strong>Failure to comply</strong> may result in disqualification from the competition.</span>}
+            a={<span><strong>Page limits:</strong> Teams may submit up to four single-sided pages (A4 or 8½&quot; x 11&quot;), or two double-sided sheets. Covers count toward the limit, and QR codes to bypass the limit are not allowed.<br /><br /><strong>Must include:</strong> Project descriptions &amp; target beneficiaries, actual impacts achieved in the previous year, and a <strong>Standardized Impact Page</strong> displaying Direct Impact, Indirect Impact, Reach, Projections, and Financial Results (income/revenue &amp; profit/surplus).<br /><br /><strong>Failure to comply</strong> may result in disqualification from the competition.</span>}
           />
 
           <Qa
@@ -1256,7 +1256,7 @@ export default function HandbookPage() {
 
           <Qa
             q="How can teams prepare for the Impact & Financial Reporting Review?"
-            a={<span>✔ Conduct self-reviews regularly<br />✔ Assign a team member or faculty advisor to oversee documentation<br />✔ Maintain clear records of team hours, beneficiaries, financials, and media coverage<br />✔ Inform beneficiaries in advance that they may be contacted for verification<br />✔ Follow Enactus' official impact definitions to avoid misrepresentation</span>}
+            a={<span>✔ Conduct self-reviews regularly<br />✔ Assign a team member or faculty advisor to oversee documentation<br />✔ Maintain clear records of team hours, beneficiaries, financials, and media coverage<br />✔ Inform beneficiaries in advance that they may be contacted for verification<br />✔ Follow Enactus&apos; official impact definitions to avoid misrepresentation</span>}
           />
 
           <Qa

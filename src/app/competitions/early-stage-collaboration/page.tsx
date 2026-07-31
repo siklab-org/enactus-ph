@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -51,33 +50,6 @@ function Qa({ q, a }: { q: string; a: React.ReactNode }) {
         {a}
       </div>
     </div>
-  );
-}
-
-function ImageCredit({
-  src,
-  alt,
-  caption,
-}: {
-  src: string;
-  alt: string;
-  caption?: string;
-}) {
-  return (
-    <figure className="my-6 overflow-hidden rounded-xl border border-border/60">
-      <Image
-        src={src}
-        alt={alt}
-        width={800}
-        height={400}
-        className="w-full object-cover"
-      />
-      {caption && (
-        <figcaption className="border-t border-border/60 bg-muted/20 px-4 py-2 text-xs text-muted-foreground">
-          {caption}
-        </figcaption>
-      )}
-    </figure>
   );
 }
 

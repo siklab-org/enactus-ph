@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
@@ -16,7 +15,6 @@ import {
   Target,
   Trophy,
   Users,
-  BookOpen,
   Building2,
   Scale,
   Globe,
@@ -901,7 +899,7 @@ export default function National2026Page() {
               </h2>
             </div>
             <div className="mt-12 grid gap-3">
-              {timeline.map((item, i) => (
+              {timeline.map((item) => (
                 <div
                   key={item.event}
                   className="flex items-center gap-4 rounded-xl border border-border/60 bg-background p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm md:gap-6 md:p-5"
