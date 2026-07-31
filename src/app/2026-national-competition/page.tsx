@@ -460,6 +460,28 @@ export default function National2026Page() {
                 </div>
               </div>
             </div>
+            <div className="mt-8 flex justify-center">
+              <a
+                href="https://tinyurl.com/enactusph2026join"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+              >
+                Apply Now
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              Application Form:{" "}
+              <a
+                href="https://tinyurl.com/enactusph2026join"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono underline underline-offset-2 hover:text-foreground"
+              >
+                tinyurl.com/enactusph2026join
+              </a>
+            </p>
           </div>
         </AnimatedSection>
       </section>
@@ -973,11 +995,20 @@ export default function National2026Page() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="mailto:enactusph@enactus.org"
+                href="https://tinyurl.com/enactusph2026join"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
               >
-                enactusph@enactus.org
+                Apply Now
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href="mailto:enactusph@enactus.org"
+                className="group inline-flex h-12 items-center gap-2 rounded-full border border-white/20 px-7 text-sm font-semibold transition-colors hover:bg-white/5"
+              >
+                enactusph@enactus.org
+                <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="https://www.enactus.ph"
