@@ -223,8 +223,8 @@ export default function Home() {
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
             <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
               <Image
-                src="/kpmg-logo.svg"
-                alt="KPMG"
+                src="/manabat-logo.png"
+                alt="R.G. Manabat & Co. (KPMG in the Philippines)"
                 width={240}
                 height={96}
                 className="h-28 w-auto object-contain"

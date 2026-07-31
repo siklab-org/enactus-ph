@@ -143,6 +143,21 @@ const scheduleSlots = [
   { activity: "Judges' Question and Answer", duration: "4 minutes" },
 ];
 
+const tocItems = [
+  { id: "timeline", label: "Timeline" },
+  { id: "eligibility", label: "Eligibility" },
+  { id: "early-stage", label: "About Early-Stage" },
+  { id: "objectives", label: "Objectives" },
+  { id: "application", label: "Application" },
+  { id: "selection", label: "Selection Process" },
+  { id: "capacity-building", label: "Capacity-Building" },
+  { id: "format", label: "Competition Format" },
+  { id: "judging", label: "Judging Rubric" },
+  { id: "awards", label: "Awards" },
+  { id: "world-cup", label: "World Cup" },
+  { id: "faq", label: "FAQ" },
+];
+
 const faqCategories: {
   title: string;
   items: { q: string; a: React.ReactNode }[];
@@ -846,8 +861,34 @@ export default function National2026Page() {
         </AnimatedSection>
       </section>
 
+      {/* ─── TABLE OF CONTENTS ─── */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+        <div className="mx-auto max-w-3xl">
+          <nav className="rounded-xl border border-border/60 bg-muted/10 p-5">
+            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              On this page
+            </p>
+            <ul className="space-y-1">
+              {tocItems.map((s, i) => (
+                <li key={s.id}>
+                  <a
+                    href={`#${s.id}`}
+                    className="group flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+                  >
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-[11px] font-semibold text-primary">
+                      {i + 1}
+                    </span>
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </div>
+
       {/* ─── COMPETITION TIMELINE ─── */}
-      <section className="border-b border-border/60">
+      <section id="timeline" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -884,7 +925,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── ELIGIBILITY ─── */}
-      <section className="border-b border-border/60 bg-muted/30">
+      <section id="eligibility" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -948,7 +989,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── ABOUT EARLY-STAGE ─── */}
-      <section className="border-b border-border/60">
+      <section id="early-stage" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
@@ -993,7 +1034,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── OBJECTIVES ─── */}
-      <section className="border-b border-border/60 bg-muted/30">
+      <section id="objectives" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
@@ -1028,7 +1069,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── APPLICATION REQUIREMENTS ─── */}
-      <section className="border-b border-border/60">
+      <section id="application" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -1088,23 +1129,12 @@ export default function National2026Page() {
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
-            <p className="mt-3 text-center text-xs text-muted-foreground">
-              Application Form:{" "}
-              <a
-                href="https://tinyurl.com/enactusph2026join"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono underline underline-offset-2 hover:text-foreground"
-              >
-                tinyurl.com/enactusph2026join
-              </a>
-            </p>
           </div>
         </AnimatedSection>
       </section>
 
       {/* ─── SELECTION PROCESS ─── */}
-      <section className="border-b border-border/60 bg-muted/30">
+      <section id="selection" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -1144,7 +1174,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── CAPACITY-BUILDING PROGRAM ─── */}
-      <section className="border-b border-border/60">
+      <section id="capacity-building" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -1193,7 +1223,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── PITCHING FORMAT ─── */}
-      <section className="border-b border-border/60 bg-muted/30">
+      <section id="format" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
@@ -1286,7 +1316,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── JUDGING RUBRIC ─── */}
-      <section className="border-b border-border/60 bg-muted/30">
+      <section id="judging" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
@@ -1434,7 +1464,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── AWARDS ─── */}
-      <section className="border-b border-border/60">
+      <section id="awards" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
@@ -1486,7 +1516,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── WORLD CUP REPRESENTATION ─── */}
-      <section className="border-b border-border/60 bg-muted/30">
+      <section id="world-cup" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
@@ -1593,7 +1623,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="border-b border-border/60">
+      <section id="faq" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
