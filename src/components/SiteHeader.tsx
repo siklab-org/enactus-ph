@@ -252,7 +252,7 @@ function MobileNav({ pathname }: { pathname: string }) {
           <div className="border-t border-border/60 p-4">
             <SheetClose asChild>
               <Link
-                href="/contact"
+                href="/2026-national-competition"
                 className="flex w-full items-center justify-center rounded-full bg-secondary px-5 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-200 hover:bg-secondary/90"
               >
                 Compete
@@ -507,7 +507,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link
-          href="/contact"
+          href="/2026-national-competition"
           className="hidden lg:inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
         >
           Compete

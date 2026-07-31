@@ -1592,6 +1592,57 @@ export default function National2026Page() {
         </AnimatedSection>
       </section>
 
+      {/* ─── FAQ ─── */}
+      <section className="border-b border-border/60">
+        <AnimatedSection>
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                · FAQ
+              </div>
+              <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
+                Frequently asked{" "}
+                <span className="text-foreground/50">questions.</span>
+              </h2>
+              <p className="mt-6 text-body leading-relaxed text-muted-foreground">
+                Answers to the most common questions about eligibility,
+                composition, judging, awards, and everything in between.
+              </p>
+            </div>
+            <div className="mx-auto mt-12 max-w-3xl space-y-10">
+              {faqCategories.map((category) => (
+                <div key={category.title}>
+                  <h3 className="mb-4 flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                    {category.title}
+                  </h3>
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="overflow-hidden rounded-2xl border border-border/60 bg-background px-5 sm:px-6"
+                  >
+                    {category.items.map((item, i) => (
+                      <AccordionItem
+                        key={item.q}
+                        value={`${category.title}-${i}`}
+                        className="border-border/60 last:border-0"
+                      >
+                        <AccordionTrigger className="py-4 text-left text-sm font-medium text-foreground hover:no-underline">
+                          {item.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                          {item.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
       {/* ─── CONTACT / CTA ─── */}
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />

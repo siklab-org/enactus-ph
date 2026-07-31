@@ -72,7 +72,7 @@ export default function CompetitionsLanding() {
               ))}
             </ul>
             <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary transition-all group-hover:gap-2">
-              View Handbook
+              View Core Competition
               <ArrowRight className="h-4 w-4" />
             </span>
           </Link>
