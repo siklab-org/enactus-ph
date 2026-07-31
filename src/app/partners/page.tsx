@@ -31,7 +31,7 @@ const tiers: Tier[] = [
     name: "Data Management Partner",
     intro: "Partners who contribute specialized expertise and resources.",
     count: 1,
-    logo: { src: "/kpmg-logo.svg", name: "KPMG" },
+    logo: { src: "/manabat-logo.png", name: "R.G. Manabat & Co. (KPMG in the Philippines)" },
   },
   {
     name: "Impact Partners",
