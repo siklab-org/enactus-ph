@@ -104,7 +104,7 @@ export default function Home() {
             style={{ animationDelay: "380ms", animationDuration: "800ms" }}
           >
             <Link
-              href="/what-we-do"
+              href="/university-engagement"
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-secondary px-6 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
             >
               Explore the network
@@ -310,7 +310,7 @@ export default function Home() {
                 </h2>
               </div>
               <Link
-                href="/what-we-do"
+                href="/university-engagement"
                 className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
               >
                 All programs →

@@ -34,7 +34,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/what-we-do" className="opacity-80 hover:opacity-100">
+              <Link href="/university-engagement" className="opacity-80 hover:opacity-100">
                 What We Do
               </Link>
             </li>
