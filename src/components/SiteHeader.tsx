@@ -32,11 +32,6 @@ import {
   CollapsibleContent,
 } from "@/components/ui/collapsible";
 
-const nav = [
-  { href: "/", label: "Home" },
-  { href: "/2026-national-competition", label: "2026 National Competition" },
-] as const;
-
 function NavLink({
   href,
   label,
@@ -97,7 +92,13 @@ const mobileNavLinks: NavLinkItem[] = [
       },
     ],
   },
-  { href: "/2026-national-competition", label: "2026 National Competition" },
+  {
+    label: "2026 National Competition",
+    children: [
+      { href: "/2026-national-competition", label: "Competition Overview" },
+      { href: "/2026-national-competition/khan-academy-challenge", label: "Khan Academy Challenge" },
+    ],
+  },
 ];
 
 const whoWeArePaths = ["/about", "/country-leadership", "/contact"];
@@ -108,10 +109,15 @@ const whatWeDoPaths = [
   "/university-engagement", "/faculty-development",
   "/faculty-development/2026-fellows",
 ];
+const competitionPaths = [
+  "/2026-national-competition",
+  "/2026-national-competition/khan-academy-challenge",
+];
 
 function getMobileAccordionValue(pathname: string): string | undefined {
   if (whoWeArePaths.includes(pathname)) return "who-we-are";
   if (whatWeDoPaths.includes(pathname)) return "what-we-do";
+  if (competitionPaths.includes(pathname)) return "national-competition";
   return undefined;
 }
 
@@ -231,7 +237,7 @@ function MobileNav({ pathname }: { pathname: string }) {
                 }
                 if (item.children) {
                   return (
-                    <AccordionItem key={item.label} value={item.label === "Who We Are" ? "who-we-are" : "what-we-do"} className="border-0">
+                    <AccordionItem key={item.label} value={item.label === "Who We Are" ? "who-we-are" : item.label === "What We Do" ? "what-we-do" : "national-competition"} className="border-0">
                       <AccordionTrigger className="rounded-lg px-3 py-3.5 text-sm font-medium text-foreground/80 hover:bg-accent/50 hover:text-foreground no-underline [&[data-state=open]>svg]:rotate-180 cursor-pointer">
                         {item.label}
                       </AccordionTrigger>
@@ -280,6 +286,7 @@ export function SiteHeader() {
     pathname === "/university-engagement" ||
     pathname === "/faculty-development" ||
     pathname === "/faculty-development/2026-fellows";
+  const isCompetitionActive = pathname.startsWith("/2026-national-competition");
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -497,14 +504,52 @@ export function SiteHeader() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {nav.slice(1).map((n) => (
-            <NavLink
-              key={n.href}
-              href={n.href}
-              label={n.label}
-              pathname={pathname}
-            />
-          ))}
+          <NavigationMenu
+            className="flex-initial"
+            delayDuration={0}
+          >
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuPrimitive.Trigger
+                  className={`group flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${isCompetitionActive
+                    ? "text-foreground after:scale-x-100"
+                    : "text-foreground/80"
+                    }`}
+                >
+                  2026 National Competition
+                  <ChevronDown className="h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" />
+                </NavigationMenuPrimitive.Trigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-56 gap-0.5 p-2">
+                    <li className="relative">
+                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
+                        <NavigationMenuLink asChild active={pathname === "/2026-national-competition"}>
+                          <Link
+                            href="/2026-national-competition"
+                            className="flex-1"
+                          >
+                            Competition Overview
+                          </Link>
+                        </NavigationMenuLink>
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      </div>
+                      <div>
+                        <div className="border-t border-border/40 mx-2 my-1" />
+                        <NavigationMenuLink asChild active={pathname === "/2026-national-competition/khan-academy-challenge"}>
+                          <Link
+                            href="/2026-national-competition/khan-academy-challenge"
+                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                          >
+                            Khan Academy Challenge
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
         <Link
           href="/2026-national-competition"
