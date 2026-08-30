@@ -42,10 +42,10 @@ export const metadata: Metadata = {
 
 const timeline = [
   { date: "July 31, 2026", event: "Call for Applications Opens" },
-  { date: "August 25, 2026", event: "Application Deadline (11:59 PM PHT)" },
+  { date: "August 25 · Extended: August 31, 2026", event: "Application Deadline (11:59 PM PHT)" },
   { date: "August 25–30, 2026", event: "Screening and Evaluation" },
-  { date: "August 31, 2026", event: "Announcement of Accepted Teams" },
-  { date: "September 2026", event: "National Capacity-Building Program (Every Saturday)" },
+  { date: "September 1–5, 2026", event: "Announcement of Accepted Teams" },
+  { date: "September 21–26, 2026", event: "National Capacity-Building Program" },
   { date: "October 8–10, 2026", event: "Enactus Philippines National Competition" },
 ];
 
@@ -1107,7 +1107,7 @@ export default function National2026Page() {
                     Applications must be submitted on or before:
                   </p>
                   <p className="mt-1 text-lg font-semibold tracking-tight">
-                    August 25, 2026
+                    August 31, 2026
                   </p>
                   <p className="mt-0.5 text-sm text-muted-foreground">
                     Applications received after the deadline shall no longer be
@@ -1147,7 +1147,7 @@ export default function National2026Page() {
                 {[
                   { label: "Independent Evaluation", desc: "All submitted applications shall undergo an independent evaluation." },
                   { label: "Top 60 Teams", desc: "The Top 60 Teams nationwide will be selected." },
-                  { label: "Official Notification", desc: "Accepted teams will be officially notified on August 31, 2026." },
+                  { label: "Official Notification", desc: "Accepted teams will be officially notified on September 1–5, 2026." },
                   { label: "Advancement", desc: "Only accepted teams shall advance to the National Competition." },
                 ].map((step, i) => (
                   <div
@@ -1185,9 +1185,9 @@ export default function National2026Page() {
               </h2>
               <p className="mt-6 text-body leading-relaxed text-muted-foreground">
                 Participation in the Capacity-Building Program is mandatory for
-                all accepted teams. The program consists of four (4) Saturday
-                sessions throughout September 2026, organized in partnership with
-                the{" "}
+                all accepted teams. The program consists of four (4) to six (6)
+                virtual sessions on September 21–26, 2026, organized in
+                partnership with the{" "}
                 <strong className="text-foreground">
                   Department of Science and Technology – Philippine Council for
                   Industry, Energy and Emerging Technology Research and

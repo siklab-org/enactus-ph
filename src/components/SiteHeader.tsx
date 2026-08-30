@@ -95,7 +95,7 @@ const mobileNavLinks: NavLinkItem[] = [
   {
     label: "2026 National Competition",
     children: [
-      { href: "/2026-national-competition", label: "Competition Overview" },
+      { href: "/2026-national-competition", label: "Early-Stage Project Competition" },
       { href: "/2026-national-competition/khan-academy-challenge", label: "Khan Academy Challenge" },
     ],
   },
@@ -521,29 +521,31 @@ export function SiteHeader() {
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
                   <ul className="grid w-56 gap-0.5 p-2">
-                    <li className="relative">
-                      <div className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
-                        <NavigationMenuLink asChild active={pathname === "/2026-national-competition"}>
-                          <Link
-                            href="/2026-national-competition"
-                            className="flex-1"
-                          >
-                            Competition Overview
-                          </Link>
-                        </NavigationMenuLink>
-                        <ChevronDown className="h-3.5 w-3.5" />
-                      </div>
-                      <div>
-                        <div className="border-t border-border/40 mx-2 my-1" />
-                        <NavigationMenuLink asChild active={pathname === "/2026-national-competition/khan-academy-challenge"}>
-                          <Link
-                            href="/2026-national-competition/khan-academy-challenge"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                          >
-                            Khan Academy Challenge
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/2026-national-competition"}
+                      >
+                        <Link
+                          href="/2026-national-competition"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Early-Stage Project Competition
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/2026-national-competition/khan-academy-challenge"}
+                      >
+                        <Link
+                          href="/2026-national-competition/khan-academy-challenge"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Khan Academy Challenge
+                        </Link>
+                      </NavigationMenuLink>
                     </li>
                   </ul>
                 </NavigationMenuContent>

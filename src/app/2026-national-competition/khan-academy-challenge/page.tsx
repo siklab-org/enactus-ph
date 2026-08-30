@@ -53,12 +53,12 @@ export const metadata: Metadata = {
 const APPLY_URL = "https://tinyurl.com/enactusphkeic2026";
 
 const timeline = [
-  { date: "August 28, 2026", event: "Official Call for Applications" },
-  { date: "August 28 – September 18, 2026", event: "Team Application" },
+  { date: "August 30, 2026", event: "Official Call for Applications" },
+  { date: "August 30 – September 18, 2026", event: "Team Application" },
   { date: "September 4, 2026", event: "Khan Academy Special Track Information Session" },
   { date: "September 19, 2026", event: "Screening and Evaluation" },
   { date: "September 20, 2026", event: "Announcement of Top 30 Teams" },
-  { date: "September 21–25, 2026", event: "Mandatory Virtual Capacity-Building Program" },
+  { date: "September 21–26, 2026", event: "Mandatory Virtual Capacity-Building Program" },
   { date: "October 9–10, 2026", event: "Khan Academy Track – National Competition" },
   { date: "November 1, 2026 – March 31, 2027", event: "Winning Initiative Implementation" },
 ];
@@ -334,7 +334,7 @@ const faqCategories: {
     items: [
       {
         q: "When is the application period?",
-        a: "August 28 – September 18, 2026.",
+        a: "August 30 – September 18, 2026.",
       },
       {
         q: "When will the Top 30 teams be announced?",
@@ -443,6 +443,7 @@ const faqCategories: {
 
 export default function KhanAcademyChallengePage() {
   const targetDate = new Date("2026-09-18T23:59:59+08:00");
+  const competitionDate = new Date("2026-10-09T00:00:00+08:00");
 
   return (
     <div className="min-h-screen bg-background">
@@ -457,7 +458,7 @@ export default function KhanAcademyChallengePage() {
             </span>
           </>
         }
-        subtitle="An Official Special Track of the Enactus Philippines National Competition 2026  ·  October 9–10, 2026  ·  De La Salle University, Manila, Philippines"
+        subtitle={"An Official Special Track of the Enactus Philippines National Competition 2026  ·  October 9–10, 2026  ·  De La Salle University, Manila, Philippines"}
       />
 
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
@@ -480,6 +481,25 @@ export default function KhanAcademyChallengePage() {
               </div>
               <div className="flex flex-col items-center gap-4">
                 <CountdownTimer targetDate={targetDate} />
+              </div>
+            </div>
+            <div className="mt-10 border-t border-white/10 pt-10">
+              <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
+                    · Khan Academy Track · October 9–10, 2026
+                  </div>
+                  <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+                    Competition countdown
+                  </h2>
+                  <p className="mt-2 max-w-lg text-secondary-foreground/80">
+                    The premier gathering of student leaders, faculty advisors,
+                    and social innovators across the Philippines.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center gap-4">
+                  <CountdownTimer targetDate={competitionDate} />
+                </div>
               </div>
             </div>
           </AnimatedSection>
@@ -916,7 +936,7 @@ export default function KhanAcademyChallengePage() {
                 <Calendar className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Application Period: August 28 – September 18, 2026
+                    Application Period: August 30 – September 18, 2026
                   </p>
                   <p className="mt-3 text-sm font-medium text-foreground">
                     Applications must be submitted on or before:
@@ -995,7 +1015,7 @@ export default function KhanAcademyChallengePage() {
                 The selected teams participate in the Mandatory Virtual
                 Capacity-Building Program from{" "}
                 <strong className="text-foreground">
-                  September 21–25, 2026
+                  September 21–26, 2026
                 </strong>
                 . The program is designed to strengthen teams&apos; ability to
                 develop their proposed initiatives, and participation forms part
