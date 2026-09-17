@@ -39,32 +39,57 @@ const staff = [
 ];
 
 const advisers = [
-//   {
-//     name: "Joey Leviste",
-//     role: "Founding Chairman & CEO",
-//     organization: "Enactus Philippines",
-//     image: "/people/joey.webp",
-//     bio: 'Dr. Jose "Joey" Paredes Leviste Jr. is a prominent Filipino corporate leader, former public servant, and social development advocate who serves as the founding Chairman and Chief Executive Officer of Enactus Philippines. Born in Malvar, Batangas, to a family rooted in public service, he cultivated a strong academic foundation, earning a Bachelor of Arts in Economics from Ateneo de Manila University, a Master of Arts in Economics from Fordham University, and a Master of Business Administration from Columbia University. His early career was marked by significant contributions to the public sector, serving as a young delegate to the 1970 Constitutional Convention, Secretary-General of the Office of the Prime Minister, and Deputy Minister of Trade and Industry. In the private sector, Dr. Leviste has held top executive roles across major industrial enterprises, serving as the Chairman of OceanaGold Philippines, Vice Chairman of the Chamber of Mines of the Philippines, and Chairman of Constellation Energy Corporation.',
-//   },
-  // {
-  //   name: "Geraldine Sunshine Acuna",
-  //   role: "President",
-  //   organization: "Resolution Project",
-  // },
   {
-    name: "Roberto G. Manabat",
-    role: "Lead Independent Director",
-    organization: "Union Bank of the Philippines",
-    image: "/people/roberto.png",
-    bio: "Roberto G. Manabat has more than 50 years of track record in the field of accounting and has been an adviser to a number of corporations on financial reporting, internal audit and good corporate governance. He is a recipient of many awards in recognition of his achievements in the accounting profession and in the business community.",
+    name: "Ms. Geraldine Acuña-Sunshine",
+    role: "President and Chief Executive Officer",
+    organization: "Khan Academy Philippines",
+    image: "/boa/Geraldine.jpg",
+    bio: "A corporate lawyer turned social-impact leader, she serves as President and CEO of Khan Academy Philippines, the platform's first international licensee, which she has scaled to millions of learners across thousands of public schools. A graduate of Harvard College, the Harvard Kennedy School, and Columbia Law School, she was the first Filipino to serve on the Harvard Board of Overseers. She also founded the Sunshine Care Foundation and a Massachusetts General Hospital research center devoted to X-Linked Dystonia Parkinsonism, a rare disease affecting people of Filipino descent.",
   },
-  // {
-  //   name: "Sharon Dayoan",
-  //   role: "Chairman and Chief Executive Officer",
-  //   organization: "KPMG RG Manabat & Co.",
-  //   image: "/people/sharon.png",
-  //   bio: "Sharon G. Dayoan is the Chairman and Chief Executive Officer of R.G. Manabat & Co. (KPMG in the Philippines). She brings over 30 years of experience in professional services, with expertise in Risk Management and Audit and Assurance. Over the years, she has worked with many of the country\u2019s top conglomerates across a range of industries. Sharon plays a key role in shaping the firm\u2019s direction as it continues to evolve into a more digitally enabled and technology-driven organization, aligned with KPMG\u2019s global commitment to innovation and long-term value. As Chairman and CEO, Sharon champions the firm\u2019s People, Performance, and Culture agenda, with a strong focus on professional growth, inclusion, and collaboration. Sharon chairs the Auditing and Assurance Standards Council of the Philippines and collaborates actively with regulators, the academe, and professional organizations to support the development of the accountancy profession. She is also a Trustee and Treasurer of the NextGen Organization of Women Corporate Directors (NOWCD), empowering future women leaders in their career journeys. A proud cum laude graduate of the University of the Philippines Diliman, she was honored with the UP Alumni Association\u2019s Distinguished Alumna Award for Public Service in Financial Management and Audit. She is also a Distinguished Alumna Awardee of the UP Virata School of Business. She is passionate about developing future leaders and advancing good governance, diversity, and inclusion.",
-  // },
+  {
+    name: 'Mr. Roberto "Bert" G. Manabat',
+    role: "Founding Chairman Emeritus, KPMG Philippines / Lead Independent Director",
+    organization: "UnionBank of the Philippines",
+    image: "/boa/Roberto.jpg",
+    bio: "A Certified Public Accountant, he is Chairman Emeritus of KPMG R.G. Manabat & Co.—the KPMG International member firm in the Philippines that bears his name—which he led as Chairman and CEO. He has served as Lead Independent Director of UnionBank of the Philippines since 2018 and is a board adviser on corporate governance and internal audit for SM Investments Corporation. He holds an MBA from the Asian Institute of Management.",
+  },
+  {
+    name: "Dr. Victor C. Manabat",
+    role: "President",
+    organization: "Philippine Association of Colleges and Schools of Business (PACSB)",
+    image: "/boa/Victor.jpg",
+    bio: "He is Dean of the College of Business Education and Tourism at Southville International School and Colleges and Executive Director of the Capital Markets Institute of the Philippines. Before entering academe, he spent over a decade as a marketing and advertising executive at agencies including McCann Erickson Philippines. He earned his MBA and Doctor in Business Administration from the Pamantasan ng Lungsod ng Maynila and is active in business-education accreditation.",
+  },
+  {
+    name: "Dr. Amado L. Magsino",
+    role: "Immediate Past President",
+    organization: "Philippine Association of Colleges and Schools of Business (PACSB)",
+    image: "/boa/Amado.jpg",
+    bio: "An educator with more than two decades of leadership across Philippine higher-education institutions, he served multiple terms as President of PACSB. He founded Passage to ASEAN (P2A) Philippines, a regional consortium promoting student mobility among ASEAN member schools, and has held leadership roles in the Philippine Council of Deans and Educators in Business. He holds a PhD in Management from Colegio de San Juan de Letran.",
+  },
+  {
+    name: 'Prof. Aristheo "Aris" Lacuna',
+    role: "Board Member",
+    organization: "Philippine Association of Colleges and Schools of Business (PACSB)",
+    image: "/boa/Aristheo.png",
+    bio: "He is an Assistant Professor at Southville International School and Colleges and a voice in social-enterprise education, serving as Vice Chairperson of the National Association of Social Enterprise Educators and Administrators (NASEEA). His work centers on integrating social entrepreneurship and design thinking into business curricula.",
+  },
+  {
+    name: "Dr. Norby Roque Salonga, CHRP",
+    role: "President",
+    organization:
+      "National Association of Social Enterprise Educators and Administrators (NASEEA)",
+    image: "/boa/Norby.jpg",
+    bio: "He is the Founding Director of De La Salle University's award-winning Lasallian Social Enterprise for Economic Development (LSEED) Center and President of NASEEA, and he teaches social entrepreneurship at DLSU. A development practitioner who helped pioneer the localization of the UN Sustainable Development Goals within Philippine academe, he has engaged dozens of universities and civil-society groups across the region. His recognitions include being named Asia-Pacific Entrepreneurship Educator of the Year, and he holds a doctorate from the University of the Philippines Diliman.",
+  },
+  {
+    name: "Ms. Maria Cristina Ibañez",
+    role: "President",
+    organization:
+      "Entrepreneurship Educators Association of the Philippines (ENEDA)",
+    image: "/boa/Maria.jpg",
+    bio: "An entrepreneurship educator affiliated with Miriam College, she serves as President of the Entrepreneurship Educators Association of the Philippines (ENEDA) and leads the SCALE NCR Technology Business Incubator (TBI) Consortium. Her work focuses on building collaborative startup ecosystems and mentoring young entrepreneurs.",
+  },
 ];
 
 export default function CountryLeadership() {
@@ -138,7 +163,7 @@ export default function CountryLeadership() {
               Board of Advisers
             </h2>
             <div className="mt-2 font-mono text-sm text-muted-foreground">
-              guidance from seasoned leaders.
+              Inaugural Board of Advisers · 2026–2028
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {advisers.map((person) => (

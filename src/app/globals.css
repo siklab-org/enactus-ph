@@ -207,6 +207,39 @@
   }
 }
 
+@keyframes pyis-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pyis-shimmer {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  55%, 100% {
+    transform: translateX(240%) skewX(-20deg);
+  }
+}
+
+@keyframes pyis-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 oklch(0.78 0.16 75 / 0);
+  }
+  20% {
+    box-shadow: 0 0 18px 3px oklch(0.78 0.16 75 / 0.35);
+  }
+  35% {
+    box-shadow: 0 0 0 0 oklch(0.78 0.16 75 / 0);
+  }
+  40%, 100% {
+    box-shadow: 0 0 0 0 oklch(0.78 0.16 75 / 0);
+  }
+}
+
 /* ─── Animation Utility Classes ─── */
 
 .animate-fade-up {
@@ -223,6 +256,18 @@
 
 .animate-pulse-soft {
   animation: pulse-soft 2000ms ease-in-out infinite;
+}
+
+.animate-pyis-float {
+  animation: pyis-float 3200ms ease-in-out infinite;
+}
+
+.animate-pyis-shimmer {
+  animation: pyis-shimmer 4200ms ease-in-out infinite;
+}
+
+.animate-pyis-glow {
+  animation: pyis-glow 4200ms ease-in-out infinite;
 }
 
 /* ─── Stagger Delay Utilities (80ms increments) ─── */

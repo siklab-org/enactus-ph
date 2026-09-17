@@ -255,7 +255,24 @@ function MobileNav({ pathname }: { pathname: string }) {
               })}
             </Accordion>
           </ScrollArea>
-          <div className="border-t border-border/60 p-4">
+          <div className="border-t border-border/60 p-4 flex flex-col gap-2">
+            <SheetClose asChild>
+              <Link
+                href="https://www.philippineyouthsummit.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-4 text-sm font-semibold transition-all duration-200 hover:bg-accent"
+              >
+                <Image
+                  src="/pyis.png"
+                  alt="Philippine Youth Summit"
+                  width={24}
+                  height={24}
+                  className="h-5 w-5 rounded-full object-cover"
+                />
+                PYIS
+              </Link>
+            </SheetClose>
             <SheetClose asChild>
               <Link
                 href="/2026-national-competition"
@@ -553,12 +570,30 @@ export function SiteHeader() {
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
-        <Link
-          href="/2026-national-competition"
-          className="hidden lg:inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
-        >
-          Compete
-        </Link>
+        <div className="hidden lg:flex items-center gap-3">
+          <Link
+            href="https://www.philippineyouthsummit.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex h-10 items-center gap-2 overflow-hidden rounded-full border border-border bg-background px-4 text-sm font-semibold text-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:border-primary/40 hover:bg-accent animate-pyis-float animate-pyis-glow"
+          >
+            <Image
+              src="/pyis.png"
+              alt="Philippine Youth Summit"
+              width={24}
+              height={24}
+              className="h-5 w-5 rounded-full object-cover transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110"
+            />
+            PYIS
+            <span className="pointer-events-none absolute inset-y-0 left-0 w-1/2 opacity-70 blur-sm bg-gradient-to-r from-transparent via-primary/25 to-transparent animate-pyis-shimmer" />
+          </Link>
+          <Link
+            href="/2026-national-competition"
+            className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
+          >
+            Compete
+          </Link>
+        </div>
       </div>
     </header>
   );
