@@ -197,8 +197,8 @@ function MobileNav({ pathname }: { pathname: string }) {
               <Image
                 src="/enactus-logo.webp"
                 alt="Enactus"
-                width={90}
-                height={40}
+                width={1920}
+                height={1080}
                 className="h-8 w-auto"
               />
             </Link>
@@ -315,8 +315,9 @@ export function SiteHeader() {
           <Image
             src="/enactus-logo.webp"
             alt="Enactus"
-            width={110}
-            height={48}
+            width={1920}
+            height={1080}
+            loading="eager"
             className="h-12 w-auto"
           />
         </Link>

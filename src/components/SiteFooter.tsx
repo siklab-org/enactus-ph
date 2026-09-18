@@ -10,8 +10,8 @@ export function SiteFooter() {
             <Image
               src="/enactus-logo.webp"
               alt="Enactus"
-              width={73}
-              height={32}
+              width={1920}
+              height={1080}
               className="h-8 w-auto brightness-0 invert"
             />
           </div>

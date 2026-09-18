@@ -198,8 +198,8 @@ export default function Home() {
                   <Image
                     src="/khan-academy-logo.svg"
                     alt="Khan Academy"
-                    width={400}
-                    height={160}
+                    width={1200}
+                    height={330}
                     className="h-40 w-auto object-contain"
                   />
                 </div>
