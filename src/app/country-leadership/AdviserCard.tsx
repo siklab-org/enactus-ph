@@ -60,7 +60,7 @@ function CardMedia({ person }: { person: Adviser }) {
         </div>
       )}
       {person.logo && (
-        <div className="absolute bottom-4 left-1/2 flex h-12 w-[55%] -translate-x-1/2 items-center justify-center rounded-xl bg-white/85 px-3 shadow-md">
+        <div className="absolute bottom-4 left-1/2 flex h-10 w-[45%] -translate-x-1/2 items-center justify-center rounded-lg bg-white/85 px-3 shadow-md">
           <Image
             src={person.logo}
             alt={person.organization}
