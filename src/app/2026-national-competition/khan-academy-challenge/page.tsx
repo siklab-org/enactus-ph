@@ -54,7 +54,7 @@ const APPLY_URL = "https://tinyurl.com/enactusphkeic2026";
 
 const timeline = [
   { date: "August 30, 2026", event: "Official Call for Applications" },
-  { date: "August 30 – September 18, 2026", event: "Team Application" },
+  { date: "August 30 – September 23, 2026", event: "Team Application" },
   { date: "September 4, 2026", event: "Khan Academy Special Track Information Session" },
   { date: "September 19, 2026", event: "Screening and Evaluation" },
   { date: "September 20, 2026", event: "Announcement of Top 30 Teams" },
@@ -334,7 +334,7 @@ const faqCategories: {
     items: [
       {
         q: "When is the application period?",
-        a: "August 30 – September 18, 2026.",
+        a: "August 30 – September 23, 2026.",
       },
       {
         q: "When will the Top 30 teams be announced?",
@@ -442,7 +442,7 @@ const faqCategories: {
 ];
 
 export default function KhanAcademyChallengePage() {
-  const targetDate = new Date("2026-09-18T23:59:59+08:00");
+  const targetDate = new Date("2026-09-23T23:59:59+08:00");
   const competitionDate = new Date("2026-10-09T00:00:00+08:00");
 
   return (
@@ -468,7 +468,7 @@ export default function KhanAcademyChallengePage() {
             <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
-                  · Applications close September 18, 2026
+                  · Applications close September 23, 2026
                 </div>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
                   Application countdown
@@ -936,13 +936,13 @@ export default function KhanAcademyChallengePage() {
                 <Calendar className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Application Period: August 30 – September 18, 2026
+                    Application Period: August 30 – September 23, 2026
                   </p>
                   <p className="mt-3 text-sm font-medium text-foreground">
                     Applications must be submitted on or before:
                   </p>
                   <p className="mt-1 text-lg font-semibold tracking-tight">
-                    September 18, 2026
+                    September 23, 2026
                   </p>
                   <p className="mt-0.5 text-sm text-muted-foreground">
                     Applications received after the deadline shall no longer be

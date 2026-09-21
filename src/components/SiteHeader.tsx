@@ -273,15 +273,7 @@ function MobileNav({ pathname }: { pathname: string }) {
                 PYIS
               </Link>
             </SheetClose>
-            <SheetClose asChild>
-              <Link
-                href="/2026-national-competition"
-                className="flex w-full items-center justify-center rounded-full bg-secondary px-5 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-200 hover:bg-secondary/90"
-              >
-                Compete
-              </Link>
-            </SheetClose>
-          </div>
+            </div>
         </div>
       </SheetContent>
     </Sheet>
@@ -588,13 +580,7 @@ export function SiteHeader() {
             PYIS
             <span className="pointer-events-none absolute inset-y-0 left-0 w-1/2 opacity-70 blur-sm bg-gradient-to-r from-transparent via-primary/25 to-transparent animate-pyis-shimmer" />
           </Link>
-          <Link
-            href="/2026-national-competition"
-            className="inline-flex h-10 items-center rounded-full bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-secondary/90 hover:shadow-[0_4px_20px_oklch(0_0_0/0.15)]"
-          >
-            Compete
-          </Link>
-        </div>
+          </div>
       </div>
     </header>
   );
