@@ -59,17 +59,6 @@ function CardMedia({ person }: { person: Adviser }) {
           <PlaceholderAvatar name={person.name} />
         </div>
       )}
-      {person.logo && (
-        <div className="absolute bottom-4 left-1/2 flex h-10 w-[45%] -translate-x-1/2 items-center justify-center rounded-lg bg-white/85 px-3 shadow-md">
-          <Image
-            src={person.logo}
-            alt={person.organization}
-            width={200}
-            height={80}
-            className="h-full w-full object-contain"
-          />
-        </div>
-      )}
     </div>
   );
 }
@@ -90,7 +79,7 @@ function CardFront({ person }: { person: Adviser }) {
 export function AdviserCard({ person }: { person: Adviser }) {
   if (!person.bio) {
     return (
-      <div className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-background">
+      <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-background">
         <CardFront person={person} />
       </div>
     );
@@ -99,7 +88,7 @@ export function AdviserCard({ person }: { person: Adviser }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-border/60 bg-background transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
+        <div className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border/60 bg-background transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]">
           <CardFront person={person} />
           <div className="absolute right-3 top-3 flex items-center rounded-full bg-background/90 px-3 py-1.5 text-xs font-semibold text-foreground opacity-0 shadow-sm transition-opacity duration-200 ease-out group-hover:opacity-100">
             See more
@@ -112,6 +101,17 @@ export function AdviserCard({ person }: { person: Adviser }) {
             <div className="overflow-hidden rounded-xl">
               <CardMedia person={person} />
             </div>
+            {person.logo && (
+              <div className="mt-3 flex h-14 w-full items-center justify-center rounded-lg border border-border/60 bg-muted/40 px-3">
+                <Image
+                  src={person.logo}
+                  alt={person.organization}
+                  width={200}
+                  height={80}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            )}
           </div>
           <div className="flex flex-col gap-4">
             <div>
@@ -126,13 +126,11 @@ export function AdviserCard({ person }: { person: Adviser }) {
               </DialogDescription>
             </div>
             <div className="h-px bg-border" />
-            <DialogDescription className="text-left">
-              <ScrollArea className="max-h-40 sm:max-h-48">
-                <p className="text-sm leading-relaxed text-muted-foreground/90">
-                  {person.bio}
-                </p>
-              </ScrollArea>
-            </DialogDescription>
+            <ScrollArea className="max-h-40 sm:max-h-48">
+              <p className="text-sm leading-relaxed text-muted-foreground/90">
+                {person.bio}
+              </p>
+            </ScrollArea>
           </div>
         </div>
       </DialogContent>

@@ -172,9 +172,14 @@ export default function CountryLeadership() {
             <div className="mt-2 font-mono text-sm text-muted-foreground">
               Inaugural Board of Advisers · 2026–2028
             </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="mt-12 flex flex-wrap justify-center gap-6">
               {advisers.map((person) => (
-                <AdviserCard key={person.name} person={person} />
+                <div
+                  key={person.name}
+                  className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)]"
+                >
+                  <AdviserCard person={person} />
+                </div>
               ))}
             </div>
           </div>
