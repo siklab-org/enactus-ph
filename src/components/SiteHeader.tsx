@@ -66,6 +66,8 @@ const mobileNavLinks: NavLinkItem[] = [
     children: [
       { href: "/about", label: "About Enactus" },
       { href: "/country-leadership", label: "Country Leadership" },
+      { href: "/board-of-advisers", label: "Board of Advisers" },
+      { href: "/faculty-fellows", label: "Faculty Fellows" },
       { href: "/contact", label: "Contact" },
     ],
   },
@@ -83,13 +85,7 @@ const mobileNavLinks: NavLinkItem[] = [
       { href: "/resources", label: "Resources" },
       { href: "/news", label: "News" },
       { href: "/university-engagement", label: "University Engagement" },
-      {
-        label: "Faculty Development",
-        children: [
-          { href: "/faculty-development", label: "Program" },
-          { href: "/faculty-development/2026-fellows", label: "2026 Fellows" },
-        ],
-      },
+      { href: "/faculty-development", label: "Faculty Development Program" },
     ],
   },
   {
@@ -101,13 +97,12 @@ const mobileNavLinks: NavLinkItem[] = [
   },
 ];
 
-const whoWeArePaths = ["/about", "/country-leadership", "/contact"];
+const whoWeArePaths = ["/about", "/country-leadership", "/board-of-advisers", "/faculty-fellows", "/contact"];
 const whatWeDoPaths = [
   "/competitions", "/competitions/handbook",
   "/competitions/early-stage-collaboration",
   "/partners", "/resources", "/news",
   "/university-engagement", "/faculty-development",
-  "/faculty-development/2026-fellows",
 ];
 const competitionPaths = [
   "/2026-national-competition",
@@ -284,7 +279,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   const isWhoWeAreActive =
-    pathname === "/about" || pathname === "/country-leadership" || pathname === "/contact";
+    pathname === "/about" || pathname === "/country-leadership" || pathname === "/board-of-advisers" || pathname === "/faculty-fellows" || pathname === "/contact";
   const isWhatWeDoActive =
     pathname === "/competitions" ||
     pathname.startsWith("/competitions/handbook") ||
@@ -293,8 +288,7 @@ export function SiteHeader() {
     pathname === "/resources" ||
     pathname === "/news" ||
     pathname === "/university-engagement" ||
-    pathname === "/faculty-development" ||
-    pathname === "/faculty-development/2026-fellows";
+    pathname === "/faculty-development";
   const isCompetitionActive = pathname.startsWith("/2026-national-competition");
 
   return (
@@ -358,6 +352,32 @@ export function SiteHeader() {
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           Country Leadership
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/board-of-advisers"}
+                      >
+                        <Link
+                          href="/board-of-advisers"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Board of Advisers
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/faculty-fellows"}
+                      >
+                        <Link
+                          href="/faculty-fellows"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Faculty Fellows
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -483,27 +503,7 @@ export function SiteHeader() {
                             href="/faculty-development"
                             className="flex-1"
                           >
-                            Faculty Development
-                          </Link>
-                        </NavigationMenuLink>
-                        <ChevronDown className="h-3.5 w-3.5" />
-                      </div>
-                      <div>
-                        <div className="border-t border-border/40 mx-2 my-1" />
-                        <NavigationMenuLink asChild active={pathname === "/faculty-development"}>
-                          <Link
-                            href="/faculty-development"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                          >
-                            Program
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild active={pathname === "/faculty-development/2026-fellows"}>
-                          <Link
-                            href="/faculty-development/2026-fellows"
-                            className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            2026 Fellows
+                            Faculty Development Program
                           </Link>
                         </NavigationMenuLink>
                       </div>

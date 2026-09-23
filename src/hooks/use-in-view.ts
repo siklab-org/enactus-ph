@@ -16,6 +16,15 @@ export function useInView(options: UseInViewOptions = {}) {
     const element = ref.current;
     if (!element) return;
 
+    // For elements taller than the viewport, the maximum achievable
+    // intersection ratio is viewportHeight / elementHeight, so the requested
+    // threshold may never be crossed and the section would stay hidden.
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const elementHeight = element.getBoundingClientRect().height;
+    const maxRatio = elementHeight > 0 ? Math.min(1, viewportHeight / elementHeight) : threshold;
+    const effectiveThreshold = Math.min(threshold, maxRatio);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -27,7 +36,7 @@ export function useInView(options: UseInViewOptions = {}) {
           setIsInView(false);
         }
       },
-      { threshold }
+      { threshold: effectiveThreshold }
     );
 
     observer.observe(element);
