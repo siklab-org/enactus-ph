@@ -15,6 +15,7 @@ export type Fellow = {
   position: string;
   institution: string;
   photo?: string;
+  logo?: string;
   bio: string;
 };
 
@@ -47,10 +48,25 @@ function CardFront({ person }: { person: Fellow }) {
   return (
     <>
       <CardMedia person={person} />
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-lg font-semibold">{person.name}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{person.position}</p>
-        <p className="mt-1 text-sm text-muted-foreground/60">{person.institution}</p>
+      <div className="flex flex-1 flex-col justify-center gap-1.5 p-6">
+        <h3 className="text-base font-semibold leading-snug">{person.name}</h3>
+        <p className="text-xs text-muted-foreground">{person.position}</p>
+        <div className="mt-1.5 flex items-center gap-3">
+          {person.logo && (
+            <span className="inline-flex h-10 w-16 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-muted/40 px-2">
+              <Image
+                src={person.logo}
+                alt={person.institution}
+                width={120}
+                height={48}
+                className="h-full w-full object-contain"
+              />
+            </span>
+          )}
+          <p className="flex-1 text-xs font-medium leading-snug text-muted-foreground/60">
+            {person.institution}
+          </p>
+        </div>
       </div>
     </>
   );
@@ -73,6 +89,17 @@ export function FellowCard({ person }: { person: Fellow }) {
             <div className="overflow-hidden rounded-xl">
               <CardMedia person={person} />
             </div>
+            {person.logo && (
+              <div className="mt-3 flex h-14 w-full items-center justify-center rounded-lg border border-border/60 bg-muted/40 px-3">
+                <Image
+                  src={person.logo}
+                  alt={person.institution}
+                  width={200}
+                  height={80}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            )}
           </div>
           <div className="flex flex-col gap-4">
             <div>
