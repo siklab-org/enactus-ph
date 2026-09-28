@@ -72,7 +72,7 @@ function CardFront({ person }: { person: Adviser }) {
         <p className="text-xs text-muted-foreground">{person.role}</p>
         <div className="mt-1.5 flex items-center gap-3">
           {person.logo && (
-            <span className="inline-flex h-10 w-16 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-muted/40 px-2">
+            <span className="inline-flex h-10 w-16 shrink-0 items-center justify-center">
               <Image
                 src={person.logo}
                 alt={person.organization}
