@@ -53,7 +53,7 @@ function CardFront({ person }: { person: Fellow }) {
         <p className="text-xs text-muted-foreground">{person.position}</p>
         <div className="mt-1.5 flex items-center gap-3">
           {person.logo && (
-            <span className="inline-flex h-10 w-16 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-muted/40 px-2">
+            <span className="inline-flex h-10 w-16 shrink-0 items-center justify-center">
               <Image
                 src={person.logo}
                 alt={person.institution}
@@ -90,7 +90,7 @@ export function FellowCard({ person }: { person: Fellow }) {
               <CardMedia person={person} />
             </div>
             {person.logo && (
-              <div className="mt-3 flex h-14 w-full items-center justify-center rounded-lg border border-border/60 bg-muted/40 px-3">
+              <div className="mt-3 flex h-14 w-full items-center justify-center">
                 <Image
                   src={person.logo}
                   alt={person.institution}
