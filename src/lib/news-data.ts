@@ -45,6 +45,18 @@ const posts: NewsPost[] = [
     imageAlt: undefined,
     publishedAt: "2026-06-01T08:00:00Z",
   },
+  {
+    slug: "pyis-2026-enactus-philippines-national-competition",
+    title:
+      "PYIS 2026 and the Enactus Philippines National Competition to Be Held Together This October",
+    body: "MANILA, Philippines \u2014 Siklab Pilipinas and Enactus Philippines are proud to announce that the Philippine Youth Innovation Summit (PYIS) 2026 and the Enactus Philippines National Competition will be held together for the first time, on October 9\u201310, 2026, at De La Salle University, Manila.\n\nThe two-day event brings together over 200 delegates from more than 10 countries for PYIS, alongside student teams from Enactus Philippines\u2019 network of over 700 universities nationwide competing in the National Competition \u2014 making it one of the largest gatherings of youth innovators and student entrepreneurs in the country.\n\n## About PYIS 2026\n\nPYIS is Siklab Pilipinas\u2019 flagship youth innovation summit, convening student delegates, educators, university leaders, innovators, startups, government agencies, and international delegates around three central themes: Artificial Intelligence, International Cooperation, and Sustainable Development. The Summit features expert-led sessions, hands-on workshops, and innovation and pitch development activities for participants from the Philippines, across ASEAN, and beyond.\n\n## About the Enactus Philippines National Competition\n\nThe National Competition brings together Enactus teams from universities across the Philippines to present entrepreneurial projects that address real social, environmental, and economic challenges in their communities. The winning team will go on to represent the Philippines at the Enactus World Cup in S\u00e3o Paulo, competing against teams from over 40 countries.\n\n## Who Will Be There\n\nThe event will convene student delegates, educators, university leaders, innovators, and international delegates, alongside institutional partners including the Department of Education, KPMG Philippines, Khan Academy Philippines, UNESCO-ICHEI, and the National Youth Council Singapore.\n\n## Event Details\n\n- **Date:** October 9\u201310, 2026\n- **Venue:** De La Salle University, Taft Avenue, Manila\n\nThe event will conclude with a Closing and Awarding Ceremony recognizing the National Competition\u2019s winning team before they advance to represent the Philippines internationally.\n\nFor more information on registration, program details, and partnership opportunities, visit [philippineyouthsummit.org](https://philippineyouthsummit.org) or [enactus.ph](https://enactus.ph).",
+    excerpt:
+      "Siklab Pilipinas and Enactus Philippines announce that PYIS 2026 and the Enactus Philippines National Competition will be held together on October 9\u201310, 2026 at De La Salle University, Manila.",
+    category: "events",
+    imageUrl: undefined,
+    imageAlt: undefined,
+    publishedAt: "2026-09-25T08:00:00Z",
+  },
 ];
 
 export function getNewsPosts(category?: NewsCategory): NewsPost[] {

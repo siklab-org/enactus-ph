@@ -21,17 +21,69 @@ function ImagePlaceholder({ aspect = "16/9" }: { aspect?: string }) {
   );
 }
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function renderInline(line: string): string {
+  return escapeHtml(line)
+    .replace(
+      /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" class="text-primary underline underline-offset-4 hover:opacity-80" target="_blank" rel="noopener noreferrer">$1</a>',
+    )
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-foreground">$1</strong>');
+}
+
 function renderBody(body: string): string {
-  return body
-    .split("\n")
-    .filter((line) => line.trim())
-    .map((line) => {
-      if (line.startsWith("- ")) {
-        return `<li class="ml-6 list-disc text-muted-foreground">${line.slice(2)}</li>`;
+  const html: string[] = [];
+  let inList = false;
+
+  const closeList = () => {
+    if (inList) {
+      html.push("</ul>");
+      inList = false;
+    }
+  };
+
+  for (const raw of body.split("\n")) {
+    const line = raw.trim();
+
+    if (!line) {
+      closeList();
+      continue;
+    }
+
+    if (line.startsWith("- ")) {
+      if (!inList) {
+        html.push('<ul class="ml-6 list-disc space-y-1">');
+        inList = true;
       }
-      return `<p class="text-muted-foreground leading-relaxed">${line}</p>`;
-    })
-    .join("");
+      html.push(
+        `<li class="text-muted-foreground">${renderInline(line.slice(2))}</li>`,
+      );
+      continue;
+    }
+
+    closeList();
+
+    if (line.startsWith("## ")) {
+      html.push(
+        `<h2 class="mt-6 font-display text-xl font-semibold tracking-tight text-foreground">${renderInline(line.slice(3))}</h2>`,
+      );
+      continue;
+    }
+
+    html.push(
+      `<p class="text-muted-foreground leading-relaxed">${renderInline(line)}</p>`,
+    );
+  }
+
+  closeList();
+  return html.join("");
 }
 
 export function NewsPostDetail({ post }: { post: NewsPost }) {
