@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const numbers = [
-  { v: "32", l: "Partner Universities" },
+  { v: "800+", l: "Partner Universities" },
   { v: "78", l: "Active Ventures" },
   { v: "12K+", l: "Volunteer Hours" },
   { v: "240K", l: "Lives Impacted" },
