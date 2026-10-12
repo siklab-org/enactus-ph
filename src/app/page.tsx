@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { StatsCounter } from "@/components/StatsCounter";
 
 const stats = [
-  { value: "32", label: "Partner Universities" },
+  { value: "800+", label: "Partner Universities" },
   { value: "78", label: "Active Ventures" },
   { value: "12K+", label: "Volunteer Hours" },
   { value: "240K", label: "Lives Impacted" },
