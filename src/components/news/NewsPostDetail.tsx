@@ -90,7 +90,7 @@ export function NewsPostDetail({ post }: { post: NewsPost }) {
   return (
     <div className="min-h-screen bg-background">
       {/* Back link */}
-      <div className="mx-auto max-w-7xl px-6 pt-8">
+      <div className="shell pt-8">
         <Link
           href="/news"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"

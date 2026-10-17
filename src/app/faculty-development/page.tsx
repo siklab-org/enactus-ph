@@ -159,7 +159,7 @@ export default function FacultyDevelopment() {
       {/* ─── APPLY NOW BANNER ─── */}
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="shell py-12 md:py-16">
           <AnimatedSection>
             <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
               <div>
@@ -195,7 +195,7 @@ export default function FacultyDevelopment() {
       {/* ─── ABOUT ENACTUS ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -231,7 +231,7 @@ export default function FacultyDevelopment() {
       {/* ─── BACKGROUND & RATIONALE ─── */}
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Background &amp; Rationale
@@ -275,7 +275,7 @@ export default function FacultyDevelopment() {
       {/* ─── COMPETENCIES ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Competency Areas
@@ -301,7 +301,7 @@ export default function FacultyDevelopment() {
       {/* ─── OBJECTIVES ─── */}
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Program Goals
@@ -336,7 +336,7 @@ export default function FacultyDevelopment() {
       {/* ─── FELLOWSHIP STRUCTURE ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Fellowship Structure &amp; Schedule
@@ -413,7 +413,7 @@ export default function FacultyDevelopment() {
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.04]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="relative shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
                 · Learning Framework
@@ -450,7 +450,7 @@ export default function FacultyDevelopment() {
       {/* ─── TARGET PARTICIPANTS ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Target Participants
@@ -477,7 +477,7 @@ export default function FacultyDevelopment() {
       {/* ─── DELIVERABLES ─── */}
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Fellowship Deliverables
@@ -516,7 +516,7 @@ export default function FacultyDevelopment() {
       {/* ─── RECOGNITION & POST-FELLOWSHIP ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto grid gap-12 md:grid-cols-2 md:gap-16">
               {/* Recognition */}
               <div>
@@ -599,7 +599,7 @@ export default function FacultyDevelopment() {
       {/* ─── LONG-TERM VISION ─── */}
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Long-Term Vision
@@ -627,7 +627,7 @@ export default function FacultyDevelopment() {
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+          <div className="relative shell flex flex-col items-center py-16 md:py-24 text-center">
             <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
               · Apply Now
             </div>

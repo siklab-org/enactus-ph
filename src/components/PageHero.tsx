@@ -11,7 +11,7 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-border/60">
       <div className="absolute inset-0 grid-bg opacity-50" aria-hidden />
       <div className="absolute right-[-4rem] top-[-4rem] h-72 w-72 rounded-full bg-primary/40 blur-3xl" aria-hidden />
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-20 pt-16 md:pt-28">
+      <div className="relative shell pb-16 md:pb-20 pt-16 md:pt-28">
         <div
           className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-fade-up"
           style={{ animationDelay: "0ms" }}
@@ -19,7 +19,7 @@ export function PageHero({
           · {eyebrow}
         </div>
         <h1
-          className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl animate-fade-up"
+          className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up"
           style={{ animationDelay: "100ms" }}
         >
           {title}

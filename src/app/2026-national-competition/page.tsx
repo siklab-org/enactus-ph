@@ -788,7 +788,7 @@ export default function National2026Page() {
       {/* ─── COUNTDOWN BANNER ─── */}
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="shell py-12 md:py-16">
           <AnimatedSection>
             <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
               <div>
@@ -815,7 +815,7 @@ export default function National2026Page() {
       {/* ─── OVERVIEW ─── */}
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Overview
@@ -860,7 +860,7 @@ export default function National2026Page() {
       </section>
 
       {/* ─── TABLE OF CONTENTS ─── */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+      <div className="shell py-8 md:py-10">
         <div className="mx-auto max-w-3xl">
           <nav className="rounded-xl border border-border/60 bg-muted/10 p-5">
             <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -888,7 +888,7 @@ export default function National2026Page() {
       {/* ─── COMPETITION TIMELINE ─── */}
       <section id="timeline" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Timeline
@@ -925,7 +925,7 @@ export default function National2026Page() {
       {/* ─── ELIGIBILITY ─── */}
       <section id="eligibility" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Eligibility
@@ -989,7 +989,7 @@ export default function National2026Page() {
       {/* ─── ABOUT EARLY-STAGE ─── */}
       <section id="early-stage" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · About the Competition
@@ -1034,7 +1034,7 @@ export default function National2026Page() {
       {/* ─── OBJECTIVES ─── */}
       <section id="objectives" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Objectives
@@ -1069,7 +1069,7 @@ export default function National2026Page() {
       {/* ─── APPLICATION REQUIREMENTS ─── */}
       <section id="application" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Application Requirements
@@ -1134,7 +1134,7 @@ export default function National2026Page() {
       {/* ─── SELECTION PROCESS ─── */}
       <section id="selection" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Selection Process
@@ -1174,7 +1174,7 @@ export default function National2026Page() {
       {/* ─── CAPACITY-BUILDING PROGRAM ─── */}
       <section id="capacity-building" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Capacity-Building Program
@@ -1223,7 +1223,7 @@ export default function National2026Page() {
       {/* ─── PITCHING FORMAT ─── */}
       <section id="format" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Competition Format
@@ -1263,7 +1263,7 @@ export default function National2026Page() {
       {/* ─── SCHEDULE PER TEAM ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Per Team Schedule
@@ -1316,7 +1316,7 @@ export default function National2026Page() {
       {/* ─── JUDGING RUBRIC ─── */}
       <section id="judging" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Judging Rubric
@@ -1382,7 +1382,7 @@ export default function National2026Page() {
       {/* ─── CODE OF CONDUCT ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Code of Conduct
@@ -1423,7 +1423,7 @@ export default function National2026Page() {
       {/* ─── COMPETITION RULES ─── */}
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Competition Rules
@@ -1464,7 +1464,7 @@ export default function National2026Page() {
       {/* ─── AWARDS ─── */}
       <section id="awards" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Awards
@@ -1516,7 +1516,7 @@ export default function National2026Page() {
       {/* ─── WORLD CUP REPRESENTATION ─── */}
       <section id="world-cup" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · World Cup
@@ -1567,7 +1567,7 @@ export default function National2026Page() {
       {/* ─── FORFEITURE POLICY ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Forfeiture Policy
@@ -1623,7 +1623,7 @@ export default function National2026Page() {
       {/* ─── FAQ ─── */}
       <section id="faq" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · FAQ
@@ -1675,7 +1675,7 @@ export default function National2026Page() {
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+          <div className="relative shell flex flex-col items-center py-16 md:py-24 text-center">
             <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
               · Apply Now
             </div>

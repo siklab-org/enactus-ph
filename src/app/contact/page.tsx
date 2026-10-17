@@ -42,7 +42,7 @@ export default function Contact() {
       {/* ─── SOCIAL CARDS ─── */}
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-2xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Get in touch

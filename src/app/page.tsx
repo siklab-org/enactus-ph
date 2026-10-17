@@ -49,7 +49,7 @@ export default function Home() {
           style={{ animationDelay: "800ms" }}
           aria-hidden
         />
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:px-8 pb-20 md:pb-28 pt-12 md:pt-23">
+        <div className="relative shell flex flex-col gap-12 pb-20 md:pb-28 lg:pb-36 pt-12 md:pt-23 lg:pt-32">
           {/* 3.1 Eyebrow — fast slide from right */}
           <div
             className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-slide-in-right"
@@ -59,7 +59,7 @@ export default function Home() {
             Enactus.ph · est. network of 33 countries
           </div>
           {/* 3.2 Title lines — dramatic cascade */}
-          <h1 className="max-w-5xl text-hero font-semibold leading-[1.12] tracking-tight">
+          <h1 className="max-w-6xl text-hero font-semibold leading-[1.12] tracking-tight">
               <span
                 className="block animate-slide-in-right"
                 style={{ animationDelay: "0ms" }}
@@ -128,13 +128,13 @@ export default function Home() {
 
       {/* STATS */}
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
+        <div className="shell grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
           {stats.map((s) => (
             <StatsCounter
               key={s.label}
               value={s.value}
               label={s.label}
-              className="px-6 py-12"
+              className="bg-secondary px-4 py-8 sm:px-6 sm:py-12"
             />
           ))}
         </div>
@@ -142,9 +142,9 @@ export default function Home() {
 
       {/* EN-ACT-US */}
       <section className="border-b border-border/60">
-        <div className="mx-auto grid w-full max-w-7xl gap-16 px-4 sm:px-6 lg:px-8 py-16 md:py-24 md:grid-cols-12">
+        <div className="shell grid gap-10 py-12 sm:gap-16 sm:py-16 md:py-24 md:grid-cols-12">
           <AnimatedSection className="md:col-span-4">
-            <h2 className="mt-4 text-5xl font-semibold tracking-tight">
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
               en<span className="text-primary">·</span>act
               <span className="text-primary">·</span>us
             </h2>
@@ -170,10 +170,10 @@ export default function Home() {
             ].map((row, i) => (
               <div
                 key={row.k}
-                className="flex gap-6 border-b border-border/60 pb-8 animate-fade-up"
+                className="flex gap-4 border-b border-border/60 pb-8 animate-fade-up sm:gap-6"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <div className="w-20 shrink-0 font-display text-3xl font-semibold text-primary">
+                <div className="w-12 shrink-0 font-display text-3xl font-semibold text-primary sm:w-20">
                   {row.k}
                 </div>
                 <p className="text-lg leading-relaxed text-foreground/80">
@@ -187,20 +187,20 @@ export default function Home() {
 
       {/* CO-PRESENTED BY */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="shell py-12 sm:py-16 md:py-24">
           <AnimatedSection>
             <div className="text-center">
               <div className="font-mono text-sm uppercase tracking-[0.3em] text-foreground">
                 · Co-presented by
               </div>
               <div className="mt-8 flex justify-center">
-                <div className="flex items-center justify-center px-12 py-10">
+                <div className="flex items-center justify-center px-4 py-6 sm:px-12 sm:py-10">
                   <Image
                     src="/khan-academy-logo.svg"
                     alt="Khan Academy"
                     width={1200}
                     height={330}
-                    className="h-40 w-auto object-contain"
+                    className="h-16 w-auto max-w-full object-contain sm:h-24 md:h-40"
                   />
                 </div>
               </div>
@@ -211,7 +211,7 @@ export default function Home() {
 
       {/* PARTNERS */}
       <section className="border-b border-border/60">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="shell py-12 sm:py-16 md:py-24">
           <AnimatedSection>
             <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
               · Our Partners
@@ -221,67 +221,67 @@ export default function Home() {
             </h2>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/manabat-logo.png"
                 alt="R.G. Manabat & Co. (KPMG in the Philippines)"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/arete-logo.png"
                 alt="Arete"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/pacsb-logo.svg"
                 alt="PACSB"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/eneda-logo.svg"
                 alt="ENEDA"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/naseea-logo.svg"
                 alt="NASEEA"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/ja-philippines-logo.png"
                 alt="JA Philippines"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-3 transition-all">
+            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
               <Image
                 src="/acent-logo.png"
                 alt="ACeNT"
                 width={240}
                 height={96}
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
               />
             </div>
           </div>
@@ -298,7 +298,7 @@ export default function Home() {
 
       {/* PILLARS */}
       <section className="border-b border-border/60 bg-muted/40">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="shell py-12 sm:py-16 md:py-24">
           <AnimatedSection>
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
@@ -317,11 +317,11 @@ export default function Home() {
               </Link>
             </div>
           </AnimatedSection>
-          <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-2">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border sm:mt-16 md:grid-cols-2">
             {pillars.map((p, i) => (
               <div
                 key={p.tag}
-                className="group relative bg-background p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-secondary hover:text-secondary-foreground hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)]"
+                className="group relative bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-secondary hover:text-secondary-foreground hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)] sm:p-8"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <p.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
@@ -342,8 +342,8 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border/60 bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 py-16 md:py-24 md:grid-cols-2 md:items-end">
-            <h2 className="text-hero font-semibold leading-[1.05] tracking-tight">
+          <div className="relative shell grid gap-10 py-12 sm:py-16 md:py-24 md:grid-cols-2 md:items-end">
+            <h2 className="text-[clamp(2rem,1.25rem+2.2vw,3.75rem)] font-semibold leading-[1.05] tracking-tight">
               Build a venture.
               <br />
               Change a community.

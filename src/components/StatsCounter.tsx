@@ -56,7 +56,7 @@ export function StatsCounter({ value, label, className = "" }: StatsCounterProps
 
   return (
     <div ref={ref} className={className}>
-      <div className="font-display text-5xl font-semibold text-primary md:text-6xl">
+      <div className="font-display text-3xl font-semibold text-primary sm:text-4xl md:text-5xl lg:text-6xl">
         {displayValue}
       </div>
       <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] opacity-70">

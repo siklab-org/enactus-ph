@@ -56,7 +56,7 @@ export default function CountryLeadership() {
       {/* ─── COUNTRY LEADERSHIP ─── */}
       <section className="border-b border-border/60 bg-muted/40">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <h2 className="max-w-3xl text-section font-bold">
               Country Leadership
             </h2>

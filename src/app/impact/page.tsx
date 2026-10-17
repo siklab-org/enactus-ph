@@ -36,7 +36,7 @@ export default function Impact() {
         subtitle="We track outcomes, not just outputs. Every team reports against the UN Sustainable Development Goals."
       />
       <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 divide-y divide-white/10 md:grid-cols-3 md:divide-x">
+        <div className="shell grid grid-cols-2 divide-y divide-white/10 md:grid-cols-3 md:divide-x">
           {numbers.map((n) => (
             <StatsCounter
               key={n.l}
@@ -49,7 +49,7 @@ export default function Impact() {
       </section>
       <section className="border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="grid items-start gap-12 md:grid-cols-5">
               <div className="md:col-span-3">
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">· Aligned with the UN SDGs</div>

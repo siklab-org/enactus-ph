@@ -227,7 +227,7 @@ export function ResourcesContent() {
 
   return (
     <AnimatedSection>
-      <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-12 md:pt-16">
+      <section className="shell pb-16 md:pb-24 pt-12 md:pt-16">
         {/* Filter bar */}
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
           {CATEGORIES.map((cat) => (

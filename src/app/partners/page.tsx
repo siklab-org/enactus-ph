@@ -156,7 +156,7 @@ export default function Partners() {
           className={`border-b border-border/60 ${idx % 2 === 1 ? "bg-muted/5" : ""}`}
         >
           <AnimatedSection>
-            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
+            <div className="shell py-12 md:py-16 lg:py-24">
               <h2 className="max-w-3xl text-subsection font-semibold">
                 {tier.name}
               </h2>

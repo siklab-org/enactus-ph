@@ -7,10 +7,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Site-wide content shell: fluid gutters that grow with the viewport and a
+   wider cap than max-w-7xl so large displays aren't left with dead margins. */
+@utility shell {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 5rem);
+  max-width: calc(110rem + 2 * clamp(1.25rem, 4vw, 5rem));
+}
+
 @theme inline {
-  --text-hero: clamp(2.5rem, 6vw, 4.5rem);
-  --text-section: clamp(1.75rem, 3.5vw, 2.5rem);
-  --text-subsection: clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-hero: clamp(2.125rem, 1.25rem + 3.5vw, 6rem);
+  --text-section: clamp(1.625rem, 0.9rem + 1.6vw, 3.25rem);
+  --text-subsection: clamp(1.25rem, 0.95rem + 0.8vw, 2.125rem);
   --text-body: clamp(0.938rem, 1.5vw, 1.063rem);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -240,6 +249,15 @@
   }
 }
 
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 /* ─── Animation Utility Classes ─── */
 
 .animate-fade-up {
@@ -268,6 +286,10 @@
 
 .animate-pyis-glow {
   animation: pyis-glow 4200ms ease-in-out infinite;
+}
+
+.animate-slide-progress {
+  animation: slide-progress linear forwards;
 }
 
 /* ─── Stagger Delay Utilities (80ms increments) ─── */

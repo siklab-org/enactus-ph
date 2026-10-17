@@ -463,7 +463,7 @@ export default function KhanAcademyChallengePage() {
 
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="shell py-12 md:py-16">
           <AnimatedSection>
             <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
               <div>
@@ -509,7 +509,7 @@ export default function KhanAcademyChallengePage() {
 
       <section className="border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Overview
@@ -555,7 +555,7 @@ export default function KhanAcademyChallengePage() {
         </AnimatedSection>
       </section>
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+      <div className="shell py-8 md:py-10">
         <div className="mx-auto max-w-3xl">
           <nav className="rounded-xl border border-border/60 bg-muted/10 p-5">
             <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -582,7 +582,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="timeline" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Timeline
@@ -620,7 +620,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="challenge" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · The Challenge
@@ -678,7 +678,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="solve" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · What Can You Solve?
@@ -707,7 +707,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="looking-for" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · What We&apos;re Looking For
@@ -739,7 +739,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="eligibility" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Eligibility
@@ -820,7 +820,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="about" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · About the Competition
@@ -858,7 +858,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="journey" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Competition Journey
@@ -892,7 +892,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="application" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Application
@@ -968,7 +968,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="selection" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Selection Process
@@ -1002,7 +1002,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="capacity-building" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Capacity-Building Program
@@ -1043,7 +1043,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="competition" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · National Competition
@@ -1125,7 +1125,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="judging" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Judging Rubric
@@ -1178,7 +1178,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="awards" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Awards
@@ -1297,7 +1297,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="implementation" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Implementation
@@ -1335,7 +1335,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="safeguards" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Participant Safeguards
@@ -1400,7 +1400,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="world-cup" className="scroll-mt-24 border-b border-border/60 bg-muted/30">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · Enactus World Cup Non-Eligibility
@@ -1427,7 +1427,7 @@ export default function KhanAcademyChallengePage() {
 
       <section id="faq" className="scroll-mt-24 border-b border-border/60">
         <AnimatedSection>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="shell py-16 md:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 · FAQ
@@ -1478,7 +1478,7 @@ export default function KhanAcademyChallengePage() {
       <section id="apply" className="relative scroll-mt-24 overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
         <AnimatedSection>
-          <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+          <div className="relative shell flex flex-col items-center py-16 md:py-24 text-center">
             <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-secondary-foreground/60">
               · Apply Now
             </div>
