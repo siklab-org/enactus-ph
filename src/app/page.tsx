@@ -11,6 +11,22 @@ const stats = [
   { value: "240K", label: "Lives Impacted" },
 ];
 
+const partners = [
+  { src: "/manabat-logo.png", alt: "R.G. Manabat & Co. (KPMG in the Philippines)" },
+  { src: "/arete-logo.png", alt: "Arete" },
+  { src: "/pacsb-logo.svg", alt: "PACSB" },
+  { src: "/eneda-logo.svg", alt: "ENEDA" },
+  { src: "/naseea-logo.svg", alt: "NASEEA" },
+  { src: "/ja-philippines-logo.png", alt: "JA Philippines" },
+  { src: "/acent-logo.png", alt: "ACeNT" },
+  { src: "/NEWPARTNERS/IDEAS.png", alt: "IDEAS" },
+  { src: "/NEWPARTNERS/lseed-logo-1.jpg.png", alt: "LSEED" },
+  { src: "/NEWPARTNERS/SCALENCR.jpg", alt: "Scale NCR" },
+  { src: "/NEWPARTNERS/SICAD.jpg", alt: "SICAD" },
+  { src: "/NEWPARTNERS/SILLAG.jpg", alt: "SILLAG" },
+  { src: "/NEWPARTNERS/UMWAD.jpg", alt: "UMWAD" },
+];
+
 const pillars = [
   {
     icon: Cpu,
@@ -221,69 +237,20 @@ export default function Home() {
             </h2>
           </AnimatedSection>
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/manabat-logo.png"
-                alt="R.G. Manabat & Co. (KPMG in the Philippines)"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/arete-logo.png"
-                alt="Arete"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/pacsb-logo.svg"
-                alt="PACSB"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/eneda-logo.svg"
-                alt="ENEDA"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/naseea-logo.svg"
-                alt="NASEEA"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/ja-philippines-logo.png"
-                alt="JA Philippines"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
-            <div className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3">
-              <Image
-                src="/acent-logo.png"
-                alt="ACeNT"
-                width={240}
-                height={96}
-                className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-              />
-            </div>
+            {partners.map((p) => (
+              <div
+                key={p.src}
+                className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3"
+              >
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  width={240}
+                  height={96}
+                  className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
+                />
+              </div>
+            ))}
           </div>
           <div className="mt-8 text-center">
             <Link
