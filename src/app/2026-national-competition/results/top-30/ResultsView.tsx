@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Crown } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -67,7 +67,7 @@ export default function ResultsView() {
   const title = `Top ${count} Results`;
   const description = {
     "top-30": "Meet the 30 schools and projects recognized in this track.",
-    "top-12": "The 12 schools advancing in the Early-Stage Project Competition.",
+    "top-12": "The 12 schools advancing in the Early-Stage Project Competition, listed without a specific order.",
     "top-4": "The four schools recognized at the top of the competition.",
   }[view];
 
@@ -184,16 +184,13 @@ export default function ResultsView() {
             )}
 
             {view === "top-12" && (
-              <ol className={styles.schoolList}>
-                {top12Schools.map((school, index) => (
+              <ul className={styles.schoolList}>
+                {top12Schools.map((school) => (
                   <li className={styles.schoolRow} key={school}>
-                    <span className={styles.rank} aria-label={`Rank ${index + 1}`}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <span className={styles.schoolName}>{school}</span>
                   </li>
                 ))}
-              </ol>
+              </ul>
             )}
 
             {view === "top-4" && (
@@ -205,7 +202,16 @@ export default function ResultsView() {
                     }`}
                     key={award}
                   >
-                    <span className={styles.award}>{award}</span>
+                    <span className={styles.award}>
+                      {award === "Champion" && (
+                        <Crown
+                          className={styles.crown}
+                          aria-hidden="true"
+                          strokeWidth={2.25}
+                        />
+                      )}
+                      {award}
+                    </span>
                     <span className={styles.podiumSchool}>{school}</span>
                   </li>
                 ))}

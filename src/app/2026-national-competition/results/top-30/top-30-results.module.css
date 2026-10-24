@@ -40,14 +40,7 @@
 }
 
 .schoolRow {
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-}
-
-.rank {
-  color: var(--primary);
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .schoolName,
@@ -55,6 +48,11 @@
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.45;
+}
+
+.podiumSchool {
+  font-size: 1.125rem;
+  letter-spacing: -0.015em;
 }
 
 .podiumRow {
@@ -70,13 +68,44 @@
 
 .award {
   color: var(--primary);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.crown {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex: 0 0 auto;
+  color: #facc15;
 }
 
 .champion .award {
-  color: inherit;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  color: #fff;
+  animation: champion-glimmer 4s ease-in-out 1s infinite;
+}
+
+@keyframes champion-glimmer {
+  0%,
+  65%,
+  100% {
+    text-shadow: none;
+  }
+
+  35% {
+    text-shadow: 0 0 0.75rem rgb(250 204 21 / 70%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .champion .award {
+    animation: none;
+    text-shadow: none;
+  }
 }
 
 @media (min-width: 1024px) {
