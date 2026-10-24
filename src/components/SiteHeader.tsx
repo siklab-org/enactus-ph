@@ -57,6 +57,7 @@ interface NavLinkItem {
   href?: string;
   label: string;
   children?: NavLinkItem[];
+  expandable?: boolean;
 }
 
 const mobileNavLinks: NavLinkItem[] = [
@@ -96,6 +97,20 @@ const mobileNavLinks: NavLinkItem[] = [
       { href: "/2026-national-competition/about", label: "About the Summit" },
       { href: "/2026-national-competition/programme-of-activities", label: "Programme of Activities" },
       { href: "/2026-national-competition/resource-speakers", label: "Resource Speakers" },
+      {
+        label: "Results",
+        expandable: true,
+        children: [
+          {
+            href: "/2026-national-competition/results/top-30",
+            label: "Early-Stage Project Competition",
+          },
+          {
+            href: "/2026-national-competition/khan-academy-challenge",
+            label: "Khan Academy Challenge",
+          },
+        ],
+      },
     ],
   },
 ];
@@ -113,6 +128,7 @@ const competitionPaths = [
   "/2026-national-competition/about",
   "/2026-national-competition/programme-of-activities",
   "/2026-national-competition/resource-speakers",
+  "/2026-national-competition/results/top-30",
 ];
 
 function getMobileAccordionValue(pathname: string): string | undefined {
@@ -142,9 +158,12 @@ function MobileNavItem({ item, pathname, depth = 0 }: { item: NavLinkItem; pathn
     );
   }
 
-  if (item.children && depth === 0) {
+  if (item.children && (depth === 0 || item.expandable)) {
     return (
-      <Collapsible className="w-full">
+      <Collapsible
+        className="w-full"
+        defaultOpen={item.children.some((child) => child.href === pathname)}
+      >
         <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg px-3 py-3.5 text-sm font-medium text-foreground/80 hover:bg-accent/50 hover:text-foreground cursor-pointer">
           {item.label}
           <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 ui-open:rotate-180" />
@@ -601,6 +620,48 @@ export function SiteHeader() {
                           Resource Speakers
                         </Link>
                       </NavigationMenuLink>
+                    </li>
+                    <li className="relative">
+                      <details
+                        className="group"
+                        open={pathname.startsWith("/2026-national-competition/results")}
+                      >
+                        <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground">
+                          Results
+                          <ChevronDown
+                            className="h-3.5 w-3.5 transition-transform group-open:rotate-180"
+                            aria-hidden="true"
+                          />
+                        </summary>
+                        <ul className="pt-0.5">
+                          <li>
+                            <NavigationMenuLink
+                              asChild
+                              active={pathname === "/2026-national-competition/results/top-30"}
+                            >
+                              <Link
+                                href="/2026-national-competition/results/top-30"
+                                className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                              >
+                                Early-Stage Project Competition
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink
+                              asChild
+                              active={pathname === "/2026-national-competition/khan-academy-challenge"}
+                            >
+                              <Link
+                                href="/2026-national-competition/khan-academy-challenge"
+                                className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                              >
+                                Khan Academy Challenge
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        </ul>
+                      </details>
                     </li>
                   </ul>
                 </NavigationMenuContent>

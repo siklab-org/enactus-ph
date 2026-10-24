@@ -1,0 +1,125 @@
+.resultsLayout {
+  display: grid;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.visualRail {
+  min-width: 0;
+}
+
+.photoRail {
+  display: none;
+}
+
+.photo {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background-color: var(--muted);
+  background-position: center;
+  background-size: cover;
+}
+
+.schoolList,
+.podium {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.schoolRow,
+.podiumRow {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.125rem 1.25rem;
+  background: var(--muted);
+}
+
+.schoolRow {
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+}
+
+.rank {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.schoolName,
+.podiumSchool {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.podiumRow {
+  grid-template-columns: minmax(7rem, 0.35fr) minmax(0, 1fr);
+  min-height: 5.5rem;
+}
+
+.champion {
+  min-height: 7rem;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.award {
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.champion .award {
+  color: inherit;
+  font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .resultsLayout {
+    grid-template-columns: minmax(19rem, 0.95fr) minmax(0, 1.2fr);
+    gap: 3rem;
+  }
+
+  .visualRail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photoRail {
+    display: grid;
+    grid-auto-rows: minmax(0, 1fr);
+    flex: 1 1 0;
+    gap: 0.625rem;
+    width: calc(100% + clamp(1.25rem, 4vw, 5rem));
+    margin-top: 2rem;
+    margin-left: calc(-1 * clamp(1.25rem, 4vw, 5rem));
+  }
+
+  .photo {
+    min-height: 0;
+  }
+
+  .photo::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(250 249 246 / 38%) 0%,
+      rgb(250 249 246 / 65%) 58%,
+      var(--background) 100%
+    );
+    content: "";
+  }
+}
+
+@media (max-width: 480px) {
+  .podiumRow {
+    grid-template-columns: 1fr;
+    gap: 0.375rem;
+  }
+}
