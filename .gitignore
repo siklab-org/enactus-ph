@@ -54,3 +54,10 @@ openspec/
 !.dev.vars.example
 
 !.env.example
+
+# agent environment
+.agents/
+skills-lock.json
+.opencode/
+openspec/
+.playwright-mcp

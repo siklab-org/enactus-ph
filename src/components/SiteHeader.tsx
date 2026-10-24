@@ -89,10 +89,13 @@ const mobileNavLinks: NavLinkItem[] = [
     ],
   },
   {
-    label: "2026 National Competition",
+    label: "Nat Comp Innovation Summit 2026",
     children: [
       { href: "/2026-national-competition", label: "Early-Stage Project Competition" },
       { href: "/2026-national-competition/khan-academy-challenge", label: "Khan Academy Challenge" },
+      { href: "/2026-national-competition/about", label: "About the Summit" },
+      { href: "/2026-national-competition/programme-of-activities", label: "Programme of Activities" },
+      { href: "/2026-national-competition/resource-speakers", label: "Resource Speakers" },
     ],
   },
 ];
@@ -107,6 +110,9 @@ const whatWeDoPaths = [
 const competitionPaths = [
   "/2026-national-competition",
   "/2026-national-competition/khan-academy-challenge",
+  "/2026-national-competition/about",
+  "/2026-national-competition/programme-of-activities",
+  "/2026-national-competition/resource-speakers",
 ];
 
 function getMobileAccordionValue(pathname: string): string | undefined {
@@ -554,6 +560,45 @@ export function SiteHeader() {
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           Khan Academy Challenge
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/2026-national-competition/about"}
+                      >
+                        <Link
+                          href="/2026-national-competition/about"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          About the Summit
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/2026-national-competition/programme-of-activities"}
+                      >
+                        <Link
+                          href="/2026-national-competition/programme-of-activities"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Programme of Activities
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/2026-national-competition/resource-speakers"}
+                      >
+                        <Link
+                          href="/2026-national-competition/resource-speakers"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Resource Speakers
                         </Link>
                       </NavigationMenuLink>
                     </li>

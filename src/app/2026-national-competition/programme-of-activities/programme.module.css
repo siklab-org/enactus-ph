@@ -1,0 +1,113 @@
+.page[data-motion-ready="true"] [data-programme-reveal] {
+  transition:
+    opacity 560ms ease-out,
+    transform 560ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.page[data-motion-ready="true"]
+  [data-programme-reveal]:not([data-revealed="true"]) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cover {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+}
+
+.schedule {
+  overflow: hidden;
+  background: var(--card);
+}
+
+.scheduleRows > li:nth-child(6n + 1) {
+  --reveal-delay: 0ms;
+}
+
+.scheduleRows > li:nth-child(6n + 2) {
+  --reveal-delay: 55ms;
+}
+
+.scheduleRows > li:nth-child(6n + 3) {
+  --reveal-delay: 110ms;
+}
+
+.scheduleRows > li:nth-child(6n + 4) {
+  --reveal-delay: 165ms;
+}
+
+.scheduleRows > li:nth-child(6n + 5) {
+  --reveal-delay: 220ms;
+}
+
+.scheduleRows > li:nth-child(6n) {
+  --reveal-delay: 275ms;
+}
+
+.page[data-motion-ready="true"] .scheduleRows > li {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.jumpLink,
+.jumpLinkSecondary {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.jumpLink {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.jumpLinkSecondary {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.jumpLink:hover,
+.jumpLinkSecondary:hover {
+  transform: translateY(-2px);
+}
+
+.jumpLink:focus-visible,
+.jumpLinkSecondary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .cover {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jumpLink,
+  .jumpLinkSecondary {
+    transition: none;
+  }
+
+  .jumpLink:hover,
+  .jumpLinkSecondary:hover {
+    transform: none;
+  }
+
+  .page[data-motion-ready="true"] [data-programme-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
