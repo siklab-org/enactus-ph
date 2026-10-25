@@ -1,0 +1,117 @@
+.resultsLayout {
+  display: grid;
+  align-items: start;
+  gap: 2rem;
+}
+
+.sectionIntro {
+  min-width: 0;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, #facc15 38%, var(--background)) 0%,
+    color-mix(in oklab, #facc15 16%, var(--background)) 58%,
+    transparent 100%
+  );
+}
+
+.filter {
+  width: min(100%, 20rem);
+  margin-top: 1.75rem;
+}
+
+.schoolList {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schoolEntry {
+  min-width: 0;
+  padding: 1.125rem 1.25rem;
+  background: var(--muted);
+}
+
+.schoolEntry:nth-child(even) {
+  background: color-mix(in oklab, var(--muted) 55%, var(--background));
+}
+
+.schoolName {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.awardLabel {
+  width: fit-content;
+  margin: 0 0 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 0.25rem;
+  background: #facc15;
+  color: #1b1b1b;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.teamMembers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.teamMember {
+  min-width: 0;
+}
+
+.teamMember dt {
+  margin-bottom: 0.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.teamMember dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1024px) {
+  .resultsLayout {
+    grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.5fr);
+    gap: 3rem;
+  }
+
+  .sectionIntro {
+    position: sticky;
+    top: 7rem;
+    min-height: 22rem;
+  }
+
+  .teamMembers {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .schoolEntry {
+    padding: 1rem;
+  }
+
+  .sectionIntro {
+    padding: 1.25rem;
+  }
+
+  .teamMembers {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+}

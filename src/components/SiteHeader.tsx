@@ -106,7 +106,7 @@ const mobileNavLinks: NavLinkItem[] = [
             label: "Early-Stage Project Competition",
           },
           {
-            href: "/2026-national-competition/khan-academy-challenge",
+            href: "/2026-national-competition/results/khan-academy-challenge",
             label: "Khan Academy Challenge",
           },
         ],
@@ -129,6 +129,7 @@ const competitionPaths = [
   "/2026-national-competition/programme-of-activities",
   "/2026-national-competition/resource-speakers",
   "/2026-national-competition/results/top-30",
+  "/2026-national-competition/results/khan-academy-challenge",
 ];
 
 function getMobileAccordionValue(pathname: string): string | undefined {
@@ -650,10 +651,10 @@ export function SiteHeader() {
                           <li>
                             <NavigationMenuLink
                               asChild
-                              active={pathname === "/2026-national-competition/khan-academy-challenge"}
+                              active={pathname === "/2026-national-competition/results/khan-academy-challenge"}
                             >
                               <Link
-                                href="/2026-national-competition/khan-academy-challenge"
+                                href="/2026-national-competition/results/khan-academy-challenge"
                                 className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                               >
                                 Khan Academy Challenge
