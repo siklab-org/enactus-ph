@@ -14,10 +14,18 @@ import {
 import styles from "./khan-academy-results.module.css";
 
 const schoolLogos: Record<string, string> = {
+  "Ilocos Sur Polytechnic State College": "ilocos sur polytechnic state college.png",
+  "National University - Fairview": "national university.svg",
   "University of Santo Tomas - General Santos City": "ust-general santos.png",
+  "Ateneo de Manila University - B (iKHAN)":
+    "Ateneo_de_Manila_University_seal.svg.webp",
+  "Cebu Technological University": "cebu tech unov.png",
   "University of the Philippines - Baguio":
     "University_of_the_Philippines_logo.png",
+  "Bicol University - Polangui": "bicol university polangui campus.png",
   "Bulacan State University - A (ISKOLI)": "bulacan state univ.png",
+  "Ateneo de Manila University - A (Yes We Khan)":
+    "Ateneo_de_Manila_University_seal.svg.webp",
   "University of the Philippines - Manila":
     "University_of_the_Philippines_logo.png",
 };

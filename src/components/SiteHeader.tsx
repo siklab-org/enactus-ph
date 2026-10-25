@@ -60,6 +60,49 @@ interface NavLinkItem {
   expandable?: boolean;
 }
 
+const competitionNavGroups: {
+  label: string;
+  links: { href: string; label: string }[];
+}[] = [
+  {
+    label: "Competition tracks",
+    links: [
+      { href: "/2026-national-competition", label: "Early-Stage Project Competition" },
+      {
+        href: "/2026-national-competition/khan-academy-challenge",
+        label: "Khan Academy Education Impact Challenge",
+      },
+    ],
+  },
+  {
+    label: "Summit information",
+    links: [
+      { href: "/2026-national-competition/about", label: "About the Summit" },
+      {
+        href: "/2026-national-competition/programme-of-activities",
+        label: "Programme & Schedule",
+      },
+      {
+        href: "/2026-national-competition/resource-speakers",
+        label: "Resource Speakers",
+      },
+    ],
+  },
+  {
+    label: "Results",
+    links: [
+      {
+        href: "/2026-national-competition/results/top-30",
+        label: "Early-Stage Project Results",
+      },
+      {
+        href: "/2026-national-competition/results/khan-academy-challenge",
+        label: "Khan Academy Challenge Results",
+      },
+    ],
+  },
+];
+
 const mobileNavLinks: NavLinkItem[] = [
   { href: "/", label: "Home" },
   {
@@ -91,27 +134,11 @@ const mobileNavLinks: NavLinkItem[] = [
   },
   {
     label: "Nat Comp Innovation Summit 2026",
-    children: [
-      { href: "/2026-national-competition", label: "Early-Stage Project Competition" },
-      { href: "/2026-national-competition/khan-academy-challenge", label: "Khan Academy Challenge" },
-      { href: "/2026-national-competition/about", label: "About the Summit" },
-      { href: "/2026-national-competition/programme-of-activities", label: "Programme of Activities" },
-      { href: "/2026-national-competition/resource-speakers", label: "Resource Speakers" },
-      {
-        label: "Results",
-        expandable: true,
-        children: [
-          {
-            href: "/2026-national-competition/results/top-30",
-            label: "Early-Stage Project Competition",
-          },
-          {
-            href: "/2026-national-competition/results/khan-academy-challenge",
-            label: "Khan Academy Challenge",
-          },
-        ],
-      },
-    ],
+    children: competitionNavGroups.map(({ label, links }) => ({
+      label,
+      children: links,
+      expandable: label === "Results",
+    })),
   },
 ];
 
@@ -556,114 +583,31 @@ export function SiteHeader() {
                   <ChevronDown className="h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" />
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-56 gap-0.5 p-2">
-                    <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/2026-national-competition"}
-                      >
-                        <Link
-                          href="/2026-national-competition"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          Early-Stage Project Competition
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/2026-national-competition/khan-academy-challenge"}
-                      >
-                        <Link
-                          href="/2026-national-competition/khan-academy-challenge"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          Khan Academy Challenge
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/2026-national-competition/about"}
-                      >
-                        <Link
-                          href="/2026-national-competition/about"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          About the Summit
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/2026-national-competition/programme-of-activities"}
-                      >
-                        <Link
-                          href="/2026-national-competition/programme-of-activities"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          Programme of Activities
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink
-                        asChild
-                        active={pathname === "/2026-national-competition/resource-speakers"}
-                      >
-                        <Link
-                          href="/2026-national-competition/resource-speakers"
-                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                        >
-                          Resource Speakers
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li className="relative">
-                      <details
-                        className="group"
-                        open={pathname.startsWith("/2026-national-competition/results")}
-                      >
-                        <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground">
-                          Results
-                          <ChevronDown
-                            className="h-3.5 w-3.5 transition-transform group-open:rotate-180"
-                            aria-hidden="true"
-                          />
-                        </summary>
-                        <ul className="pt-0.5">
-                          <li>
-                            <NavigationMenuLink
-                              asChild
-                              active={pathname === "/2026-national-competition/results/top-30"}
-                            >
-                              <Link
-                                href="/2026-national-competition/results/top-30"
-                                className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                  <ul className="grid w-[32rem] grid-cols-2 gap-x-4 gap-y-2 p-3">
+                    {competitionNavGroups.map((group) => (
+                      <li key={group.label}>
+                        <h3 className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          {group.label}
+                        </h3>
+                        <ul className="space-y-0.5">
+                          {group.links.map((item) => (
+                            <li key={item.href}>
+                              <NavigationMenuLink
+                                asChild
+                                active={pathname === item.href}
                               >
-                                Early-Stage Project Competition
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
-                          <li>
-                            <NavigationMenuLink
-                              asChild
-                              active={pathname === "/2026-national-competition/results/khan-academy-challenge"}
-                            >
-                              <Link
-                                href="/2026-national-competition/results/khan-academy-challenge"
-                                className="block rounded-md px-6 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
-                              >
-                                Khan Academy Challenge
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
+                                <Link
+                                  href={item.href}
+                                  className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                                >
+                                  {item.label}
+                                </Link>
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
                         </ul>
-                      </details>
-                    </li>
+                      </li>
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
