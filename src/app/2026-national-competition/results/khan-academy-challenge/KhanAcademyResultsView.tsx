@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import {
   Select,
@@ -11,6 +12,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import styles from "./khan-academy-results.module.css";
+
+const schoolLogos: Record<string, string> = {
+  "University of Santo Tomas - General Santos City": "ust-general santos.png",
+  "University of the Philippines - Baguio":
+    "University_of_the_Philippines_logo.png",
+  "Bulacan State University - A (ISKOLI)": "bulacan state univ.png",
+  "University of the Philippines - Manila":
+    "University_of_the_Philippines_logo.png",
+};
 
 const topTenSchools = [
   {
@@ -131,73 +141,92 @@ export default function KhanAcademyResultsView() {
 
       <section
         id="results"
-        className={`shell scroll-mt-24 py-12 md:py-16 ${styles.resultsLayout}`}
+        className={`scroll-mt-24 ${styles.resultsSection}`}
         aria-labelledby="results-heading"
       >
-        <div className={styles.sectionIntro}>
-          <h2
-            id="results-heading"
-            className="text-section font-bold leading-tight text-balance"
-          >
-            {isTopFour ? "Top 4 awardees" : "Top 10 schools"}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            {isTopFour
-              ? "The four schools recognized as awardees."
-              : "Listed in no particular order."}
-          </p>
-          <div className={styles.filter}>
-            <label
-              htmlFor="results-view"
-              className="mb-2 block text-sm font-semibold"
-            >
-              Filter results
-            </label>
-            <Select
-              value={view}
-              onValueChange={(value) => {
-                if (value === "top-10" || value === "top-4") {
-                  setView(value);
-                }
-              }}
-            >
-              <SelectTrigger
-                id="results-view"
-                aria-label="Filter results"
-                className="border-border bg-background text-foreground"
+        <div className="shell relative z-10 py-12 md:py-16">
+          <div className={styles.resultsLayout}>
+            <div className={styles.sectionIntro}>
+              <h2
+                id="results-heading"
+                className="text-section font-bold leading-tight text-balance"
               >
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="top-10">Top 10</SelectItem>
-                <SelectItem value="top-4">Top 4</SelectItem>
-              </SelectContent>
-            </Select>
+                {isTopFour ? "Top 4 awardees" : "Top 10 schools"}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                {isTopFour
+                  ? "The four schools recognized as awardees."
+                  : "Listed in no particular order."}
+              </p>
+              <div className={styles.filter}>
+                <label
+                  htmlFor="results-view"
+                  className="mb-2 block text-sm font-semibold"
+                >
+                  Filter results
+                </label>
+                <Select
+                  value={view}
+                  onValueChange={(value) => {
+                    if (value === "top-10" || value === "top-4") {
+                      setView(value);
+                    }
+                  }}
+                >
+                  <SelectTrigger
+                    id="results-view"
+                    aria-label="Filter results"
+                    className="border-border bg-background text-foreground"
+                  >
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="top-10">Top 10</SelectItem>
+                    <SelectItem value="top-4">Top 4</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <ul className={styles.schoolList}>
+              {displayedSchools.map(
+                ({ school: { school: schoolName, faculty, students }, award }) => {
+                  const logo = schoolLogos[schoolName];
+                  return (
+                    <li className={styles.schoolEntry} key={schoolName}>
+                      {award && <p className={styles.awardLabel}>{award}</p>}
+                      <div className={styles.schoolHeading}>
+                        {logo && (
+                          <Image
+                            src={`/school%20logos/${encodeURIComponent(logo)}`}
+                            alt=""
+                            width={64}
+                            height={64}
+                            sizes="64px"
+                            className={styles.schoolLogo}
+                          />
+                        )}
+                        <h3 className={styles.schoolName}>{schoolName}</h3>
+                      </div>
+                      <dl className={styles.teamMembers}>
+                        <div className={styles.teamMember}>
+                          <dt>Faculty</dt>
+                          <dd>{faculty}</dd>
+                        </div>
+                        {students.map((student, index) => (
+                          <div className={styles.teamMember} key={student}>
+                            <dt>Student {index + 1}</dt>
+                            <dd>{student}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </li>
+                  );
+                },
+              )}
+            </ul>
           </div>
         </div>
-
-        <ul className={styles.schoolList}>
-          {displayedSchools.map(
-            ({ school: { school: schoolName, faculty, students }, award }) => (
-              <li className={styles.schoolEntry} key={schoolName}>
-                {award && <p className={styles.awardLabel}>{award}</p>}
-                <h3 className={styles.schoolName}>{schoolName}</h3>
-                <dl className={styles.teamMembers}>
-                  <div className={styles.teamMember}>
-                    <dt>Faculty</dt>
-                    <dd>{faculty}</dd>
-                  </div>
-                  {students.map((student, index) => (
-                    <div className={styles.teamMember} key={student}>
-                      <dt>Student {index + 1}</dt>
-                      <dd>{student}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </li>
-            ),
-          )}
-        </ul>
       </section>
     </>
   );

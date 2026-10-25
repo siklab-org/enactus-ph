@@ -1,25 +1,15 @@
 .resultsLayout {
   display: grid;
-  align-items: stretch;
+  align-items: start;
   gap: 2rem;
+}
+
+.resultsSection {
+  background-color: #fff;
 }
 
 .visualRail {
   min-width: 0;
-}
-
-.photoRail {
-  display: none;
-}
-
-.photo {
-  position: relative;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
-  background-color: var(--muted);
-  background-position: center;
-  background-size: cover;
 }
 
 .schoolList,
@@ -40,7 +30,26 @@
 }
 
 .schoolRow {
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 4rem minmax(0, 1fr);
+}
+
+.schoolLogo {
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 auto;
+  background: transparent;
+  object-fit: contain;
+}
+
+.projectSchool,
+.podiumIdentity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.projectSchool p {
+  margin: 0;
 }
 
 .schoolName,
@@ -110,39 +119,8 @@
 
 @media (min-width: 1024px) {
   .resultsLayout {
-    grid-template-columns: minmax(19rem, 0.95fr) minmax(0, 1.2fr);
-    gap: 3rem;
-  }
-
-  .visualRail {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .photoRail {
-    display: grid;
-    grid-auto-rows: minmax(0, 1fr);
-    flex: 1 1 0;
-    gap: 0.625rem;
-    width: calc(100% + clamp(1.25rem, 4vw, 5rem));
-    margin-top: 2rem;
-    margin-left: calc(-1 * clamp(1.25rem, 4vw, 5rem));
-  }
-
-  .photo {
-    min-height: 0;
-  }
-
-  .photo::after {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgb(250 249 246 / 38%) 0%,
-      rgb(250 249 246 / 65%) 58%,
-      var(--background) 100%
-    );
-    content: "";
+    grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 2fr);
+    gap: 2rem;
   }
 }
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Crown } from "lucide-react";
 import {
   Select,
@@ -13,10 +14,55 @@ import {
 import { top30Projects } from "../top30-results";
 import styles from "./top-30-results.module.css";
 
-const fillerPhotos = Array.from(
-  { length: 11 },
-  (_, index) => `/bg-fillers/bg${index + 1}.jpg`,
-);
+const schoolLogos: Record<string, string> = {
+  "Tarlac State University - Main Campus": "tarlac state u.png",
+  "University of Santo Tomas - General Santos": "ust-general santos.png",
+  "Iloilo Science and Technology University - Iloilo City Campus":
+    "iloilo science univ.png",
+  "State University of Northern Negros - Main Campus":
+    "state univ of northen negros.png",
+  "West Visayas State University - Main Campus": "west visayas university.png",
+  "Central Mindanao University - Main Campus":
+    "Central_Mindanao_University_logo.png",
+  "Universidad de Dagupan": "universidad de dagupan.png",
+  "Capiz State University - Dayao Campus": "Capiz_State_University.png",
+  "Asian Institute of Management": "Asian_Institute_of_Management_logo.svg",
+  "Don Mariano Marcos Memorial State University - South La Union Campus":
+    "don mariano.png",
+  "Aklan State University - Kalibo Campus": "aklan state univ.png",
+  "Holy Trinity College of General Santos City": "holy trinity college.png",
+  "University of Southern Mindanao - Kabacan Campus":
+    "University_of_Southern_Mindanao kabacan.png",
+  "Camarines Sur Polytechnic Colleges - Main Campus":
+    "Camarines_Sur_Polytechnic_Colleges_Logo.png",
+  "Ateneo de Davao University": "Ateneo_de_Davao_University_logo.png",
+  "University of the Philippines - Tacloban":
+    "University_of_the_Philippines_logo.png",
+  "University of the Philippines - Mindanao":
+    "university of the philippines mindanao.png",
+  "University of the Philippines - Cebu": "UP_Cebu_logo.png",
+  "Mapúa University - Intramuros Campus": "Mapua Univ.png",
+  "Angeles University Foundation - Main Campus": "angeles city foundation.png",
+  "Iloilo State University of Fisheries Science and Technology - Dingle Campus":
+    "iloilo state univ of fisheries science and technology.png",
+  "De La Salle - College of Saint Benilde - Antipolo":
+    "delasalle college of saint benilde.svg",
+  "Mariano Marcos State University - Batac Campus":
+    "mariano marcos state univ.png",
+  "University Of Mindanao - Main Campus": "University_of_Mindanao_Logo.png",
+  "Quezon City University - San Bartolome Campus":
+    "quezon city university.png",
+  "Bulacan State University - Main Campus": "bulacan state univ.png",
+  "University of San Agustin": "University_of_San_Agustin_Logo.png",
+  "University of San Carlos - Downtown Campus": "university of san carlos.svg",
+  "University of Santo Tomas - Manila": "university of sto tomas manila.svg",
+  "Naga College Foundation Inc.": "naga college foundation.png",
+};
+
+const getSchoolLogoSrc = (school: string) => {
+  const logo = schoolLogos[school];
+  return logo ? `/school%20logos/${encodeURIComponent(logo)}` : undefined;
+};
 
 const top12Schools = [
   "Mariano Marcos State University - Batac Campus",
@@ -54,16 +100,9 @@ const resultCounts: Record<ResultsView, number> = {
   "top-4": 4,
 };
 
-const photoCounts: Record<ResultsView, number> = {
-  "top-30": 8,
-  "top-12": 4,
-  "top-4": 2,
-};
-
 export default function ResultsView() {
   const [view, setView] = useState<ResultsView>("top-30");
   const count = resultCounts[view];
-  const photos = fillerPhotos.slice(0, photoCounts[view]);
   const title = `Top ${count} Results`;
   const description = {
     "top-30": "Meet the 30 schools and projects recognized in this track.",
@@ -130,98 +169,133 @@ export default function ResultsView() {
         </div>
       </section>
 
-      <section id="projects" className="shell scroll-mt-24 py-12 md:py-16">
-        <div className={styles.resultsLayout}>
-          <aside className={styles.visualRail} aria-labelledby="track-heading">
-            <h2
-              id="track-heading"
-              className="text-section font-bold leading-tight text-balance"
-            >
-              Early-Stage Project Competition Track
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {description}
-            </p>
-            <div className={styles.photoRail} aria-hidden="true">
-              {photos.map((photo, index) => (
-                <div
-                  key={photo}
-                  className={styles.photo}
-                  style={{
-                    backgroundImage: `url("${photo}")`,
-                    backgroundPosition:
-                      index % 2 === 0 ? "center 44%" : "center 58%",
-                  }}
-                />
-              ))}
+      <section
+        id="projects"
+        className={`scroll-mt-24 ${styles.resultsSection}`}
+      >
+        <div className="shell relative z-10 py-12 md:py-16">
+          <div className={styles.resultsLayout}>
+            <aside className={styles.visualRail} aria-labelledby="track-heading">
+              <h2
+                id="track-heading"
+                className="text-section font-bold leading-tight text-balance"
+              >
+                Early-Stage Project Competition Track
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                {description}
+              </p>
+            </aside>
+
+            <div>
+              {view === "top-30" && (
+                <ul className="space-y-2">
+                  {top30Projects.map((project, index) => {
+                    const logoSrc = getSchoolLogoSrc(project.school);
+                    return (
+                      <li
+                        key={`${project.school}-${project.project}`}
+                        className={`grid gap-x-6 gap-y-3 px-4 py-4 sm:px-6 md:grid-cols-[minmax(12rem,0.75fr)_minmax(0,1.25fr)] md:py-5 ${
+                          index % 2 === 0 ? "bg-muted/40" : ""
+                        }`}
+                      >
+                        <div>
+                          <div className={styles.projectSchool}>
+                            {logoSrc && (
+                              <Image
+                                src={logoSrc}
+                                alt=""
+                                width={64}
+                                height={64}
+                                sizes="64px"
+                                className={styles.schoolLogo}
+                              />
+                            )}
+                            <p className="text-sm font-medium leading-relaxed text-muted-foreground">
+                              {project.school}
+                            </p>
+                          </div>
+                          <h3 className="mt-1 text-xl font-bold leading-snug tracking-tight">
+                            {project.project}
+                          </h3>
+                        </div>
+                        <p className="text-sm leading-relaxed text-foreground/90 md:text-base">
+                          {project.description}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+
+              {view === "top-12" && (
+                <ul className={styles.schoolList}>
+                  {top12Schools.map((school) => {
+                    const logoSrc = getSchoolLogoSrc(school);
+                    return (
+                      <li className={styles.schoolRow} key={school}>
+                        {logoSrc && (
+                          <Image
+                            src={logoSrc}
+                            alt=""
+                            width={64}
+                            height={64}
+                            sizes="64px"
+                            className={styles.schoolLogo}
+                          />
+                        )}
+                        <span className={styles.schoolName}>{school}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+
+              {view === "top-4" && (
+                <ol className={styles.podium}>
+                  {top4Schools.map(({ award, school }, index) => {
+                    const logoSrc = getSchoolLogoSrc(school);
+                    return (
+                      <li
+                        className={`${styles.podiumRow} ${
+                          index === 0 ? styles.champion : ""
+                        }`}
+                        key={award}
+                      >
+                        <span className={styles.award}>
+                          {award === "Champion" && (
+                            <Crown
+                              className={styles.crown}
+                              aria-hidden="true"
+                              strokeWidth={2.25}
+                            />
+                          )}
+                          {award}
+                        </span>
+                        <span className={styles.podiumIdentity}>
+                          {logoSrc && (
+                            <Image
+                              src={logoSrc}
+                              alt=""
+                              width={64}
+                              height={64}
+                              sizes="64px"
+                              className={styles.schoolLogo}
+                            />
+                          )}
+                          <span className={styles.podiumSchool}>{school}</span>
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
             </div>
-          </aside>
-
-          <div>
-            {view === "top-30" && (
-              <ul className="space-y-2">
-                {top30Projects.map((project, index) => (
-                  <li
-                    key={`${project.school}-${project.project}`}
-                    className={`grid gap-x-10 gap-y-3 px-4 py-6 sm:px-6 md:grid-cols-[minmax(14rem,0.8fr)_minmax(0,1.2fr)] md:py-7 ${
-                      index % 2 === 0 ? "bg-muted/40" : ""
-                    }`}
-                  >
-                    <div>
-                      <p className="text-sm font-medium leading-relaxed text-muted-foreground">
-                        {project.school}
-                      </p>
-                      <h3 className="mt-1 text-xl font-bold leading-snug tracking-tight">
-                        {project.project}
-                      </h3>
-                    </div>
-                    <p className="text-sm leading-relaxed text-foreground/90 md:text-base">
-                      {project.description}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {view === "top-12" && (
-              <ul className={styles.schoolList}>
-                {top12Schools.map((school) => (
-                  <li className={styles.schoolRow} key={school}>
-                    <span className={styles.schoolName}>{school}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {view === "top-4" && (
-              <ol className={styles.podium}>
-                {top4Schools.map(({ award, school }, index) => (
-                  <li
-                    className={`${styles.podiumRow} ${
-                      index === 0 ? styles.champion : ""
-                    }`}
-                    key={award}
-                  >
-                    <span className={styles.award}>
-                      {award === "Champion" && (
-                        <Crown
-                          className={styles.crown}
-                          aria-hidden="true"
-                          strokeWidth={2.25}
-                        />
-                      )}
-                      {award}
-                    </span>
-                    <span className={styles.podiumSchool}>{school}</span>
-                  </li>
-                ))}
-              </ol>
-            )}
           </div>
+          <p className="sr-only" aria-live="polite">
+            Showing the Top {count} results.
+          </p>
         </div>
-        <p className="sr-only" aria-live="polite">
-          Showing the Top {count} results.
-        </p>
       </section>
     </>
   );
