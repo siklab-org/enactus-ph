@@ -1,92 +1,70 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const exploreLinks = [
+  { href: "/about", label: "About Enactus" },
+  { href: "/impact", label: "Our impact" },
+  { href: "/2026-national-competition", label: "National competition" },
+  { href: "/news", label: "News" },
+];
+
+const getInvolvedLinks = [
+  { href: "/university-engagement", label: "Join a team" },
+  { href: "/faculty-development", label: "Faculty" },
+  { href: "/partners", label: "Partner with us" },
+  { href: "/contact", label: "Contact" },
+];
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/60 bg-secondary text-secondary-foreground">
-      <div className="shell grid gap-12 py-12 md:py-16 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
+    <footer className="site-footer">
+      <div className="shell site-footer-main">
+        <div className="site-footer-brand">
+          <Link href="/" aria-label="Enactus Philippines home">
             <Image
               src="/enactus-logo.webp"
-              alt="Enactus"
+              alt="Enactus Philippines"
               width={1920}
               height={1080}
-              className="h-8 w-auto brightness-0 invert"
+              className="site-footer-logo"
             />
-          </div>
-          <p className="mt-6 max-w-md text-sm leading-relaxed opacity-75">
-            A national network of student, academic and business leaders using
-            entrepreneurial action to build a more sustainable Philippines.
+          </Link>
+          <p>
+            Student, academic and business leaders using entrepreneurial action
+            to build a more sustainable Philippines.
           </p>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] opacity-50">
-            Bonifacio Global City, Manila
-          </p>
+          <span>Bonifacio Global City, Manila</span>
         </div>
-        <div>
-          <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
-            Explore
-          </h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <Link href="/about" className="opacity-80 hover:opacity-100">
-                Who We Are
-              </Link>
-            </li>
-            <li>
-              <Link href="/university-engagement" className="opacity-80 hover:opacity-100">
-                What We Do
-              </Link>
-            </li>
-            <li>
-              <Link href="/news" className="opacity-80 hover:opacity-100">
-                News
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="opacity-80 hover:opacity-100">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
-            Network
-          </h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <a
-                href="https://enactus.org"
-                target="_blank"
-                rel="noreferrer"
-                className="opacity-80 hover:opacity-100"
-              >
-                Enactus Global
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://siklab.org.ph/"
-                target="_blank"
-                rel="noreferrer"
-                className="opacity-80 hover:opacity-100"
-              >
-                Siklab
-              </a>
-            </li>
-          </ul>
+
+        <nav className="site-footer-nav" aria-label="Explore Enactus">
+          <h2>Explore</h2>
+          {exploreLinks.map((link) => (
+            <Link href={link.href} key={link.href}>{link.label}</Link>
+          ))}
+        </nav>
+
+        <nav className="site-footer-nav" aria-label="Get involved">
+          <h2>Get involved</h2>
+          {getInvolvedLinks.map((link) => (
+            <Link href={link.href} key={link.href}>{link.label}</Link>
+          ))}
+        </nav>
+
+        <div className="site-footer-nav">
+          <h2>Our network</h2>
+          <a href="https://enactus.org" target="_blank" rel="noreferrer">
+            Enactus Global
+          </a>
+          <a href="https://siklab.org.ph/" target="_blank" rel="noreferrer">
+            Siklab Pilipinas
+          </a>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="shell flex flex-col gap-2 py-6 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-1">
-            <span>Enactus Philippines is a chapter of Enactus Global</span>
-            <span>
-              © {new Date().getFullYear()} Enactus Global. All rights reserved.
-            </span>
-          </div>
-          <span>Entrepreneurial · Action · Us</span>
+
+      <div className="site-footer-bottom">
+        <div className="shell">
+          <span>Enactus Philippines is a chapter of Enactus Global.</span>
+          <span>© {new Date().getFullYear()} Enactus Global. All rights reserved.</span>
         </div>
       </div>
     </footer>

@@ -309,7 +309,7 @@ function MobileNav({ pathname }: { pathname: string }) {
                 href="https://www.philippineyouthsummit.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-4 text-sm font-semibold transition-all duration-200 hover:bg-accent"
+                className="flex w-full items-center justify-center gap-2 bg-primary px-5 py-4 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-105"
               >
                 <Image
                   src="/pyis.png"
@@ -345,7 +345,7 @@ export function SiteHeader() {
   const isCompetitionActive = pathname.startsWith("/2026-national-competition");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header className="site-header sticky top-0 z-40 border-b border-border/60 bg-background">
       <div className="shell flex h-16 items-center justify-between">
         <Link
           href="/"
@@ -357,7 +357,7 @@ export function SiteHeader() {
             width={1920}
             height={1080}
             loading="eager"
-            className="h-12 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
         <MobileNav pathname={pathname} />
@@ -619,17 +619,16 @@ export function SiteHeader() {
             href="https://www.philippineyouthsummit.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex h-10 items-center gap-2 overflow-hidden rounded-full border border-border bg-background px-4 text-sm font-semibold text-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:border-primary/40 hover:bg-accent animate-pyis-float animate-pyis-glow"
+            className="inline-flex h-10 items-center gap-2 px-3 text-sm font-semibold text-foreground transition-transform duration-200 hover:scale-105"
           >
             <Image
               src="/pyis.png"
               alt="Philippine Youth Summit"
               width={24}
               height={24}
-              className="h-5 w-5 rounded-full object-cover transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110"
+              className="h-5 w-5 object-cover"
             />
             PYIS
-            <span className="pointer-events-none absolute inset-y-0 left-0 w-1/2 opacity-70 blur-sm bg-gradient-to-r from-transparent via-primary/25 to-transparent animate-pyis-shimmer" />
           </Link>
           </div>
       </div>

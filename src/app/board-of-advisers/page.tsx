@@ -44,10 +44,10 @@ const advisers = [
   },
   {
     name: 'Prof. Aristheo "Aris" Lacuna',
-    role: "Board Member",
-    organization: "Philippine Association of Colleges and Schools of Business (PACSB)",
+    role: "Founder",
+    organization: "Design Thinking 4 Schools (PH)",
     portrait: "/boa/Aristheo-Portrait.png",
-    logo: "/boa/AristheoAmadoVictor-Logo.png",
+    logo: "",
     bio: "He is an Assistant Professor at Southville International School and Colleges and a voice in social-enterprise education, serving as Vice Chairperson of the National Association of Social Enterprise Educators and Administrators (NASEEA). His work centers on integrating social entrepreneurship and design thinking into business curricula.",
   },
   {

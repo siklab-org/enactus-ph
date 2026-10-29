@@ -40,9 +40,38 @@ const audiences = [
   "Government and diplomatic representatives",
 ];
 
-const partnerLogos = Array.from({ length: 18 }, (_, index) => index + 1).filter(
-  (number) => number !== 6,
-);
+type PartnerLogo = {
+  src: string;
+  alt: string;
+  layout: "featured" | "half" | "standard";
+};
+
+const partnerLogos: PartnerLogo[] = [
+  {
+    src: "/khan-academy-logo.svg",
+    alt: "Khan Academy Philippines",
+    layout: "featured",
+  },
+  {
+    src: "/pacsb-logo.svg",
+    alt: "Philippine Association of Colleges and Schools of Business",
+    layout: "half",
+  },
+  {
+    src: "/lseed-logo-1.jpg.png",
+    alt: "LSEED Center",
+    layout: "half",
+  },
+  ...Array.from({ length: 18 }, (_, index) => index + 1)
+    .filter((number) => ![1, 5, 6].includes(number))
+    .map(
+      (number): PartnerLogo => ({
+        src: `/partnerlogos/Partner%20Logo%20(${number}).png`,
+        alt: `Summit partner ${number}`,
+        layout: "standard",
+      }),
+    ),
+];
 
 export default function SummitAboutPage() {
   return (
@@ -206,19 +235,31 @@ export default function SummitAboutPage() {
               meaningful dialogue and collaboration possible.
             </p>
           </div>
-          <div className="grid grid-cols-2 items-center gap-x-6 gap-y-5 sm:grid-cols-3 md:grid-cols-4">
-            {partnerLogos.map((number) => (
+          <div className="grid grid-cols-2 items-center gap-x-6 gap-y-5 sm:grid-cols-4">
+            {partnerLogos.map((logo) => (
               <div
-                key={number}
-                className="flex min-h-20 items-center justify-center px-3 py-4"
+                key={logo.alt}
+                className={`flex min-h-20 items-center justify-center px-3 py-4 ${
+                  logo.layout === "featured"
+                    ? "col-span-2 sm:col-span-4"
+                    : logo.layout === "half"
+                      ? "col-span-2"
+                      : ""
+                }`}
               >
                 <Image
-                  src={`/partnerlogos/Partner%20Logo%20(${number}).png`}
-                  alt={`Summit partner ${number}`}
+                  src={logo.src}
+                  alt={logo.alt}
                   width={180}
                   height={90}
                   sizes="(max-width: 640px) 40vw, (max-width: 1024px) 22vw, 14vw"
-                  className="max-h-16 w-full object-contain opacity-85"
+                  className={`w-full object-contain opacity-85 ${
+                    logo.layout === "featured"
+                      ? "max-h-32 sm:max-h-36 md:max-h-40"
+                      : logo.layout === "half"
+                        ? "max-h-16"
+                        : "max-h-14"
+                  }`}
                 />
               </div>
             ))}

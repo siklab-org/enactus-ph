@@ -1,20 +1,89 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Cpu, LineChart, Sprout, Users } from "lucide-react";
-import { AnimatedSection } from "@/components/AnimatedSection";
-import { StatsCounter } from "@/components/StatsCounter";
+import Link from "next/link";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BookOpenCheck,
+  ChartNoAxesCombined,
+  GraduationCap,
+  Handshake,
+  Lightbulb,
+  Network,
+  Sprout,
+  UsersRound,
+} from "lucide-react";
+import { getNewsPosts } from "@/lib/news-data";
+import { PhilippinesMap } from "@/components/PhilippinesMap";
 
-const stats = [
-  { value: "800+", label: "Partner Universities" },
-  { value: "78", label: "Active Ventures" },
-  { value: "12K+", label: "Volunteer Hours" },
-  { value: "240K", label: "Lives Impacted" },
+const impact = [
+  { value: "800+", label: "Partner universities" },
+  { value: "78", label: "Student-led ventures" },
+  { value: "12K+", label: "Volunteer hours" },
+  { value: "240K+", label: "Lives impacted" },
+];
+
+const pathways = [
+  {
+    slug: "students",
+    title: "Students",
+    description: "Find your campus team and turn an idea into action.",
+    href: "/university-engagement",
+    icon: GraduationCap,
+  },
+  {
+    slug: "faculty",
+    title: "Faculty",
+    description: "Help students build ventures with lasting community value.",
+    href: "/faculty-development",
+    icon: BookOpenCheck,
+  },
+  {
+    slug: "partners",
+    title: "Partners",
+    description: "Bring expertise, resources and opportunity to the network.",
+    href: "/partners",
+    icon: Handshake,
+  },
+  {
+    slug: "alumni",
+    title: "Alumni",
+    description: "Share what you have learned with the next generation.",
+    href: "/about",
+    icon: UsersRound,
+  },
+];
+
+const ventureStages = [
+  {
+    title: "Start with a need",
+    description:
+      "Listen to communities and understand the challenge before designing a response.",
+    image: "/ENACTUSSLIDESHOW/6.jpg",
+    alt: "Students and mentors gather at an Enactus Philippines event",
+    icon: Sprout,
+  },
+  {
+    title: "Build a solution",
+    description:
+      "Bring entrepreneurial thinking, practical skills and partners together around an idea.",
+    image: "/ENACTUSSLIDESHOW/4.jpg",
+    alt: "Enactus participants share ideas during a university event",
+    icon: Lightbulb,
+  },
+  {
+    title: "Measure what changes",
+    description:
+      "Learn from the work, track outcomes and improve the venture over time.",
+    image: "/ENACTUSSLIDESHOW/5.jpg",
+    alt: "A student presents at an Enactus Philippines competition",
+    icon: ChartNoAxesCombined,
+  },
 ];
 
 const partners = [
   { src: "/manabat-logo.png", alt: "R.G. Manabat & Co. (KPMG in the Philippines)" },
-  { src: "/arete-logo.png", alt: "Arete" },
-  { src: "/pacsb-logo.svg", alt: "PACSB" },
+  { src: "/arete-logo.png", alt: "Areté" },
+  { src: "/pacsb-logo.svg", alt: "Philippine Association of Collegiate Schools of Business" },
   { src: "/eneda-logo.svg", alt: "ENEDA" },
   { src: "/naseea-logo.svg", alt: "NASEEA" },
   { src: "/ja-philippines-logo.png", alt: "JA Philippines" },
@@ -27,319 +96,295 @@ const partners = [
   { src: "/NEWPARTNERS/UMWAD.jpg", alt: "UMWAD" },
 ];
 
-const pillars = [
-  {
-    icon: Cpu,
-    tag: "01 / Innovation",
-    title: "Tech-enabled ventures",
-    body: "We back student teams shipping software, IoT, fintech and AI solutions for Philippine communities.",
-  },
-  {
-    icon: Sprout,
-    tag: "02 / Sustainability",
-    title: "Climate-positive enterprise",
-    body: "From agri-tech to circular plastics, our projects align with the UN Sustainable Development Goals.",
-  },
-  {
-    icon: Users,
-    tag: "03 / Community",
-    title: "Inclusive by design",
-    body: "Co-built with farmers, MSMEs, and out-of-school youth across Luzon, Visayas and Mindanao.",
-  },
-  {
-    icon: LineChart,
-    tag: "04 / Scale",
-    title: "From campus to country",
-    body: "Mentors, partners and capital that take a thesis project into a registered social enterprise.",
-  },
-];
+function formatDate(date: string) {
+  return new Intl.DateTimeFormat("en-PH", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
+}
 
 export default function Home() {
+  const news = getNewsPosts().slice(0, 2).map((post) => ({
+    ...post,
+    headline:
+      post.slug === "pyis-2026-enactus-philippines-national-competition"
+        ? "PYIS and Nationals Join"
+        : "Enactus Returns in 2026",
+  }));
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* HERO */}
-      <section className="relative overflow-hidden border-b border-border/60">
-        <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
-        <div
-          className="absolute right-[-6rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-primary/40 blur-3xl "
-          style={{ animationDelay: "800ms" }}
-          aria-hidden
-        />
-        <div className="relative shell flex flex-col gap-12 pb-20 md:pb-28 lg:pb-36 pt-12 md:pt-23 lg:pt-32">
-          {/* 3.1 Eyebrow — fast slide from right */}
-          <div
-            className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground animate-slide-in-right"
-            style={{ animationDelay: "0ms", animationDuration: "600ms" }}
-          >
-            <span className="inline-block h-px w-8 bg-foreground/40" />
-            Enactus.ph · est. network of 33 countries
-          </div>
-          {/* 3.2 Title lines — dramatic cascade */}
-          <h1 className="max-w-6xl text-hero font-semibold leading-[1.12] tracking-tight">
-              <span
-                className="block animate-slide-in-right"
-                style={{ animationDelay: "0ms" }}
-              >
-                We believe{" "}
-                <span className="text-foreground/30">investing</span> in
-              </span>
-              <span
-                className="block animate-slide-in-right"
-                style={{ animationDelay: "100ms" }}
-              >
-                students who <span className="text-foreground/30">take </span>
-              </span>
-              <span
-                className="block animate-slide-in-right"
-                style={{ animationDelay: "200ms" }}
-              >
-                <span className="inline-block bg-primary italic">
-                  entrepreneurial action
-                </span>{" "}
-                for
-              </span>
-              <span
-                className="block animate-slide-in-right"
-                style={{ animationDelay: "300ms" }}
-              >
-                others <span className="text-foreground/30">creates a</span>{" "}
-                better world
-              </span>
-              <span
-                className="block animate-slide-in-right"
-                style={{ animationDelay: "400ms" }}
-              >
-                <span className="inline-block bg-primary px-3 italic">
-                  for us all.
-                </span>
-              </span>
-          </h1>
-          {/* 3.3 CTA buttons — mid pace */}
-          <div
-            className="flex flex-wrap items-center gap-4 animate-slide-in-right"
-            style={{ animationDelay: "380ms", animationDuration: "800ms" }}
-          >
-            <Link
-              href="/university-engagement"
-              className="group inline-flex h-12 items-center gap-2 rounded-full bg-secondary px-6 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
-            >
-              Explore the network
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex h-12 items-center gap-2 rounded-full border border-foreground/20 px-6 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/5"
-            >
-              Start a team
-            </Link>
+    <div className="home-page">
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="home-hero-photo home-hero-map">
+          <PhilippinesMap />
+        </div>
+        <div className="home-hero-copy">
+          <div className="home-hero-copy-inner">
+            <h1 id="home-title">
+              Student ideas.<br />National impact.
+            </h1>
+            <p>
+              Enactus Philippines brings students, educators and business leaders
+              together to build ventures that move communities forward.
+            </p>
+            <div className="home-hero-actions">
+              <Link className="home-button home-button-dark" href="/university-engagement">
+                Find your place <ArrowUpRight aria-hidden="true" size={18} />
+              </Link>
+              <Link className="home-text-link" href="/about">
+                What is Enactus?
+              </Link>
+            </div>
+            <a className="home-scroll-link" href="#our-impact">
+              Explore our impact
+            </a>
           </div>
         </div>
-        {/* 3.4 Yellow slash — delay 400ms */}
-        <div
-          className="absolute bottom-0 left-0 h-16 w-1/2 yellow-slash animate-slide-in-left"
-          style={{ animationDelay: "400ms" }}
-          aria-hidden
-        />
       </section>
 
-      {/* STATS */}
-      <section className="border-b border-border/60 bg-secondary text-secondary-foreground">
-        <div className="shell grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
-          {stats.map((s) => (
-            <StatsCounter
-              key={s.label}
-              value={s.value}
-              label={s.label}
-              className="bg-secondary px-4 py-8 sm:px-6 sm:py-12"
-            />
+      <section className="home-impact" id="our-impact" aria-labelledby="impact-title">
+        <div className="home-impact-intro">
+          <h2 id="impact-title">A network in action</h2>
+          <p>Students turning entrepreneurial action into measurable change.</p>
+        </div>
+        <div className="home-impact-stats">
+          {impact.map((stat) => (
+            <div className="home-impact-stat" key={stat.label}>
+              <p className="home-stat-value">{stat.value}</p>
+              <p className="home-stat-label">{stat.label}</p>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* EN-ACT-US */}
-      <section className="border-b border-border/60">
-        <div className="shell grid gap-10 py-12 sm:gap-16 sm:py-16 md:py-24 md:grid-cols-12">
-          <AnimatedSection className="md:col-span-4">
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              en<span className="text-primary">·</span>act
-              <span className="text-primary">·</span>us
-            </h2>
-            <p className="mt-6 text-muted-foreground">
-              Three syllables. One operating model for solving the
-              country&apos;s hardest problems.
-            </p>
-          </AnimatedSection>
-          <div className="space-y-8 md:col-span-8">
-            {[
-              {
-                k: "En",
-                v: "trepreneurial — initiating innovation with integrity and passion.",
-              },
-              {
-                k: "Act",
-                v: "ion — the experience of social impact that sparks social enterprise.",
-              },
-              {
-                k: "Us",
-                v: " — students, academics and business leaders building a better Philippines.",
-              },
-            ].map((row, i) => (
-              <div
-                key={row.k}
-                className="flex gap-4 border-b border-border/60 pb-8 animate-fade-up sm:gap-6"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <div className="w-12 shrink-0 font-display text-3xl font-semibold text-primary sm:w-20">
-                  {row.k}
-                </div>
-                <p className="text-lg leading-relaxed text-foreground/80">
-                  {row.v}
-                </p>
-              </div>
-            ))}
+      <section className="home-story" aria-labelledby="story-title">
+        <div className="home-story-copy">
+          <h2 id="story-title">Business for good.</h2>
+          <p className="home-story-lead">
+            Enactus is a global network of students who use entrepreneurship to
+            address social, environmental and economic challenges.
+          </p>
+          <p>
+            In the Philippines, campus teams work alongside communities to
+            develop practical ventures, learn by doing and build a more
+            sustainable future.
+          </p>
+          <div className="home-story-focus" aria-label="Explore the challenges Enactus addresses">
+            <h3>Choose a challenge</h3>
+            <details name="story-focus">
+              <summary>Social</summary>
+              <p>Use entrepreneurship to address social challenges alongside communities.</p>
+            </details>
+            <details name="story-focus">
+              <summary>Environmental</summary>
+              <p>Develop practical responses to environmental challenges.</p>
+            </details>
+            <details name="story-focus">
+              <summary>Economic</summary>
+              <p>Build ventures that help address economic challenges.</p>
+            </details>
           </div>
+          <Link className="home-inline-link" href="/about">
+            Get to know Enactus <ArrowRight aria-hidden="true" size={18} />
+          </Link>
         </div>
+        <figure className="home-story-photo">
+          <Image
+            src="/ENACTUSSLIDESHOW/3.jpg"
+            alt="Enactus Philippines representatives at a memorandum of agreement signing"
+            fill
+            sizes="(max-width: 800px) 100vw, 48vw"
+            className="home-cover-image"
+          />
+          <figcaption>Partnerships connect ideas with the people and resources to grow them.</figcaption>
+        </figure>
       </section>
 
-      {/* CO-PRESENTED BY */}
-      <section className="border-b border-border/60">
-        <div className="shell py-12 sm:py-16 md:py-24">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="font-mono text-sm uppercase tracking-[0.3em] text-foreground">
-                · Co-presented by
-              </div>
-              <div className="mt-8 flex justify-center">
-                <div className="flex items-center justify-center px-4 py-6 sm:px-12 sm:py-10">
-                  <Image
-                    src="/khan-academy-logo.svg"
-                    alt="Khan Academy"
-                    width={1200}
-                    height={330}
-                    className="h-16 w-auto max-w-full object-contain sm:h-24 md:h-40"
-                  />
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
+      <section className="home-pathways" aria-labelledby="pathways-title">
+        <div className="home-pathways-intro">
+          <h2 id="pathways-title">There is a place for you here.</h2>
+          <p>Choose where you want to take part in the movement.</p>
+          <Link className="home-pathways-contact" href="/contact">
+            Talk with our team <ArrowRight aria-hidden="true" size={18} />
+          </Link>
         </div>
-      </section>
-
-      {/* PARTNERS */}
-      <section className="border-b border-border/60">
-        <div className="shell py-12 sm:py-16 md:py-24">
-          <AnimatedSection>
-            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              · Our Partners
-            </div>
-            <h2 className="mt-4 max-w-2xl text-section font-semibold">
-              The organizations powering our mission.
-            </h2>
-          </AnimatedSection>
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {partners.map((p) => (
-              <div
-                key={p.src}
-                className="flex aspect-[3/2] items-center justify-center rounded-xl p-2 transition-all sm:p-3"
-              >
-                <Image
-                  src={p.src}
-                  alt={p.alt}
-                  width={240}
-                  height={96}
-                  className="h-14 w-auto max-w-full object-contain sm:h-20 md:h-24 lg:h-28"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
+        <nav className="home-pathway-list" aria-label="Choose your pathway">
+          {pathways.map((pathway) => (
             <Link
-              href="/partners"
-              className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
+              className={`home-pathway home-pathway-${pathway.slug}`}
+              href={pathway.href}
+              key={pathway.title}
             >
-              View all partners →
+              <span className="home-pathway-icon" aria-hidden="true">
+                <pathway.icon size={26} strokeWidth={1.8} />
+              </span>
+              <span className="home-pathway-copy">
+                <h3>{pathway.title}</h3>
+                <p>{pathway.description}</p>
+              </span>
+              <span className="home-pathway-arrow" aria-hidden="true">
+                <ArrowUpRight size={22} />
+              </span>
             </Link>
+          ))}
+        </nav>
+      </section>
+
+      <section className="home-venture" aria-labelledby="venture-title">
+        <div className="home-section-heading home-venture-heading">
+          <div>
+            <h2 id="venture-title">Local need. Lasting venture.</h2>
+            <p>Good work begins with listening, grows through action and keeps learning.</p>
           </div>
+          <Link className="home-inline-link" href="/university-engagement">
+            Explore our programs <ArrowRight aria-hidden="true" size={18} />
+          </Link>
+        </div>
+        <div className="home-venture-grid">
+          {ventureStages.map((stage) => (
+            <Link
+              className="home-venture-item"
+              href="/university-engagement"
+              key={stage.title}
+            >
+              <article>
+                <div className="home-venture-image">
+                  <Image
+                    src={stage.image}
+                    alt={stage.alt}
+                    fill
+                    sizes="(max-width: 700px) 100vw, 33vw"
+                    className="home-cover-image"
+                  />
+                  <span className="home-venture-icon" aria-hidden="true">
+                    <stage.icon size={34} strokeWidth={1.8} />
+                  </span>
+                </div>
+                <div className="home-venture-copy">
+                  <h3>{stage.title}</h3>
+                  <p>{stage.description}</p>
+                  <span className="home-venture-action">
+                    Explore university programs
+                    <ArrowUpRight aria-hidden="true" size={19} />
+                  </span>
+                </div>
+              </article>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* PILLARS */}
-      <section className="border-b border-border/60 bg-muted/40">
-        <div className="shell py-12 sm:py-16 md:py-24">
-          <AnimatedSection>
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+      <section className="home-co-presented" aria-labelledby="home-competition-title">
+        <div className="home-co-presented-copy">
+          <h2 id="home-competition-title">
+            <Link
+              className="home-co-presented-title"
+              href="/2026-national-competition"
+            >
+              Enactus Philippines National Competition
+              <ArrowRight aria-hidden="true" size={25} />
+            </Link>
+          </h2>
+          <p>
+            A national stage for student ventures to share ideas, learn, and
+            create lasting impact in their communities.
+          </p>
+        </div>
+        <figure className="home-co-presented-poster">
+          <Image
+            src="/enactus nat comp.png"
+            alt="Enactus Philippines National Competition 2026 poster"
+            width={1434}
+            height={1316}
+            sizes="(max-width: 700px) 60vw, (max-width: 1050px) 28vw, 20vw"
+          />
+        </figure>
+        <div className="home-co-presented-partner">
+          <span>Co-presented with</span>
+          <Image
+            src="/khan-academy-logo.svg"
+            alt="Khan Academy Philippines"
+            width={1200}
+            height={330}
+            sizes="(max-width: 700px) 90vw, (max-width: 1050px) 55vw, 34vw"
+          />
+          <p>Learning and enterprise come together on a national stage.</p>
+        </div>
+      </section>
+
+      <section className="home-partners" aria-labelledby="partners-title">
+        <div className="home-partners-intro">
+          <h2 id="partners-title">Stronger together.</h2>
+          <p>
+            Our partners help student ventures access the support, expertise and
+            connections they need to grow.
+          </p>
+          <Link className="home-inline-link" href="/partners">
+            Meet our partners <ArrowRight aria-hidden="true" size={18} />
+          </Link>
+        </div>
+        <div className="home-partner-logos" aria-label="Enactus Philippines partners">
+          {partners.map((partner) => (
+            <div className="home-partner-logo" key={partner.src}>
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={260}
+                height={120}
+                sizes="(max-width: 700px) 40vw, 16vw"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-news" aria-labelledby="news-title">
+        <div className="home-section-heading">
+          <div>
+            <div className="home-news-title">
+              <h2 id="news-title">Latest from our network.</h2>
+              <span className="home-news-network-icon" aria-hidden="true">
+                <Network size={25} strokeWidth={1.8} />
+              </span>
+            </div>
+            <p>Updates from across our network.</p>
+          </div>
+          <Link className="home-inline-link" href="/news">
+            All news <ArrowRight aria-hidden="true" size={18} />
+          </Link>
+        </div>
+        <div className="home-news-list">
+          {news.map((post) => (
+            <article className="home-news-item" key={post.slug}>
+              <p className="home-news-date">{formatDate(post.publishedAt)}</p>
               <div>
-                <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                  · How we work
-                </div>
-                <h2 className="mt-4 max-w-2xl text-section font-semibold">
-                  A platform for the next generation of Filipino founders.
-                </h2>
+                <h3><Link href={`/news/${post.slug}`}>{post.headline}</Link></h3>
+                <p>{post.excerpt}</p>
               </div>
               <Link
-                href="/university-engagement"
-                className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-primary"
+                className="home-news-arrow"
+                href={`/news/${post.slug}`}
+                aria-label={`Read ${post.title}`}
               >
-                All programs →
+                <ArrowUpRight aria-hidden="true" size={21} />
               </Link>
-            </div>
-          </AnimatedSection>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border sm:mt-16 md:grid-cols-2">
-            {pillars.map((p, i) => (
-              <div
-                key={p.tag}
-                className="group relative bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-secondary hover:text-secondary-foreground hover:shadow-[0_8px_30px_oklch(0_0_0/0.12)] sm:p-8"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <p.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                <div className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] opacity-60">
-                  {p.tag}
-                </div>
-                <h3 className="mt-2 text-subsection font-semibold">{p.title}</h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed opacity-80">
-                  {p.body}
-                </p>
-              </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden border-b border-border/60 bg-secondary text-secondary-foreground">
-        <div className="absolute inset-0 grid-bg opacity-[0.06]" aria-hidden />
-        <AnimatedSection>
-          <div className="relative shell grid gap-10 py-12 sm:py-16 md:py-24 md:grid-cols-2 md:items-end">
-            <h2 className="text-[clamp(2rem,1.25rem+2.2vw,3.75rem)] font-semibold leading-[1.05] tracking-tight">
-              Build a venture.
-              <br />
-              Change a community.
-              <br />
-              <span className="text-primary">Shape a country.</span>
-            </h2>
-            <div className="space-y-6">
-              <p className="text-lg opacity-80">
-                Whether you&apos;re a student forming a campus team, a faculty
-                member, or an industry partner, there&apos;s a seat at the
-                table.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 items-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90"
-                >
-                  Get involved
-                </Link>
-                <Link
-                  href="/news"
-                  className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm font-semibold hover:bg-white/5"
-                >
-                  Latest news
-                </Link>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
+      <section className="home-join" aria-labelledby="join-title">
+        <div className="home-join-copy">
+          <h2 id="join-title">Build a better Philippines.</h2>
+          <p>
+            Bring your ideas, experience or partnership to a network turning
+            entrepreneurial action into community impact.
+          </p>
+        </div>
+        <Link className="home-button home-join-button" href="/contact">
+          Get involved <ArrowUpRight aria-hidden="true" size={18} />
+        </Link>
       </section>
     </div>
   );

@@ -100,6 +100,36 @@ const resultCounts: Record<ResultsView, number> = {
   "top-4": 4,
 };
 
+const getTeamMembers = (school: string) => {
+  const project = top30Projects.find((entry) => entry.school === school);
+  if (!project) {
+    throw new Error(`No Top 30 project found for ${school}`);
+  }
+
+  return project;
+};
+
+function TeamDetails({
+  facultyAdvisor,
+  students,
+}: {
+  facultyAdvisor: string;
+  students: readonly string[];
+}) {
+  return (
+    <div className="mt-3 space-y-1 text-sm leading-relaxed">
+      <p>
+        <span className="font-semibold">Faculty advisor: </span>
+        {facultyAdvisor}
+      </p>
+      <p>
+        <span className="font-semibold">Students: </span>
+        {students.join(", ")}
+      </p>
+    </div>
+  );
+}
+
 export default function ResultsView() {
   const [view, setView] = useState<ResultsView>("top-30");
   const count = resultCounts[view];
@@ -117,7 +147,7 @@ export default function ResultsView() {
           className="pointer-events-none absolute inset-0 grid-bg opacity-40"
           aria-hidden
         />
-        <div className="shell relative py-10 md:py-14">
+        <div className="shell relative py-8 md:py-10">
           <Link
             href="/2026-national-competition"
             className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
@@ -126,8 +156,8 @@ export default function ResultsView() {
             National Competition 2026
           </Link>
 
-          <div className="mt-7 grid items-end gap-6 md:grid-cols-[minmax(0,1fr)_auto]">
-            <div>
+          <div className="relative mt-5 grid grid-cols-1 items-center gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-6 md:mt-6 md:gap-x-8">
+            <div className="relative z-10 min-w-0">
               <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
                 {title}
               </h1>
@@ -136,7 +166,16 @@ export default function ResultsView() {
                 Track
               </p>
             </div>
-            <div className="w-full shrink-0 bg-secondary px-5 py-4 text-secondary-foreground sm:w-52">
+            <Image
+              src="/enactus%20nat%20comp.png"
+              alt="Enactus Philippines National Competition 2026 at DLSU Manila, 09–10 October"
+              width={1434}
+              height={1316}
+              sizes="(max-width: 639px) 176px, (max-width: 767px) 224px, (max-width: 1023px) 288px, 320px"
+              loading="eager"
+              className="pointer-events-none absolute right-0 top-[-7rem] z-0 h-auto w-44 object-contain opacity-23 sm:relative sm:right-auto sm:top-auto sm:z-auto sm:w-56 sm:opacity-100 md:w-72 lg:w-80"
+            />
+            <div className="relative z-10 w-full bg-secondary px-5 py-4 text-secondary-foreground sm:max-w-xs">
               <label
                 htmlFor="results-view"
                 className="mb-2 block text-sm font-semibold"
@@ -218,6 +257,10 @@ export default function ResultsView() {
                           <h3 className="mt-1 text-xl font-bold leading-snug tracking-tight">
                             {project.project}
                           </h3>
+                          <TeamDetails
+                            facultyAdvisor={project.facultyAdvisor}
+                            students={project.students}
+                          />
                         </div>
                         <p className="text-sm leading-relaxed text-foreground/90 md:text-base">
                           {project.description}
@@ -232,6 +275,7 @@ export default function ResultsView() {
                 <ul className={styles.schoolList}>
                   {top12Schools.map((school) => {
                     const logoSrc = getSchoolLogoSrc(school);
+                    const team = getTeamMembers(school);
                     return (
                       <li className={styles.schoolRow} key={school}>
                         {logoSrc && (
@@ -244,7 +288,13 @@ export default function ResultsView() {
                             className={styles.schoolLogo}
                           />
                         )}
-                        <span className={styles.schoolName}>{school}</span>
+                        <div>
+                          <span className={styles.schoolName}>{school}</span>
+                          <TeamDetails
+                            facultyAdvisor={team.facultyAdvisor}
+                            students={team.students}
+                          />
+                        </div>
                       </li>
                     );
                   })}
@@ -255,6 +305,7 @@ export default function ResultsView() {
                 <ol className={styles.podium}>
                   {top4Schools.map(({ award, school }, index) => {
                     const logoSrc = getSchoolLogoSrc(school);
+                    const team = getTeamMembers(school);
                     return (
                       <li
                         className={`${styles.podiumRow} ${
@@ -272,7 +323,7 @@ export default function ResultsView() {
                           )}
                           {award}
                         </span>
-                        <span className={styles.podiumIdentity}>
+                        <div className={styles.podiumIdentity}>
                           {logoSrc && (
                             <Image
                               src={logoSrc}
@@ -283,8 +334,14 @@ export default function ResultsView() {
                               className={styles.schoolLogo}
                             />
                           )}
-                          <span className={styles.podiumSchool}>{school}</span>
-                        </span>
+                          <div>
+                            <span className={styles.podiumSchool}>{school}</span>
+                            <TeamDetails
+                              facultyAdvisor={team.facultyAdvisor}
+                              students={team.students}
+                            />
+                          </div>
+                        </div>
                       </li>
                     );
                   })}

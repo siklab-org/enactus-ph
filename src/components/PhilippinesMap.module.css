@@ -1,0 +1,360 @@
+.root {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(138px, 0.72fr) minmax(0, 1.65fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  padding: 14px;
+  background: #fff;
+  color: #17263b;
+}
+
+.regionPanel {
+  grid-row: 1 / span 2;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 14px;
+  padding: 8px 4px 8px 2px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.islandControls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+}
+
+.islandButton {
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 0;
+  background: #dbe3dd;
+  color: #263a36;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.islandButton:hover,
+.islandButton:focus-visible {
+  background: #c6d5cc;
+}
+
+.islandButton:focus-visible,
+.marker:focus-visible {
+  outline: 3px solid #17263b;
+  outline-offset: 3px;
+}
+
+.islandButtonSelected {
+  background: #17263b;
+  color: #fff;
+}
+
+.islandButtonSelected:hover,
+.islandButtonSelected:focus-visible {
+  background: #263a52;
+}
+
+.regionSummary {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  margin-top: 4px;
+}
+
+.regionSummary h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.regionSummary p {
+  margin: 0;
+  color: #46564f;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.regionSummary strong {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.regionSummary .campusLocations {
+  color: #46564f;
+  font-size: 11px;
+}
+
+.mapFrame {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.mapFramePanning {
+  cursor: grabbing;
+}
+
+.mapCanvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1429 / 2465;
+  transform-origin: center;
+  transition: transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.mapFramePanning .mapCanvas {
+  transition: none;
+}
+
+.svgHost {
+  position: absolute;
+  inset: 0;
+}
+
+.svgHost svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.svgHost :global(path.region) {
+  fill: #f2dc83;
+  stroke: none;
+  stroke-width: 0;
+  vector-effect: non-scaling-stroke;
+  transition: fill 150ms ease;
+  cursor: pointer;
+}
+
+.svgHost :global(path.region:hover) {
+  fill: #e8c85b;
+}
+
+.svgHost :global(path.region.island-active) {
+  fill: #f2dc83;
+  stroke: none;
+  stroke-width: 0;
+}
+
+.svgHost :global(path.region.island-active:hover) {
+  fill: #e8c85b;
+}
+
+.zoomControls {
+  position: absolute;
+  z-index: 5;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  gap: 5px;
+  justify-items: stretch;
+}
+
+.zoomButton,
+.resetButton {
+  min-width: 34px;
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  background: #fff;
+  color: #17263b;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.zoomButton {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.resetButton {
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.zoomButton:hover:not(:disabled),
+.resetButton:hover {
+  background: #f0f1ed;
+}
+
+.zoomButton:disabled {
+  color: #98a09c;
+  cursor: not-allowed;
+}
+
+.zoomButton:focus-visible,
+.resetButton:focus-visible {
+  outline: 3px solid #17263b;
+  outline-offset: 2px;
+}
+
+.markerPosition {
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+}
+
+.markerPositionActive {
+  z-index: 4;
+}
+
+.marker {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.markerDot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #17263b;
+  box-shadow: 0 0 0 1px #17263b;
+  transition: transform 140ms ease, background-color 140ms ease;
+}
+
+.marker:hover .markerDot,
+.marker:focus-visible .markerDot,
+.markerHighlighted .markerDot {
+  background: #e3b921;
+  box-shadow: 0 0 0 2px #17263b;
+  transform: scale(1.16);
+}
+
+.popup {
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  display: grid;
+  width: max-content;
+  max-width: min(230px, calc(100vw - 32px));
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #17263b;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.35;
+  transform: translateX(-50%);
+}
+
+.popup strong {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.popup span,
+.popup small {
+  color: #e2e8eb;
+}
+
+.popup small {
+  margin-top: 3px;
+  font-size: 10px;
+}
+
+.popupRight {
+  right: 0;
+  left: auto;
+  transform: translateX(0);
+}
+
+.popupLeft {
+  right: auto;
+  left: 0;
+  transform: translateX(0);
+}
+
+.mapCaption {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: #46564f;
+  font-size: 11px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.mapLoading,
+.mapError {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  place-items: center;
+  color: #263a36;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapCanvas,
+  .islandButton,
+  .markerDot,
+  .svgHost :global(path.region) {
+    transition: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .root {
+    grid-template-columns: minmax(118px, 0.72fr) minmax(0, 1.4fr);
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .regionPanel {
+    gap: 10px;
+    padding-top: 4px;
+  }
+
+  .panelTitle {
+    font-size: 13px;
+  }
+
+  .islandButton {
+    min-height: 34px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .regionSummary h3 {
+    font-size: 16px;
+  }
+
+  .regionSummary p {
+    font-size: 11px;
+  }
+}
