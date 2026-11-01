@@ -122,12 +122,14 @@ export default function Home() {
         <div className="home-hero-copy">
           <div className="home-hero-copy-inner">
             <h1 id="home-title">
-              Student ideas.<br />National impact.
+              We believe <span className="home-hero-highlight home-hero-highlight-primary">investing</span> in students
+              <br />
+              who <span className="home-hero-highlight home-hero-highlight-primary">take</span> <span className="home-hero-highlight home-hero-highlight-secondary">entrepreneurial action</span>
+              <br />
+              for others <span className="home-hero-highlight home-hero-highlight-primary">creates a</span> better world
+              <br />
+              for <span className="home-hero-highlight home-hero-highlight-secondary">us all</span>.
             </h1>
-            <p>
-              Enactus Philippines brings students, educators and business leaders
-              together to build ventures that move communities forward.
-            </p>
             <div className="home-hero-actions">
               <Link className="home-button home-button-dark" href="/university-engagement">
                 Find your place <ArrowUpRight aria-hidden="true" size={18} />
