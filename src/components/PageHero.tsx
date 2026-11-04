@@ -34,10 +34,10 @@ export function PageHero({
         )}
       </div>
       <div
-          className="absolute bottom-0 left-0 h-10 w-1/3 yellow-slash animate-slide-in-left"
-          style={{ animationDelay: "300ms" }}
-          aria-hidden
-        />
+        className="absolute bottom-0 left-0 h-6 w-1/3 yellow-slash animate-slide-in-left"
+        style={{ animationDelay: "300ms" }}
+        aria-hidden
+      />
     </section>
   );
 }

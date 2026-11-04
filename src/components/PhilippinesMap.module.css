@@ -36,6 +36,7 @@
   min-height: 36px;
   padding: 7px 10px;
   border: 0;
+  border-inline-start: 4px solid #f5c52e;
   background: #dbe3dd;
   color: #263a36;
   font: inherit;
@@ -64,7 +65,7 @@
 
 .islandButtonSelected:hover,
 .islandButtonSelected:focus-visible {
-  background: #263a52;
+  filter: brightness(0.9);
 }
 
 .regionSummary {

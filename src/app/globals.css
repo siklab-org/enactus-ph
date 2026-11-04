@@ -859,6 +859,111 @@ body:has(.home-page) {
   outline-color: var(--home-yellow);
 }
 
+.home-sdg {
+  padding: clamp(72px, 9vw, 124px) clamp(24px, 8vw, 128px);
+  color: var(--home-ink);
+  background: #f1f3f6;
+}
+
+.home-sdg-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 36px;
+  margin-bottom: 42px;
+}
+
+.home-sdg-heading > div {
+  max-width: 720px;
+}
+
+.home-sdg-heading h2 {
+  max-width: 14ch;
+  margin-bottom: 16px;
+  color: var(--home-ink);
+  font-size: clamp(42px, 4.8vw, 64px);
+  font-weight: 650;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.home-sdg-heading p {
+  max-width: 58ch;
+  margin-bottom: 0;
+  color: var(--home-muted);
+  font-size: 17px;
+}
+
+.home-sdg-heading > .home-inline-link {
+  margin-bottom: 5px;
+}
+
+.home-sdg-goals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-sdg-goal {
+  display: flex;
+  min-height: 224px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(20px, 2.4vw, 32px);
+  border-top: 7px solid;
+  color: var(--home-ink);
+  background: white;
+  text-decoration: none;
+  transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.home-sdg-goal:hover {
+  background: #fffdf6;
+  transform: translateY(-4px);
+}
+
+.home-sdg-number {
+  margin-bottom: 18px;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.05em;
+}
+
+.home-sdg-goal h3 {
+  max-width: 17ch;
+  margin-bottom: 20px;
+  color: var(--home-ink);
+  font-size: clamp(19px, 1.7vw, 24px);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.home-sdg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: var(--home-ink);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: gap 180ms ease, text-decoration-color 180ms ease;
+}
+
+.home-sdg-goal:hover .home-sdg-link,
+.home-sdg-goal:focus-visible .home-sdg-link {
+  gap: 12px;
+  text-decoration-color: currentColor;
+}
+
+.home-sdg-goal:focus-visible {
+  outline: 3px solid var(--home-ink);
+  outline-offset: 4px;
+}
+
 .home-pathways {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -1622,6 +1727,56 @@ body:has(.home-page) {
   font-size: 14px;
 }
 
+.footer-sdg-color-bar {
+  display: grid;
+  height: 7px;
+  grid-template-columns: repeat(17, minmax(0, 1fr));
+  width: 100%;
+}
+
+.sdg-impact-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sdg-impact-item {
+  min-width: 0;
+  border-top: 6px solid;
+  background: white;
+}
+
+.sdg-impact-item a {
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.sdg-impact-item a:hover > span:last-child {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sdg-impact-item a:focus-visible {
+  outline: 3px solid var(--home-ink);
+  outline-offset: 3px;
+}
+
+.sdg-impact-item a > span:first-child {
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.sdg-impact-item a > span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
 .site-footer {
   border-top: 0;
   color: white;
@@ -1734,6 +1889,10 @@ body:has(.home-page) {
 
   .home-partners {
     grid-template-columns: 1fr;
+  }
+
+  .home-sdg-goals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .home-co-presented {
@@ -1900,8 +2059,20 @@ body:has(.home-page) {
 
   .home-pathways,
   .home-venture,
-  .home-news {
+  .home-news,
+  .home-sdg {
     padding: 72px 24px;
+  }
+
+  .home-sdg-heading {
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .home-sdg-heading h2 {
+    font-size: 38px;
   }
 
   .home-pathways {
@@ -2188,6 +2359,7 @@ body:has(.home-page) {
   .home-pathways,
   .home-venture,
   .home-news,
+  .home-sdg,
   .home-join {
     padding: 56px 20px;
   }
@@ -2204,6 +2376,19 @@ body:has(.home-page) {
 
   .home-venture-grid {
     gap: 26px;
+  }
+
+  .home-sdg-goal {
+    min-height: 190px;
+    padding: 18px;
+  }
+
+  .home-sdg-number {
+    font-size: 26px;
+  }
+
+  .home-sdg-goal h3 {
+    font-size: 18px;
   }
 
   .home-venture-image {
@@ -2274,6 +2459,7 @@ body:has(.home-page) {
   .home-pathways,
   .home-venture,
   .home-news,
+  .home-sdg,
   .home-join,
   .home-co-presented {
     padding-inline: 18px;

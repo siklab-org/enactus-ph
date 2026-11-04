@@ -8,7 +8,20 @@ import {
   mapViewBox,
   type IslandGroup,
 } from "@/lib/enactus-universities";
+import { sdgGoals } from "@/lib/sdg";
 import styles from "./PhilippinesMap.module.css";
+
+const islandSdgAccentIds: Record<IslandGroup, number> = {
+  luzon: 4,
+  visayas: 8,
+  mindanao: 13,
+};
+
+function getSdgColor(id: number) {
+  const goal = sdgGoals.find((item) => item.id === id);
+  if (!goal) throw new Error(`SDG ${id} is not defined.`);
+  return goal.color;
+}
 
 function isIslandGroup(value: string): value is IslandGroup {
   return islandGroups.some((island) => island === value);
@@ -290,15 +303,22 @@ export function PhilippinesMap() {
             All islands
           </button>
           {islandGroups.map((island) => (
-          <button
-            type="button"
-            className={`${styles.islandButton} ${selectedIsland === island ? styles.islandButtonSelected : ""}`}
-            aria-pressed={selectedIsland === island}
-            key={island}
-            onClick={() => selectIsland(island)}
-          >
-            {islandGroupLabels[island]}
-          </button>
+            <button
+              type="button"
+              className={`${styles.islandButton} ${selectedIsland === island ? styles.islandButtonSelected : ""}`}
+              aria-pressed={selectedIsland === island}
+              key={island}
+              onClick={() => selectIsland(island)}
+              style={{
+                borderInlineStart: `4px solid ${getSdgColor(islandSdgAccentIds[island])}`,
+                backgroundColor:
+                  selectedIsland === island
+                    ? getSdgColor(islandSdgAccentIds[island])
+                    : undefined,
+              }}
+            >
+              {islandGroupLabels[island]}
+            </button>
           ))}
         </div>
         <div className={styles.regionSummary} aria-live="polite">

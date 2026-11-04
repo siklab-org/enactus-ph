@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { StatsCounter } from "@/components/StatsCounter";
+import { sdgGoals } from "@/lib/sdg";
 
 export const metadata: Metadata = {
   title: "Impact",
@@ -17,14 +18,6 @@ const numbers = [
   { v: "240K", l: "Lives Impacted" },
   { v: "17", l: "SDGs Addressed" },
   { v: "8", l: "Years Active" },
-];
-
-const sdgs = [
-  "No Poverty", "Zero Hunger", "Quality Education", "Gender Equality",
-  "Clean Water", "Affordable Energy", "Decent Work", "Industry & Innovation",
-  "Reduced Inequalities", "Sustainable Cities", "Responsible Consumption",
-  "Climate Action", "Life Below Water", "Life on Land", "Peace & Justice",
-  "Partnerships",
 ];
 
 export default function Impact() {
@@ -56,11 +49,17 @@ export default function Impact() {
                 <h2 className="mt-4 max-w-3xl text-section font-semibold">
                   17 goals. One country. A generation of operators.
                 </h2>
-                <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border md:grid-cols-4 break-words">
-                  {sdgs.map((s, i) => (
-                    <li key={s} className="flex items-baseline gap-3 bg-background p-5">
-                      <span className="font-mono text-[11px] text-primary">{String(i + 1).padStart(2, "0")}</span>
-                      <span className="text-sm font-medium">{s}</span>
+                <ul className="sdg-impact-list mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
+                  {sdgGoals.map((goal) => (
+                    <li
+                      className="sdg-impact-item"
+                      key={goal.id}
+                      style={{ borderTopColor: goal.color }}
+                    >
+                      <a href={goal.href} target="_blank" rel="noreferrer">
+                        <span style={{ color: goal.color }}>Goal {goal.id}</span>
+                        <span>{goal.name}</span>
+                      </a>
                     </li>
                   ))}
                 </ul>

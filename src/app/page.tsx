@@ -13,6 +13,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import { getNewsPosts } from "@/lib/news-data";
+import { sdgGoals } from "@/lib/sdg";
 import { PhilippinesMap } from "@/components/PhilippinesMap";
 
 const impact = [
@@ -95,6 +96,10 @@ const partners = [
   { src: "/NEWPARTNERS/SILLAG.jpg", alt: "SILLAG" },
   { src: "/NEWPARTNERS/UMWAD.jpg", alt: "UMWAD" },
 ];
+
+const homeSdgGoals = sdgGoals.filter((goal) =>
+  [4, 8, 12, 13].includes(goal.id),
+);
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-PH", {
@@ -201,6 +206,40 @@ export default function Home() {
           />
           <figcaption>Partnerships connect ideas with the people and resources to grow them.</figcaption>
         </figure>
+      </section>
+
+      <section className="home-sdg" aria-labelledby="sdg-title">
+        <div className="home-sdg-heading">
+          <div>
+            <h2 id="sdg-title">Global goals. Local action.</h2>
+            <p>
+              The UN Sustainable Development Goals offer a shared framework
+              for the challenges student ventures work to address.
+            </p>
+          </div>
+          <Link className="home-inline-link" href="/impact">
+            Explore our impact <ArrowRight aria-hidden="true" size={18} />
+          </Link>
+        </div>
+        <div className="home-sdg-goals">
+          {homeSdgGoals.map((goal) => (
+            <a
+              className="home-sdg-goal"
+              href={goal.href}
+              key={goal.id}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="home-sdg-number" style={{ color: goal.color }}>
+                Goal {goal.id}
+              </span>
+              <h3>{goal.name}</h3>
+              <span className="home-sdg-link">
+                Explore goal <ArrowUpRight aria-hidden="true" size={18} />
+              </span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section className="home-pathways" aria-labelledby="pathways-title">

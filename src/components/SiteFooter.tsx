@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { sdgGoals } from "@/lib/sdg";
 
 const exploreLinks = [
   { href: "/about", label: "About Enactus" },
@@ -18,6 +19,11 @@ const getInvolvedLinks = [
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <div className="footer-sdg-color-bar" aria-hidden="true">
+        {sdgGoals.map((goal) => (
+          <span key={goal.id} style={{ backgroundColor: goal.color }} />
+        ))}
+      </div>
       <div className="shell site-footer-main">
         <div className="site-footer-brand">
           <Link href="/" aria-label="Enactus Philippines home">
