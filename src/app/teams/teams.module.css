@@ -1,0 +1,391 @@
+.page {
+  color: #17263b;
+  background: #fff;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(500px, 1.2fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  padding: clamp(48px, 6vw, 88px) clamp(24px, 7vw, 112px);
+  background: #f0f2f4;
+}
+
+.heroCopy {
+  max-width: 590px;
+}
+
+.heroContext,
+.directoryContext {
+  margin: 0 0 20px;
+  color: #455369;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.heroContext::before {
+  display: block;
+  width: 48px;
+  height: 7px;
+  margin-bottom: 24px;
+  background: #f5c52e;
+  content: "";
+}
+
+.hero h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(52px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.96;
+}
+
+.heroDescription {
+  max-width: 43ch;
+  margin: 24px 0 0;
+  color: #455369;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.55;
+}
+
+.browseLink,
+.contact > a {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 18px;
+  color: #fff;
+  background: #17263b;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, gap 180ms ease;
+}
+
+.browseLink {
+  margin-top: 28px;
+}
+
+.browseLink:hover,
+.contact > a:hover {
+  gap: 17px;
+  color: #17263b;
+  background: #f5c52e;
+}
+
+.browseLink:focus-visible,
+.contact > a:focus-visible,
+.islandNav a:focus-visible {
+  outline: 3px solid #17263b;
+  outline-offset: 4px;
+}
+
+.listNote {
+  max-width: 43ch;
+  margin: 32px 0 0;
+  color: #455369;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mapPanel {
+  position: relative;
+  height: clamp(500px, 52vw, 680px);
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.directory {
+  padding: clamp(64px, 8vw, 112px) clamp(24px, 7vw, 112px);
+  scroll-margin-top: 96px;
+}
+
+.directoryHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.9fr);
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+
+.directoryContext {
+  margin-bottom: 16px;
+}
+
+.directoryHeader h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(38px, 4.8vw, 64px);
+  font-weight: 680;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.directoryHeader > p {
+  max-width: 46ch;
+  margin: 0 0 4px;
+  color: #455369;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.islandNav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.islandNav a {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  color: #17263b;
+  background: #e9edf0;
+  font-size: 16px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.islandNav a:hover {
+  background: #f5c52e;
+  transform: translateY(-2px);
+}
+
+.islandNav a span:last-child {
+  color: #455369;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.islandSection {
+  padding: clamp(34px, 5vw, 64px) 0;
+  scroll-margin-top: 96px;
+}
+
+.islandSection + .islandSection {
+  border-top: 8px solid #f0f2f4;
+}
+
+.islandHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.islandHeading h3 {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 680;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.islandHeading p {
+  margin: 8px 0 0;
+  color: #455369;
+  font-size: 15px;
+}
+
+.islandHeading strong {
+  display: grid;
+  width: 68px;
+  aspect-ratio: 1;
+  place-items: center;
+  color: #17263b;
+  background: #f5c52e;
+  font-size: 28px;
+  letter-spacing: -0.05em;
+}
+
+.provinceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px 24px;
+}
+
+.province {
+  padding: 24px;
+  background: #f4f5f6;
+}
+
+.province:nth-child(4n + 2),
+.province:nth-child(4n + 3) {
+  background: #e9edf0;
+}
+
+.province h4 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.province ul {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.province li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  padding: 12px 0;
+}
+
+.province li + li {
+  border-top: 1px solid #d8dde1;
+}
+
+.province li svg {
+  margin-top: 3px;
+  color: #a67e00;
+}
+
+.province li span {
+  display: block;
+  font-size: 15px;
+  font-weight: 620;
+  line-height: 1.4;
+}
+
+.province li small {
+  display: block;
+  margin-top: 4px;
+  color: #455369;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(44px, 6vw, 80px) clamp(24px, 7vw, 112px);
+  background: #f5c52e;
+}
+
+.contact h2 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.contact p {
+  max-width: 55ch;
+  margin: 0;
+  color: #34445a;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.contact > a {
+  flex: 0 0 auto;
+  color: #fff;
+  background: #17263b;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: minmax(0, 0.85fr) minmax(380px, 1.15fr);
+    gap: 28px;
+    padding-inline: clamp(24px, 5vw, 56px);
+  }
+
+  .mapPanel {
+    height: 560px;
+  }
+
+  .directory,
+  .contact {
+    padding-inline: clamp(24px, 5vw, 56px);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding: 48px 24px;
+  }
+
+  .hero h1 {
+    max-width: 12ch;
+    font-size: clamp(48px, 12vw, 72px);
+  }
+
+  .mapPanel {
+    height: 560px;
+  }
+
+  .directory {
+    padding: 56px 24px;
+  }
+
+  .directoryHeader {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+
+  .islandNav {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .islandNav a {
+    min-height: 62px;
+    padding: 14px 18px;
+  }
+
+  .provinceGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .contact {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 48px 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-inline: 18px;
+  }
+
+  .mapPanel {
+    height: 500px;
+  }
+
+  .directory,
+  .contact {
+    padding-inline: 18px;
+  }
+
+  .islandNav a {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

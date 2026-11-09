@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
@@ -403,6 +404,63 @@ export default function FacultyDevelopment() {
                 <Badge variant="outline" className="w-fit shrink-0 border-primary/40 text-primary">
                   In-Person
                 </Badge>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── FIRST COHORT ─── */}
+      <section
+        id="first-cohort"
+        className="border-b border-border/60 bg-muted/30"
+      >
+        <AnimatedSection>
+          <div className="shell py-16 md:py-24">
+            <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                  · First Cohort · 2026
+                </div>
+                <h2 className="mt-4 text-section font-semibold leading-tight tracking-tight">
+                  The first cohort, in action
+                </h2>
+                <p className="mt-6 text-body leading-relaxed text-muted-foreground">
+                  Across three virtual sessions in June, the inaugural fellows
+                  explored sustainability and social impact, design thinking
+                  and social innovation, and mentoring student innovators. The
+                  cohort was formally recognized at the Enactus Philippines
+                  National Relaunch Ceremony on July 3, 2026, at Areté, Ateneo
+                  de Manila University.
+                </p>
+                <Link
+                  href="/faculty-fellows"
+                  className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  Meet the inaugural fellows
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </div>
+
+              <div>
+                <h3 className="text-subsection font-semibold">
+                  What the cohort explored
+                </h3>
+                <ul className="mt-6 divide-y divide-border/60">
+                  {sessions.map((session) => (
+                    <li
+                      key={session.day}
+                      className="py-5 first:pt-0 last:pb-0"
+                    >
+                      <p className="text-sm font-medium text-muted-foreground">
+                        {session.date}
+                      </p>
+                      <p className="mt-1 text-base font-semibold leading-snug">
+                        {session.title}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

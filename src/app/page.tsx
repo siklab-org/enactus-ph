@@ -28,7 +28,7 @@ const pathways = [
     slug: "students",
     title: "Students",
     description: "Find your campus team and turn an idea into action.",
-    href: "/university-engagement",
+    href: "/teams",
     icon: GraduationCap,
   },
   {
@@ -136,7 +136,7 @@ export default function Home() {
               for <span className="home-hero-highlight home-hero-highlight-secondary">us all</span>.
             </h1>
             <div className="home-hero-actions">
-              <Link className="home-button home-button-dark" href="/university-engagement">
+              <Link className="home-button home-button-dark" href="/teams">
                 Find your place <ArrowUpRight aria-hidden="true" size={18} />
               </Link>
               <Link className="home-text-link" href="/about">
@@ -210,16 +210,24 @@ export default function Home() {
 
       <section className="home-sdg" aria-labelledby="sdg-title">
         <div className="home-sdg-heading">
-          <div>
+          <div className="home-sdg-copy">
+            <p className="home-sdg-kicker">UN SDGs in focus</p>
             <h2 id="sdg-title">Global goals. Local action.</h2>
             <p>
               The UN Sustainable Development Goals offer a shared framework
               for the challenges student ventures work to address.
             </p>
           </div>
-          <Link className="home-inline-link" href="/impact">
-            Explore our impact <ArrowRight aria-hidden="true" size={18} />
-          </Link>
+          <div className="home-sdg-meta">
+            <div className="home-sdg-pills" aria-label="Primary strands of impact">
+              <span>People</span>
+              <span>Planet</span>
+              <span>Prosperity</span>
+            </div>
+            <Link className="home-inline-link" href="/impact">
+              Explore our impact <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
         </div>
         <div className="home-sdg-goals">
           {homeSdgGoals.map((goal) => (
@@ -229,6 +237,7 @@ export default function Home() {
               key={goal.id}
               target="_blank"
               rel="noreferrer"
+              style={{ borderTopColor: goal.color }}
             >
               <span className="home-sdg-number" style={{ color: goal.color }}>
                 Goal {goal.id}

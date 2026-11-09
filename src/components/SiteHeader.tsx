@@ -129,6 +129,7 @@ const mobileNavLinks: NavLinkItem[] = [
       { href: "/resources", label: "Resources" },
       { href: "/news", label: "News" },
       { href: "/university-engagement", label: "University Engagement" },
+      { href: "/teams", label: "Find a Team" },
       { href: "/faculty-development", label: "Faculty Development Program" },
     ],
   },
@@ -148,6 +149,7 @@ const whatWeDoPaths = [
   "/competitions/early-stage-collaboration",
   "/partners", "/resources", "/news",
   "/university-engagement", "/faculty-development",
+  "/teams",
 ];
 const competitionPaths = [
   "/2026-national-competition",
@@ -341,6 +343,7 @@ export function SiteHeader() {
     pathname === "/resources" ||
     pathname === "/news" ||
     pathname === "/university-engagement" ||
+    pathname === "/teams" ||
     pathname === "/faculty-development";
   const isCompetitionActive = pathname.startsWith("/2026-national-competition");
 
@@ -546,6 +549,16 @@ export function SiteHeader() {
                           className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
                         >
                           University Engagement
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild active={pathname === "/teams"}>
+                        <Link
+                          href="/teams"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          Find a Team
                         </Link>
                       </NavigationMenuLink>
                     </li>

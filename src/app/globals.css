@@ -862,7 +862,7 @@ body:has(.home-page) {
 .home-sdg {
   padding: clamp(72px, 9vw, 124px) clamp(24px, 8vw, 128px);
   color: var(--home-ink);
-  background: #f1f3f6;
+  background: #e9edf0;
 }
 
 .home-sdg-heading {
@@ -873,8 +873,29 @@ body:has(.home-page) {
   margin-bottom: 42px;
 }
 
-.home-sdg-heading > div {
+.home-sdg-copy::before,
+.home-partners-intro::before,
+.home-pathways-intro::before,
+.home-join-copy::before {
+  display: block;
+  width: 48px;
+  height: 7px;
+  margin-bottom: 22px;
+  background: var(--home-yellow);
+  content: "";
+}
+
+.home-sdg-copy {
   max-width: 720px;
+}
+
+.home-sdg-kicker {
+  margin: 0 0 12px;
+  color: var(--home-ink);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .home-sdg-heading h2 {
@@ -894,6 +915,34 @@ body:has(.home-page) {
   font-size: 17px;
 }
 
+.home-sdg-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.home-sdg-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.home-sdg-pills span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(20, 19, 19, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--home-ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .home-sdg-heading > .home-inline-link {
   margin-bottom: 5px;
 }
@@ -905,21 +954,26 @@ body:has(.home-page) {
 }
 
 .home-sdg-goal {
+  position: relative;
   display: flex;
   min-height: 224px;
   flex-direction: column;
   align-items: flex-start;
   padding: clamp(20px, 2.4vw, 32px);
+  border: 1px solid rgba(26, 27, 29, 0.08);
   border-top: 7px solid;
+  border-radius: 18px;
   color: var(--home-ink);
-  background: white;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 10px 18px rgba(17, 20, 23, 0.04);
   text-decoration: none;
-  transition: transform 200ms ease, background-color 200ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .home-sdg-goal:hover {
-  background: #fffdf6;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 26px rgba(17, 20, 23, 0.08);
+  border-color: rgba(17, 20, 23, 0.15);
 }
 
 .home-sdg-number {
@@ -1347,15 +1401,23 @@ body:has(.home-page) {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
-  gap: 24px 32px;
+  gap: 8px;
+  padding: 8px;
+  background: #edf0f2;
 }
 
 .home-partner-logo {
   display: flex;
-  min-height: 82px;
+  min-height: 94px;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 14px;
+  background: #fff;
+}
+
+.home-partner-logo:nth-child(4n + 2),
+.home-partner-logo:nth-child(4n + 3) {
+  background: #f8f9fa;
 }
 
 .home-partner-logo img {
