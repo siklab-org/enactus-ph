@@ -131,6 +131,7 @@ const mobileNavLinks: NavLinkItem[] = [
       { href: "/university-engagement", label: "University Engagement" },
       { href: "/teams", label: "Find a Team" },
       { href: "/faculty-development", label: "Faculty Development Program" },
+      { href: "/capacity-building", label: "National Capacity Building Program" },
     ],
   },
   {
@@ -150,6 +151,7 @@ const whatWeDoPaths = [
   "/partners", "/resources", "/news",
   "/university-engagement", "/faculty-development",
   "/teams",
+  "/capacity-building",
 ];
 const competitionPaths = [
   "/2026-national-competition",
@@ -308,6 +310,15 @@ function MobileNav({ pathname }: { pathname: string }) {
           <div className="border-t border-border/60 p-4 flex flex-col gap-2">
             <SheetClose asChild>
               <Link
+                href="/capacity-building"
+                aria-current={pathname === "/capacity-building" ? "page" : undefined}
+                className="flex w-full items-center justify-center bg-primary px-5 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                National Capacity Building Program
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link
                 href="https://www.philippineyouthsummit.org"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -344,7 +355,8 @@ export function SiteHeader() {
     pathname === "/news" ||
     pathname === "/university-engagement" ||
     pathname === "/teams" ||
-    pathname === "/faculty-development";
+    pathname === "/faculty-development" ||
+    pathname === "/capacity-building";
   const isCompetitionActive = pathname.startsWith("/2026-national-competition");
 
   return (
@@ -573,6 +585,19 @@ export function SiteHeader() {
                           </Link>
                         </NavigationMenuLink>
                       </div>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        asChild
+                        active={pathname === "/capacity-building"}
+                      >
+                        <Link
+                          href="/capacity-building"
+                          className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent data-[active]:text-accent-foreground"
+                        >
+                          National Capacity Building Program
+                        </Link>
+                      </NavigationMenuLink>
                     </li>
                   </ul>
                 </NavigationMenuContent>

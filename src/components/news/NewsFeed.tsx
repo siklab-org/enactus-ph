@@ -18,7 +18,7 @@ export function NewsFeed({ category }: { category?: NewsCategory }) {
   }
 
   return (
-    <div className="mx-auto max-w-2xl space-y-8">
+    <div className="w-full space-y-8">
       {posts.map((post) => (
         <NewsPostCard key={post.slug} post={post} />
       ))}

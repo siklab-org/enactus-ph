@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   AUTHOR,
-  PLACEHOLDER,
   CATEGORIES,
   type NewsPost,
 } from "@/lib/news-data";
@@ -14,17 +12,6 @@ function formatDate(iso: string): string {
     month: "long",
     day: "numeric",
   });
-}
-
-function ImagePlaceholder({ aspect = "16/9" }: { aspect?: string }) {
-  return (
-    <div
-      className="flex items-center justify-center rounded-xl bg-muted text-muted-foreground"
-      style={{ aspectRatio: aspect }}
-    >
-      <ImageIcon className="h-8 w-8 opacity-40" />
-    </div>
-  );
 }
 
 function categoryLabel(key: string): string {
@@ -63,29 +50,13 @@ export function NewsPostCard({ post }: { post: NewsPost }) {
 
       {/* Content */}
       <div className="mt-4">
-        <h2 className="font-display text-lg font-semibold leading-snug tracking-tight text-foreground group-hover:text-primary transition-colors">
+        <h2 className="font-display text-lg font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
           {post.title}
         </h2>
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
           {post.excerpt}
         </p>
       </div>
-
-      {/* Image / Placeholder */}
-      {post.imageUrl ? (
-        <div className="mt-4">
-          {post.imageUrl === PLACEHOLDER ? (
-            <ImagePlaceholder />
-          ) : (
-            <img
-              src={post.imageUrl}
-              alt={post.imageAlt ?? ""}
-              className="w-full rounded-xl object-cover"
-              style={{ aspectRatio: "16/9" }}
-            />
-          )}
-        </div>
-      ) : null}
 
       {/* Divider + meta */}
       <div className={cn("mt-5 border-t border-border/40 pt-3")}>

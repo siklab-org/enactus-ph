@@ -87,6 +87,12 @@ function renderBody(body: string): string {
 }
 
 export function NewsPostDetail({ post }: { post: NewsPost }) {
+  const images = post.images?.length
+    ? post.images
+    : post.imageUrl
+      ? [{ url: post.imageUrl, alt: post.imageAlt ?? "" }]
+      : [];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Back link */}
@@ -127,18 +133,27 @@ export function NewsPostDetail({ post }: { post: NewsPost }) {
         </h1>
 
         {/* Image / Placeholder */}
-        {post.imageUrl ? (
-          <div className="mt-8">
-            {post.imageUrl === PLACEHOLDER ? (
-              <ImagePlaceholder />
-            ) : (
-              <img
-                src={post.imageUrl}
-                alt={post.imageAlt ?? ""}
-                className="w-full rounded-xl object-cover"
-                style={{ aspectRatio: "16/9" }}
-              />
-            )}
+        {images.length > 0 ? (
+          <div className="mt-8 space-y-4">
+            {images.map((image, index) => (
+              <figure key={`${image.url}-${index}`} className="overflow-hidden rounded-xl">
+                {image.url === PLACEHOLDER ? (
+                  <ImagePlaceholder />
+                ) : (
+                  <img
+                    src={image.url}
+                    alt={image.alt ?? ""}
+                    className="w-full rounded-xl object-cover"
+                    style={{ aspectRatio: "16/9" }}
+                  />
+                )}
+                {image.caption ? (
+                  <figcaption className="mt-2 text-sm text-muted-foreground">
+                    {image.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ))}
           </div>
         ) : null}
 

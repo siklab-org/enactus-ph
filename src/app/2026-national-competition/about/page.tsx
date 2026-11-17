@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { SummitPhotoCarousel } from "./SummitPhotoCarousel";
 
 export const metadata: Metadata = {
   title: "About the Summit",
@@ -38,6 +39,28 @@ const audiences = [
   "Youth-serving organizations and partners",
   "Industry and business leaders",
   "Government and diplomatic representatives",
+];
+
+const summitVideoUrl = "https://www.facebook.com/share/v/19pUfqeNrV/";
+const summitVideoEmbedUrl =
+  "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2097202444235456%2F&show_text=false&width=1280";
+
+const summitPhotos = [
+  "Delegates gathered in the auditorium",
+  "Two summit leaders wearing their event medals",
+  "Student presenters sharing their project on stage",
+  "A delegate speaking during a panel discussion",
+  "A speaker presenting a sustainability-focused session",
+  "A student presenting an innovation project",
+  "A summit award recipient standing with event representatives",
+  "A summit award being presented on stage",
+  "Student teams celebrating with their competition awards",
+  "Award recipients and organizers gathered on stage",
+  "Summit delegates posing together in the auditorium",
+  "Students taking part in the Parade of Schools",
+  "Performers presenting a cultural number on stage",
+  "A cultural performance during the summit program",
+  "Performers celebrating on the summit stage",
 ];
 
 type PartnerLogo = {
@@ -143,6 +166,48 @@ export default function SummitAboutPage() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="summit-media" className="shell py-16 md:py-24">
+        <div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-20">
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              Summit highlights
+            </p>
+            <h2 className="mt-4 max-w-[12ch] text-section font-bold leading-tight text-balance">
+              Moments worth sharing.
+            </h2>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+              Revisit the National Competition and Innovation Summit through
+              the event video and photo highlights.
+            </p>
+          </div>
+          <div className="min-w-0">
+            <div className="relative aspect-video overflow-hidden rounded-2xl bg-secondary">
+              <iframe
+                src={summitVideoEmbedUrl}
+                title="Facebook video from the National Competition and Innovation Summit 2026"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <a
+              href={summitVideoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-foreground underline decoration-primary underline-offset-4 transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              Watch on Facebook
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-14 md:mt-20">
+          <SummitPhotoCarousel photos={summitPhotos} />
         </div>
       </section>
 
